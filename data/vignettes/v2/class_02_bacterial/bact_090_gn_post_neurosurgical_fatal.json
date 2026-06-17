@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-090-CID-2004-US-South-region-GN-Late-Fatal",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 55,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 1.5,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "55-year-old male, US South region. Glioma resection 9 days prior; postoperative course complicated by CSF leak from surgical site, then fever 39.0 C, headache, declining mental status over 36 hours, progressive obtundation. Tertiary ED. No freshwater. Healthcare-associated gram-negative bacterial meningitis. Outcome: fatal hospital day 4.",
+    "red_flags_present": [
+      "recent_neurosurgery"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 118,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 60,
+    "glasgow_coma_scale": 8,
+    "oxygen_saturation_pct": 92,
+    "respiratory_rate_breaths_per_min": 24
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 19500,
+    "platelets_per_uL": 165000,
+    "alt_ast_U_per_L": 42,
+    "crp_mg_per_L": 215.0,
+    "procalcitonin_ng_per_mL": 11.5,
+    "serum_sodium_mEq_per_L": 135
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 30.0,
+    "csf_wbc_per_mm3": 4500,
+    "csf_neutrophil_pct": 86,
+    "csf_lymphocyte_pct": 14,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 16,
+    "csf_protein_mg_per_dL": 290,
+    "csf_lactate_mmol_per_L": 8.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 8,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": 1,
+    "imaging_text_summary": "CT head non-contrast: diffuse cerebral edema with effacement of sulci, basilar meningeal enhancement on contrast-equivalent regions, no focal lesion, no midline shift. Pattern consistent with severe late-stage bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_negative_rods",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "pseudomonas_aeruginosa",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "pseudomonas_aeruginosa_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-PRE-ADJ-1",
+      "WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 1 vignette anchored to PMID 15494903 (Tunkel IDSA 2004); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE1-PRE-ADJ-1, WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.3 (2026-05-08). anchor=Tunkel-IDSA-2004 stratum=post-neurosurgical-GN.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "guideline",
+      "pmid": "15494903",
+      "doi": "10.1086/425368"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_3",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 15494903 (Tunkel IDSA 2004 CID guideline) healthcare-associated meningitis recommendations. Demographic anchor (55yo M post-neurosurgical glioma resection day 9 with CSF leak) reflects post-neurosurgical gram-negative stratum covered by Tunkel for empiric meropenem-vancomycin coverage. CSF profile bacterial range; gram-negative rods on Gram stain with Pseudomonas culture. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain, neurosurgery_history, csf_leak}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein, lactate, gcs}; tier_4_priors={temp, symptom_days, hr}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=fatal_hospital_day_4. Antibiotic_started_hours=2. Tier: tier_4_imputation_idsa_guideline_anchored. 5.3.3 wave1 GN-post-neurosurgical-fatal."
+  },
+  "narrative_es": "Varon de 55 anos en region sur de Estados Unidos, ingresado a urgencias terciarias nueve dias despues de reseccion de glioma. El curso postoperatorio se complico con fuga de liquido cefalorraquideo en el sitio quirurgico. En 36 horas desarrollo fiebre 39.0 C, cefalea y deterioro del estado mental con obnubilacion progresiva. Examen: temperatura 39.0 C, escala de Glasgow 8, rigidez de nuca, signo de Kernig positivo, deficit focal (hemiparesia derecha), sin exantema. Liquido cefalorraquideo mostro presion de apertura 30 cmH2O, leucocitos 4,500 por mm3 (86 por ciento neutrofilos), glucosa 16 mg/dL, proteina 290 mg/dL. Tincion de Gram con bacilos gramnegativos y cultivo Pseudomonas aeruginosa. Anclaje en guia IDSA Tunkel 2004 (PMID 15494903), recomendaciones para meningitis asociada a atencion sanitaria. Subphase 1.3 commit 5.3.3 wave 1.",
+  "narrative_en": "A 55-year-old man in the US South region presented to a tertiary emergency department 9 days after glioma resection. The postoperative course had been complicated by a CSF leak at the surgical site. Over 36 hours he developed fever to 39.0 C, headache, and declining mental status with progressive obtundation. Examination on admission: temperature 39.0 C, Glasgow Coma Scale 8, neck stiffness, positive Kernig sign, focal deficit (right hemiparesis), no rash. CSF showed opening pressure 30 cmH2O, white cell count 4,500 per cubic millimeter (86 percent neutrophils), glucose 16 mg/dL, protein 290 mg/dL. Gram stain revealed gram-negative rods; culture identified Pseudomonas aeruginosa. Anchored to Tunkel IDSA 2004 (PMID 15494903) healthcare-associated meningitis recommendations (empiric meropenem coverage of gram-negative rods including Pseudomonas in post-neurosurgical context). Outcome: fatal hospital day 4. Subphase 1.3 commit 5.3.3 wave 1, pre-adjudication hold_for_revision."
+}

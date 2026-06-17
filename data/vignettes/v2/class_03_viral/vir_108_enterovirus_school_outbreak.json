@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-108-NEJM-2018-US-South-region-EV-Mid",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 11,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "11-year-old male, US South region. School outbreak with multiple peers symptomatic. 2-day course: fever 38.7 C, headache, neck stiffness, photophobia, vomiting, summer early-September presentation. Pediatric tertiary ED. No freshwater. No focal. Outcome: survived with full recovery in 6 days.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.7,
+    "heart_rate_bpm": 100,
+    "systolic_bp_mmHg": 110,
+    "diastolic_bp_mmHg": 68,
+    "glasgow_coma_scale": 15,
+    "oxygen_saturation_pct": 98,
+    "respiratory_rate_breaths_per_min": 20
+  },
+  "exam": {
+    "mental_status_grade": "alert",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 10200,
+    "platelets_per_uL": 285000,
+    "alt_ast_U_per_L": 23,
+    "crp_mg_per_L": 14.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 18.0,
+    "csf_wbc_per_mm3": 180,
+    "csf_neutrophil_pct": 18,
+    "csf_lymphocyte_pct": 82,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 58,
+    "csf_protein_mg_per_dL": 60,
+    "csf_lactate_mmol_per_L": 2.0,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "none",
+    "imaging_pattern": null,
+    "imaging_finding_count": null,
+    "imaging_text_summary": "No imaging performed (uncomplicated enteroviral meningitis presentation with normal mental status; Tyler 2018 NEJM review supports deferring imaging in benign aseptic pattern)."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_enterovirus_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE1-PRE-ADJ-1",
+      "VIRAL-WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.5 VIRAL vignette anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE1-PRE-ADJ-1, VIRAL-WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.5 (2026-05-08). anchor=Tyler-NEJM-2018 stratum=EV-school-outbreak.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "30089069",
+      "doi": "10.1056/NEJMra1708714"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_5",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review). Enteroviral aseptic meningitis with school-outbreak epidemiology. Demographic anchor (11yo M US school outbreak September) sits in school-outbreak-pediatric stratum. CSF lymphocytic (180 WBC, 82 percent lymphocytes), normal glucose 58, mildly elevated protein 60 - textbook viral pattern. EV PCR positive. Imputation tiers: tier_1_primary={age, sex, ev_pcr, school_outbreak_context, season}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein}; tier_4_priors={temp, gcs, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_full_recovery. Tier: tier_3_imputation_within_review. 5.3.5 wave1 EV-school-outbreak-pediatric."
+  },
+  "narrative_es": "Varon de 11 anos en region sur de Estados Unidos, ingresado a urgencias pediatricas terciarias a principios de septiembre con dos dias de fiebre 38.7 C, cefalea, rigidez de nuca, fotofobia y vomitos. Asistio a colegio con varios companeros con sintomas similares la misma semana (brote escolar de enterovirus sospechado). Examen: temperatura 38.7 C, escala de Glasgow 15, alerta, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Liquido cefalorraquideo mostro presion de apertura 18 cmH2O, leucocitos 180 por mm3 (82 por ciento linfocitos), glucosa 58 mg/dL, proteina 60 mg/dL. PCR de enterovirus en LCR positiva. Anclaje en revision Tyler 2018 NEJM (PMID 30089069), estrato brote escolar. Subphase 1.3 commit 5.3.5 wave 1.",
+  "narrative_en": "An 11-year-old boy in the US South region presented to a tertiary pediatric emergency department in early September with a 2-day course of fever to 38.7 C, headache, neck stiffness, photophobia, and vomiting. He attended a school with several peers reporting similar symptoms in the same week (suspected school enteroviral outbreak). Examination on admission: temperature 38.7 C, Glasgow Coma Scale 15, alert, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 18 cmH2O, white cell count 180 per cubic millimeter (82 percent lymphocytes), glucose 58 mg/dL, protein 60 mg/dL. CSF enterovirus PCR positive. Gram stain and culture negative. No imaging performed. Anchored to Tyler 2018 NEJM viral encephalitis review (PMID 30089069), school-outbreak enteroviral stratum. Outcome: survived with full recovery in six days. Subphase 1.3 commit 5.3.5 wave 1, pre-adjudication hold_for_revision."
+}

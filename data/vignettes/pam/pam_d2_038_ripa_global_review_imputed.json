@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-038-J Clin Med-2025-US-South-region-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 28,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 5.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Five-day history of fever, headache, vomiting, and progressive lethargy in a 28-year-old male from the US South region after recreational freshwater (lake) exposure. Demographics imputed within Ripa 2025 Romanian systematic review of 98 patients (17 USA cases sub-cohort).",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 110,
+    "systolic_bp_mmHg": 122,
+    "diastolic_bp_mmHg": 76,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 20
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17400,
+    "platelets_per_uL": 248000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 86.0,
+    "procalcitonin_ng_per_mL": 1.8,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 30.0,
+    "csf_wbc_per_mm3": 3000,
+    "csf_neutrophil_pct": 90,
+    "csf_lymphocyte_pct": 9,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 360,
+    "csf_lactate_mmol_per_L": 6.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 160,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema. Imaging imputed within Ripa 2025 systematic review's 17 USA cases / 98-patient global cohort."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Naegleria fowleri PCR (CDC reference laboratory)",
+        "result": "Positive (consistent with within-cohort imputation per Ripa 2025 systematic review).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39860533"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Rîpă C, Cobzaru RG, Rîpă MR, Maștaleru A, Oancea A, Cumpăt CM, Leon MM Journal of Clinical Medicine 2025 (PMID 39860533). Demographics: 28 years male, US South region. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "39860533",
+      "doi": "10.3390/jcm14020526"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 38 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: none. Outcome: fatal. Anchored to PMID 39860533 (Rîpă C, Cobzaru RG, Rîpă MR, Maștaleru A, Oancea A, Cumpăt CM, Leon MM, Journal of Clinical Medicine 2025). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: 7-author Romanian systematic review (Iasi, Univ Med & Pharmacy Grigore T. Popa) of 52 PAM case-report articles via Web of Science search. Abstract reports 98 patients (17 women 17.4%, 81 men 82.6%) from 17 countries: 17 USA, 8 India, 7 China, 4 Pakistan, 2 UK, plus 1 each from Thailand/Korea/Japan/Italy/Iran/Norway/Turkey/Costa Rica/Zambia/Australia/Taiwan/Venezuela/Mexico...."
+  },
+  "narrative_es": "Varón de 28 años originario de la región sur de Estados Unidos que se presentó con cinco días de fiebre, cefalea, vómitos y letargia progresiva tras exposición recreativa a agua dulce (lago). Al ingreso la temperatura fue de 39.0 C, escala de Glasgow 11, con rigidez de nuca y somnolencia. El líquido cefalorraquídeo mostró leucocitos 3,000 por mm3 (90 por ciento neutrófilos), glucosa 22 mg/dL, proteína 360 mg/dL y lactato 6.8 mmol/L. La PCR del líquido cefalorraquídeo para Naegleria fowleri fue positiva en el laboratorio de referencia de los CDC. La tomografía mostró edema cerebral difuso. Se inició el protocolo de PAM de los CDC; el paciente falleció por edema cerebral refractario. Esta viñeta es una imputación de Tier-4 dentro de la cohorte: no se reclama un caso nombrado específico. Los datos clínicos siguen la epidemiología de la revisión sistemática rumana de Rîpă 2025 (98 pacientes en 52 artículos, subcohorte de 17 casos en EE. UU.); las características demográficas están fijadas en la tabla de distribución del Día 2 (PMID 39860533).",
+  "narrative_en": "A 28-year-old male from the US South region presented with a five-day history of fever, headache, vomiting, and progressive lethargy following recreational freshwater (lake) exposure. On admission temperature was 39.0 C, Glasgow Coma Scale 11, with neck stiffness and somnolence. CSF showed white cell count 3,000 per cubic millimeter (90 percent neutrophils), glucose 22 mg/dL, protein 360 mg/dL, and lactate 6.8 mmol/L. CSF PCR confirmed Naegleria fowleri at the CDC reference laboratory. CT showed diffuse cerebral edema. Treatment per CDC PAM protocol was initiated; the patient died of refractory cerebral edema. This vignette is a Tier-4 within-cohort imputation: no specific named-case is claimed. Clinical specifics follow Rîpă 2025 Romanian systematic review epidemiology (98 patients across 52 case-report articles, 17 USA sub-cohort); demographics are locked from the Day-2 distribution table (PMID 39860533)."
+}

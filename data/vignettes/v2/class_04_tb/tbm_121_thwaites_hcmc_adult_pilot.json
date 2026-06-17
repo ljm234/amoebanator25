@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-TBM-121-Thwaites-HCMC",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 35,
+    "sex": "male",
+    "ethnicity": "asian",
+    "geography_region": "other_global",
+    "altitude_residence_m": 19
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 28.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Four-week subacute illness in a 35-year-old man from Ho Chi Minh City. Low-grade evening fevers, weight loss of 4 kg, progressive frontal headache for three weeks, and intermittent vomiting in the final week. No recent freshwater exposure. Household contact with a cousin treated for pulmonary tuberculosis the prior year.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.4,
+    "heart_rate_bpm": 96,
+    "systolic_bp_mmHg": 122,
+    "diastolic_bp_mmHg": 78,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "CN_VI",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 8400,
+    "platelets_per_uL": 312000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 38.0,
+    "procalcitonin_ng_per_mL": 0.4,
+    "serum_sodium_mEq_per_L": 128
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 24.0,
+    "csf_wbc_per_mm3": 280,
+    "csf_neutrophil_pct": 20,
+    "csf_lymphocyte_pct": 78,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 28,
+    "csf_protein_mg_per_dL": 280,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 14.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Thick basal meningeal enhancement on post-contrast T1 with mild communicating hydrocephalus and a small left basal ganglia infarct. Findings consistent with active tuberculous meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Positive, rifampicin susceptible. Cycle threshold consistent with TBM.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "CSF AFB smear (Ziehl-Neelsen)",
+        "result": "Positive, scant acid-fast bacilli on concentrated specimen.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Pending at LP; reported positive at 4 weeks (M. tuberculosis drug-sensitive).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-TBM-121-ADJ-1",
+      "PILOT-TBM-121-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Thwaites GE et al. NEJM 2004 (PMID 15496623), HCMC dexamethasone TBM RCT. 35-year-old Vietnamese adult, drug-sensitive TBM with classical lymphocytic CSF (lymph 78 percent, protein 280, glucose 28), ADA 14 U/L, Xpert MTB/RIF Ultra positive, AFB smear positive, CN VI palsy positive. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "rct",
+      "pmid": "15496623",
+      "doi": "10.1056/NEJMoa040573"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 1 of 6 for Class 4 TBM. Anchored to Thwaites NEJM 2004 dexamethasone RCT (HCMC adult HIV-negative, drug-sensitive TBM). CSF and imaging within published case ranges; ADA 14 U/L above Ye TM&IH 2023 cutoff of 10. CN VI palsy present. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 35 anos de Ho Chi Minh, Vietnam, ingresado a un hospital terciario tras un cuadro subagudo de cuatro semanas. Refiere fiebre vespertina baja, perdida de 4 kg, cefalea frontal progresiva de tres semanas y vomitos intermitentes en la ultima semana. Antecedente de primo con tuberculosis pulmonar tratada el ano previo. Examen al ingreso: temperatura 38.4 C, Glasgow 13, somnoliento, rigidez de nuca, signo de Kernig positivo, paresia del sexto par craneal derecho y papiledema en el fondo de ojo. LCR con presion de apertura 24 cmH2O, leucocitos 280 por mm3 (78 por ciento linfocitos), glucosa 28 mg/dL, proteina 280 mg/dL, adenosina desaminasa 14 U/L. RM con contraste mostro engrosamiento meningeo basal e hidrocefalia comunicante leve. Xpert MTB/RIF Ultra positivo en LCR, susceptible a rifampicina. Anclaje Thwaites NEJM 2004 (PMID 15496623). Subphase 1.4 pilot.",
+  "narrative_en": "A 35-year-old man from Ho Chi Minh City presented to a tertiary referral hospital with a four-week subacute illness. He reported low-grade evening fevers, four kilograms of weight loss, three weeks of progressive frontal headache, and intermittent vomiting in the final week. His cousin had been treated for pulmonary tuberculosis the prior year. Examination on admission: temperature 38.4 C, Glasgow Coma Scale 13, somnolent but rousable, neck stiffness, positive Kernig sign, right lateral gaze palsy consistent with sixth cranial nerve involvement, and papilledema on fundoscopy. CSF showed opening pressure 24 cmH2O, white cell count 280 per cubic millimeter with 78 percent lymphocytes, glucose 28 mg/dL, protein 280 mg/dL, and adenosine deaminase 14 U/L. MRI with contrast demonstrated thick basal meningeal enhancement and mild communicating hydrocephalus. CSF Xpert MTB/RIF Ultra was positive and rifampicin susceptible. Anchored to Thwaites NEJM 2004 (PMID 15496623). Subphase 1.4 commit 5.4.2 pilot, hold_for_revision."
+}

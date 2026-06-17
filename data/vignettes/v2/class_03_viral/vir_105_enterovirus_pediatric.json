@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-105-PLoSOne-2007-Pediatric",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 5,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 200
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "5-year-old male, Athens Greece (Aghia Sophia Children's Hospital), pediatric ED. 2-day course: fever 38.6 C, headache, vomiting, photophobia, neck stiffness on exam, summer late-June presentation. No rash. No freshwater exposure. Outcome: survived with full recovery. Diagnostic_ambiguity_flag=true; type=csf_neutrophil_predominant_in_confirmed_viral (reflects Michos 2007 cohort evidence).",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.6,
+    "heart_rate_bpm": 110,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 64,
+    "glasgow_coma_scale": 15,
+    "oxygen_saturation_pct": 98,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "alert",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 11200,
+    "platelets_per_uL": 285000,
+    "alt_ast_U_per_L": 22,
+    "crp_mg_per_L": 18.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 18.0,
+    "csf_wbc_per_mm3": 220,
+    "csf_neutrophil_pct": 65,
+    "csf_lymphocyte_pct": 35,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 55,
+    "csf_protein_mg_per_dL": 65,
+    "csf_lactate_mmol_per_L": 2.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 3,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "none",
+    "imaging_pattern": null,
+    "imaging_finding_count": null,
+    "imaging_text_summary": "No imaging performed (uncomplicated viral meningitis presentation in a child with normal mental status; per IDSA encephalitis guidelines imaging not mandatory in this context)."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_enterovirus_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17668054"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17668054"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17668054"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-PRE-ADJ-1",
+      "PILOT-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=pilot vignette anchored to PMID 17668054 (Michos 2007 PLoS One pediatric aseptic 506 cohort); external clinical adjudication pending; classification provisional. adjudicator_ids=PILOT-PRE-ADJ-1, PILOT-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.2 (2026-05-07).",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "17668054",
+      "doi": "10.1371/journal.pone.0000674"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-07T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_2",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 17668054 (Michos 2007 PLoS One 2(7):e674), 506-child aseptic meningitis Athens cohort with EV PCR positive in 48.9 percent (47/96 tested). CRITICAL: cohort documented PMN predominance >50 percent in 58.3 percent of EV PCR-positive cases, contradicting textbook viral-CSF-lymphocytic. Vignette deliberately reflects this evidence-based reality (CSF WBC 220 near cohort median 201, neutrophils 65 percent). Anchor (5yo M summer) matches cohort median age and seasonal peak. Imputation tiers: tier_1_primary={age, sex, ev_pcr, neutrophil_pct, season}; tier_3_within_cohort={csf_wbc, glucose, protein}; tier_4_priors={temp, symptom_days, gcs}. Indeterminate=none. Diagnostic_ambiguity=true; type=csf_neutrophil_predominant_in_confirmed_viral. Outcome=survived_full_recovery (no cohort deaths). Tier: primary_source_direct. 5.3.2 pilot 5."
+  },
+  "narrative_es": "Nino de 5 anos en Atenas, Grecia (Hospital Pediatrico Aghia Sophia), ingresado con dos dias de fiebre 38.6 C, cefalea, vomitos, fotofobia y rigidez de nuca al examen, presentacion estival en junio (pico estacional de la cohorte Michos 2007). Examen: temperatura 38.6 C, escala de Glasgow 15, alerta, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Liquido cefalorraquideo mostro presion de apertura 18 cmH2O, leucocitos 220 por mm3 (65 por ciento neutrofilos, predominio polimorfonuclear deliberado que refleja el hallazgo Michos 2007 de PMN-predominancia en 58.3 por ciento de casos EV PCR-positivos), glucosa 55 mg/dL, proteina 65 mg/dL. PCR de enterovirus en LCR positiva. Cultivo y tincion de Gram negativos. Sin imagenes (presentacion no complicada). Anclaje primario en cohorte pediatrica de meningitis aseptica de 506 ninos (PMID 17668054, Michos 2007 PLoS One, mediana 5 anos, EV PCR-positivo 48.9 por ciento, PMN-predominancia 58.3 por ciento). Diagnostic_ambiguity_flag=true. Subphase 1.3 commit 5.3.2 pilot 5.",
+  "narrative_en": "A 5-year-old boy in Athens, Greece (Aghia Sophia Children's Hospital) presented with a two-day course of fever to 38.6 C, headache, vomiting, photophobia, and neck stiffness on examination, in summer (late June; matches the seasonal peak of the Michos 2007 cohort). Examination on admission: temperature 38.6 C, Glasgow Coma Scale 15, alert, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 18 cmH2O, white cell count 220 per cubic millimeter (65 percent neutrophils, deliberately PMN-predominant reflecting the Michos 2007 finding of PMN predominance in 58.3 percent of EV PCR-positive cases), glucose 55 mg/dL, protein 65 mg/dL. CSF enterovirus PCR positive. Gram stain and culture negative. No imaging performed (uncomplicated viral meningitis presentation in a child with normal mental status). Primary anchor: PMID 17668054 (Michos 2007 PLoS One), 506-child pediatric aseptic meningitis cohort (median age 5y, EV PCR-positive 48.9 percent, PMN-predominance 58.3 percent in EV PCR-positive). Diagnostic_ambiguity_flag=true; type=csf_neutrophil_predominant_in_confirmed_viral. Outcome: survived with full recovery (no deaths in cohort). Subphase 1.3 commit 5.3.2 pilot 5, pre-adjudication hold_for_revision."
+}

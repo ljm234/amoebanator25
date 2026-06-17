@@ -1,0 +1,121 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-064-RPMESP-2016-Lima-Pediatric",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 1,
+    "sex": "male",
+    "ethnicity": "mestizo",
+    "geography_region": "peru_lima_coast",
+    "altitude_residence_m": 154
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.5,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Eighteen-month-old male, Lima Peru tertiary pediatric center. 2.5 day history of fever 39.5 C, irritability, decreased responsiveness over preceding 12 hours, vomiting, bulging anterior fontanelle on exam. No freshwater exposure. No rash. Outcome: survived with mild hearing impairment. Antibiotic started at hour 2.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.5,
+    "heart_rate_bpm": 156,
+    "systolic_bp_mmHg": 92,
+    "diastolic_bp_mmHg": 56,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 32
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": null
+  },
+  "labs": {
+    "wbc_blood_per_uL": 21000,
+    "platelets_per_uL": 280000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 220.0,
+    "procalcitonin_ng_per_mL": 12.0,
+    "serum_sodium_mEq_per_L": 135
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 32.0,
+    "csf_wbc_per_mm3": 5400,
+    "csf_neutrophil_pct": 92,
+    "csf_lymphocyte_pct": 8,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 18,
+    "csf_protein_mg_per_dL": 280,
+    "csf_lactate_mmol_per_L": 8.0,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 8,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: meningeal enhancement noted, no focal lesion, no hydrocephalus, no midline shift. Schema imaging_pattern enum lacks meningeal_enhancement_no_focal_lesion; mapped to normal with narrative note per D2."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_positive_diplococci",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "streptococcus_pneumoniae",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:27831604"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-PRE-ADJ-1",
+      "PILOT-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=pilot vignette anchored to PMID 27831604 (Davalos 2016 RPMESP Lima ped); external clinical adjudication pending; classification provisional. adjudicator_ids=PILOT-PRE-ADJ-1, PILOT-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.2 (2026-05-07).",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "27831604",
+      "doi": "10.17843/rpmesp.2016.333.2349"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-07T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_2",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 27831604 (Davalos 2016 RPMESP), 44-episode pediatric SP meningitis multicenter Lima cohort 2006-2011 (68.2 percent under-2y, CFR 32.6 percent). Demographic anchor (18mo M) sits in dominant cohort stratum. CSF profile within bacterial range per Tunkel IDSA 2004 (PMID 15494903). Imaging enum lacks meningeal_enhancement_no_focal_lesion; mapped to normal with narrative note. Imputation tiers: tier_1_primary={age, sex, region, csf_culture, csf_gram_stain}; tier_3_within_cohort={csf_wbc, csf_neutrophil_pct, csf_glucose, csf_protein}; tier_4_priors={gcs, temperature_celsius}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_mild_hearing_impairment per cohort sequelae. Antibiotic_started_hours=2. Tier: primary_source_direct (Peru). 5.3.2 pilot 1."
+  },
+  "narrative_es": "Lactante varon de 18 meses originario de Lima, Peru, ingresado a centro pediatrico terciario con dos y medio dias de fiebre 39.5 C, irritabilidad, respuesta disminuida en las ultimas 12 horas, vomitos y fontanela anterior abombada al examen. Liquido cefalorraquideo mostro presion de apertura 32 cmH2O, leucocitos 5,400 por mm3 (92 por ciento neutrofilos), glucosa 18 mg/dL, proteina 280 mg/dL. La tincion de Gram revelo diplococos grampositivos y el cultivo identifico Streptococcus pneumoniae. Anclaje primario en cohorte multicentrica pediatrica de Lima (PMID 27831604, Davalos 2016 RPMESP, 44 episodios 2006-2011, 68.2 por ciento bajo 2 anos, mortalidad 32.6 por ciento). Subphase 1.3 commit 5.3.2 pilot 1.",
+  "narrative_en": "An 18-month-old male from Lima, Peru presented to a tertiary pediatric center with a two-and-a-half day history of fever to 39.5 C, irritability, decreased responsiveness over the preceding 12 hours, vomiting, and bulging anterior fontanelle on initial examination. CSF showed opening pressure 32 cmH2O, white cell count 5,400 per cubic millimeter (92 percent neutrophils), glucose 18 mg/dL, protein 280 mg/dL. Gram stain revealed gram-positive diplococci; culture identified Streptococcus pneumoniae. Primary anchor: PMID 27831604 (Davalos 2016 RPMESP), 44-episode pediatric pneumococcal meningitis multicenter Lima cohort 2006-2011 (68.2 percent under 2 years, case fatality 32.6 percent). Outcome: survived with mild hearing impairment. Subphase 1.3 commit 5.3.2 pilot 1, pre-adjudication hold_for_revision."
+}

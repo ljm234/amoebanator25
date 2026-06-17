@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-115-Lancet-Infect-Dis-2010-Netherlands-VZV-Mid",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 65,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 5.0,
+    "chief_complaint": "headache",
+    "prodrome_description": "65-year-old male, Netherlands, on chemotherapy for multiple myeloma. 5-day course: vesicular dermatomal rash in V1 trigeminal distribution (zoster ophthalmicus) day 1, then headache day 3, low-grade fever 38.0 C and confusion day 4, neck stiffness day 5 prompting tertiary ED Amsterdam. No freshwater. Outcome: survived with mild residual visual field deficit per Granerod cohort VZV-immunocompromised pattern.",
+    "red_flags_present": [
+      "immunocompromise"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "malignancy_active",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.0,
+    "heart_rate_bpm": 92,
+    "systolic_bp_mmHg": 128,
+    "diastolic_bp_mmHg": 78,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "other",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 4200,
+    "platelets_per_uL": 145000,
+    "alt_ast_U_per_L": 32,
+    "crp_mg_per_L": 28.0,
+    "procalcitonin_ng_per_mL": 0.4,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 22.0,
+    "csf_wbc_per_mm3": 220,
+    "csf_neutrophil_pct": 25,
+    "csf_lymphocyte_pct": 75,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 52,
+    "csf_protein_mg_per_dL": 110,
+    "csf_lactate_mmol_per_L": 2.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: normal. VZV reactivation with dermatomal rash and CSF lymphocytic pleocytosis can show normal parenchymal imaging in the absence of overt vasculopathy or cerebellitis; Granerod 2010 Lancet ID cohort documented this benign-imaging VZV phenotype."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_vzv_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "vzv_igm_serology",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "vesicle_swab_tzanck_smear",
+        "result": "multinucleated_giant_cells_seen",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE2-PRE-ADJ-1",
+      "VIRAL-WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.6 VIRAL vignette anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE2-PRE-ADJ-1, VIRAL-WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.6 (2026-05-08, FINAL Subphase 1.3 wave). anchor=Granerod-Lancet-ID-2010 stratum=VZV-immunocompromised-zoster-ophthalmicus.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "20952256",
+      "doi": "10.1016/S1473-3099(10)70222-X"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T21:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_6",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort). VZV-immunocompromised-zoster-ophthalmicus phenotype with V1 dermatomal vesicular rash + CSF lymphocytic pleocytosis + VZV PCR positive. Demographic anchor (65yo M NL multiple myeloma chemotherapy with V1 dermatomal vesicular rash) sits in VZV-immuno-compromised stratum. CSF lymphocytic. MRI parenchyma normal in absence of overt VZV vasculopathy. Imputation tiers: tier_1_primary={age, sex, vzv_pcr, dermatomal_v1_rash, immunocompromise_chemotherapy}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_with_mild_visual_field_deficit. Tier: tier_3_imputation_within_review. 5.3.6 wave2 VZV-Granerod-immunocompromised-zoster-ophthalmicus."
+  },
+  "narrative_es": "Varon de 65 anos en Paises Bajos en quimioterapia por mieloma multiple, ingresado a urgencias terciarias en Amsterdam tras curso de cinco dias: exantema vesicular dermatomal en distribucion V1 trigeminal (herpes zoster oftalmico) al primer dia, luego cefalea al tercer dia, febricula 38.0 C y confusion al cuarto y rigidez de nuca al quinto. Examen: temperatura 38.0 C, escala de Glasgow 14, rigidez de nuca, signo de Kernig positivo, deficit focal (exantema vesicular dermatomal V1 con compromiso palpebral), sin exantema petequial. Liquido cefalorraquideo mostro leucocitos 220 por mm3 (75 por ciento linfocitos), glucosa 52 mg/dL, proteina 110 mg/dL. PCR de VZV en LCR positiva. IgM VZV positiva. Tzanck con celulas gigantes multinucleadas. RM cerebral normal. Anclaje en cohorte Granerod 2010 Lancet ID (PMID 20952256). Subphase 1.3 commit 5.3.6 wave 2.",
+  "narrative_en": "A 65-year-old man in the Netherlands on chemotherapy for multiple myeloma presented to a tertiary emergency department in Amsterdam after a 5-day course beginning with a vesicular dermatomal rash in the V1 trigeminal distribution (zoster ophthalmicus) on day 1, followed by headache on day 3, low-grade fever to 38.0 C and confusion on day 4, and neck stiffness on day 5. Examination on admission: temperature 38.0 C, Glasgow Coma Scale 14, neck stiffness, positive Kernig sign, focal deficit (left V1 dermatomal vesicular rash with eyelid involvement), no petechial rash. CSF showed opening pressure 22 cmH2O, white cell count 220 per cubic millimeter (75 percent lymphocytes), glucose 52 mg/dL, protein 110 mg/dL. CSF VZV PCR positive. VZV IgM serology positive. Vesicle swab Tzanck smear showed multinucleated giant cells. Brain MRI with DWI/FLAIR was normal. Anchored to Granerod 2010 Lancet Infect Dis UK encephalitis cohort (PMID 20952256), VZV-immunocompromised-zoster-ophthalmicus stratum. Outcome: survived with mild residual visual field deficit. Subphase 1.3 commit 5.3.6 wave 2, pre-adjudication hold_for_revision."
+}

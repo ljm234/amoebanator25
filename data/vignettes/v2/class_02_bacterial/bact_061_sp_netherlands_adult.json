@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-061-Lancet-Infect-Dis-2016-Netherlands-SP-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 35,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 1.5,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "35-year-old male, Netherlands. 36-hour rapid progression: fever 39.0 C, severe headache, neck stiffness, photophobia. Tertiary ED Amsterdam. No freshwater. Triad present (Bijlsma 2016 cohort 47 percent triad subgroup). Outcome: survived. Antibiotic at hour 1 plus dexamethasone EU guideline.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 110,
+    "systolic_bp_mmHg": 124,
+    "diastolic_bp_mmHg": 76,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 20
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18500,
+    "platelets_per_uL": 240000,
+    "alt_ast_U_per_L": 30,
+    "crp_mg_per_L": 175.0,
+    "procalcitonin_ng_per_mL": 7.5,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 27.0,
+    "csf_wbc_per_mm3": 5200,
+    "csf_neutrophil_pct": 88,
+    "csf_lymphocyte_pct": 12,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 200,
+    "csf_lactate_mmol_per_L": 6.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_positive_diplococci",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26652862"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "streptococcus_pneumoniae",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26652862"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "streptococcus_pneumoniae_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26652862"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE2-PRE-ADJ-1",
+      "WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 2 vignette anchored to PMID 26652862 (Bijlsma 2016 Lancet ID); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE2-PRE-ADJ-1, WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.4 (2026-05-08). anchor=Bijlsma-Lancet-ID-2016 stratum=adult-community.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "26652862",
+      "doi": "10.1016/S1473-3099(15)00430-2"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T15:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_4",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 26652862 (Bijlsma 2016 Lancet Infect Dis), 1,412-episode prospective Netherlands community-acquired adult bacterial meningitis cohort 2006-2014 (SP 70 percent, classic triad 47 percent, mortality 17 percent). Demographic anchor (35yo M adult community SP) sits in dominant cohort stratum. CSF profile bacterial range. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain, triad}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived. Antibiotic_started_hours=1. Tier: tier_3_imputation_within_cohort_review. 5.3.4 wave2 SP-NL-adult."
+  },
+  "narrative_es": "Varon de 35 anos en Paises Bajos (Amsterdam), ingresado a urgencias terciarias con 36 horas de progresion rapida: fiebre 39.0 C, cefalea intensa, rigidez de nuca, fotofobia. Examen: temperatura 39.0 C, escala de Glasgow 13, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Triada clasica presente (subgrupo del 47 por ciento triada-positiva de la cohorte Bijlsma 2016). Liquido cefalorraquideo mostro presion de apertura 27 cmH2O, leucocitos 5,200 por mm3 (88 por ciento neutrofilos), glucosa 22 mg/dL, proteina 200 mg/dL. Tincion de Gram con diplococos grampositivos y cultivo Streptococcus pneumoniae. Anclaje primario en cohorte prospectiva neerlandesa Bijlsma 2016 Lancet ID (PMID 26652862, 1,412 episodios 2006-2014, SP 70 por ciento, triada 47 por ciento). Subphase 1.3 commit 5.3.4 wave 2.",
+  "narrative_en": "A 35-year-old man in the Netherlands presented to a tertiary emergency department in Amsterdam with a 36-hour rapid progression of fever to 39.0 C, severe headache, neck stiffness, and photophobia. Examination on admission: temperature 39.0 C, Glasgow Coma Scale 13, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 27 cmH2O, white cell count 5,200 per cubic millimeter (88 percent neutrophils), glucose 22 mg/dL, protein 200 mg/dL. Gram stain revealed gram-positive diplococci; culture identified Streptococcus pneumoniae. Primary anchor: PMID 26652862 (Bijlsma 2016 Lancet Infect Dis), 1,412-episode prospective Netherlands community-acquired adult bacterial meningitis cohort 2006-2014 (SP 70 percent, classic triad 47 percent). Outcome: survived. Subphase 1.3 commit 5.3.4 wave 2, pre-adjudication hold_for_revision."
+}

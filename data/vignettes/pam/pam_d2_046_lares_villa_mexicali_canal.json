@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-046-JCM-1993-Mexicali-River",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 11,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_latam",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Four days of fever, headache, vomiting, and progressive somnolence in an 11-year-old boy from Mexicali after recreational swimming in an irrigation canal one week earlier. Initial empiric ceftriaxone at a regional hospital did not improve mental status; transfer to a tertiary center followed.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "river",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.3,
+    "heart_rate_bpm": 118,
+    "systolic_bp_mmHg": 108,
+    "diastolic_bp_mmHg": 68,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17800,
+    "platelets_per_uL": 250000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 90.0,
+    "procalcitonin_ng_per_mL": 2.0,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 3060,
+    "csf_neutrophil_pct": 89,
+    "csf_lymphocyte_pct": 10,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 21,
+    "csf_protein_mg_per_dL": 358,
+    "csf_lactate_mmol_per_L": 6.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 180,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema with mild basal cistern effacement."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Naegleria fowleri PCR (national reference laboratory)",
+        "result": "Positive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:8458963"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "methodology=day1_pmid_reuse; Anchored to Lares-Villa F et al. J Clin Microbiol 1993 (PMID 8458963). Demographics: 11 years male, Mexicali, MX. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "8458963",
+      "doi": null
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 46 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: river. Atypical type: irrigation_canal. Outcome: fatal. Anchored to PMID 8458963 (Lares-Villa F et al., J Clin Microbiol 1993). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: First Mexican human N. fowleri isolations. Fernandez-Quintanilla unaccented per original 1993 JCM publication (5-pass diacritic check)."
+  },
+  "narrative_es": "Niño de 11 años previamente sano, originario de Mexicali, que ingresó a un centro terciario con cuatro días de fiebre, cefalea, vómitos y somnolencia progresiva una semana después de nadar recreativamente en un canal de riego. La exploración mostró temperatura 39.3 C, escala de Glasgow 12, rigidez de nuca y signo de Kernig positivo sin déficit focal. El líquido cefalorraquídeo mostró presión de apertura 28 cmH2O, leucocitos 3,060 por mm3 (89 por ciento neutrófilos), glucosa 21 mg/dL, proteína 358 mg/dL y lactato 6.8 mmol/L. La PCR de Naegleria fowleri en líquido cefalorraquídeo en el laboratorio nacional de referencia fue positiva. Se inició el protocolo de PAM de los CDC, pero el paciente falleció. El Día 1 utilizó a Lares-Villa 1993 para v18 (niño de 9 años, misma exposición al canal de Mexicali); v46 es una imputación dentro de la cohorte para un perfil pediátrico distinto dentro del contexto documentado por el ancla, codificada bajo el clúster de río (PMID 8458963).",
+  "narrative_en": "An 11-year-old previously healthy boy from Mexicali presented to a tertiary center with four days of fever, headache, vomiting, and progressive somnolence one week after recreational swimming in an irrigation canal. Examination showed temperature 39.3 C, Glasgow Coma Scale 12, neck stiffness, and a positive Kernig sign without focal deficit. CSF showed opening pressure 28 cmH2O, white cell count 3,060 per cubic millimeter (89 percent neutrophils), glucose 21 mg/dL, protein 358 mg/dL, and lactate 6.8 mmol/L. CSF PCR for Naegleria fowleri at the national reference laboratory was positive. The CDC PAM regimen was started but the patient died. Day-1 used Lares-Villa 1993 for v18 (9-year-old boy, same Mexicali canal exposure); v46 is a within-cohort imputation for a different pediatric demographic within the same anchor's documented case context, encoded under the river cluster (PMID 8458963)."
+}

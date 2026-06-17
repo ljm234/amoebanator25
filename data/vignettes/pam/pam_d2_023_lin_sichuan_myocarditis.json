@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-023-Front Microbiol-2024-Sichuan-Splash-Pad",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 6,
+    "sex": "female",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.0,
+    "chief_complaint": "seizure",
+    "prodrome_description": "Two days of fever, headache, vomiting, and lethargy (initially diagnosed as acute upper respiratory tract infection plus acute gastritis at a local hospital, treated with oral cefaclor 48 hours prior to PICU admission). Three hours before admission a 5-minute seizure was followed by persistent coma. Patient had swum in an indoor heated public pool 7 days before symptom onset.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "swimming_pool_unchlorinated",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.2,
+    "heart_rate_bpm": 184,
+    "systolic_bp_mmHg": 112,
+    "diastolic_bp_mmHg": 74,
+    "glasgow_coma_scale": 8,
+    "oxygen_saturation_pct": 98,
+    "respiratory_rate_breaths_per_min": 39
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 13000,
+    "platelets_per_uL": 434000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 28.2,
+    "procalcitonin_ng_per_mL": 3.68,
+    "serum_sodium_mEq_per_L": 170
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 8.0,
+    "csf_wbc_per_mm3": 960,
+    "csf_neutrophil_pct": 90,
+    "csf_lymphocyte_pct": 9,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 85,
+    "csf_protein_mg_per_dL": 1000,
+    "csf_lactate_mmol_per_L": 7.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "not_done",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 3200,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Cranial CT at 64 hours post-admission showed effacement of the sulci and narrowing of the lateral ventricles, suggestive of cerebral herniation. EEG at 8 hours showed diffuse slow waves; transcranial Doppler demonstrated significantly reduced cerebral blood flow; near-infrared spectroscopy showed regional oxygen saturation as low as 10 percent. Echocardiography: left ventricular dilation, ejection fraction 42 percent, fractional shortening 20 percent (impaired systolic function consistent with fulminant myocarditis)."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "Blood metagenomic next-generation sequencing (mNGS) at 40 hours post-admission",
+        "result": "Naegleria fowleri 2,503 reads, 79.56 percent relative abundance.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39606118"
+      },
+      {
+        "test_name": "CSF metagenomic next-generation sequencing (mNGS)",
+        "result": "Naegleria fowleri 10,314 reads, 98.34 percent relative abundance; phylogenetic analysis identified novel genotype k39_3 within the species.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39606118"
+      },
+      {
+        "test_name": "Cardiac troponin I",
+        "result": "15.239 ug/L (reference 0.1-0.2); supports fulminant myocarditis as primary presenting syndrome.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39606118"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Lin L et al. Frontiers in Microbiology 2024 (PMID 39606118). Demographics: 6 years female, Sichuan, CN. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "39606118",
+      "doi": "10.3389/fmicb.2024.1463822"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 23 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: splash_pad. Atypical type: indoor_heated_pool_fulminant_myocarditis. Outcome: fatal. Anchored to PMID 39606118 (Lin L et al., Frontiers in Microbiology 2024). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: 6yo F Sichuan China, indoor heated pool 7d pre-onset April 2024, fulminant myocarditis presentation, ECMO-managed, novel candidate genotype k39_3, FATAL despite AmpB + rifampin. Same index patient as Li J 2025 Front Med (PMID 40969815) field investigation companion paper. Authors: Liangkang Lin, Lili Luo, Mei Wu, Jun Chen, Yi Liao, Haiyang Zhang."
+  },
+  "narrative_es": "Niña de 6 años previamente sana, ingresada a la unidad de cuidados intensivos pediátricos del Hospital de la Segunda Universidad de China Occidental en abril de 2024 con fiebre, cefalea, vómitos y letargia. Cuarenta y ocho horas antes había sido evaluada en un hospital local por sospecha de infección respiratoria aguda y gastritis, recibiendo cefaclor oral; tres horas antes del ingreso a la unidad presentó una crisis convulsiva de 5 minutos seguida de coma persistente. Siete días antes del inicio de síntomas nadó en una piscina pública cubierta con agua caliente. Al ingreso presentó temperatura 39.2 C, frecuencia cardíaca 184, escala de Glasgow 8 y troponina I cardíaca 15.239 microgramos por litro con fracción de eyección ecocardiográfica 42 por ciento, compatible con miocarditis fulminante. El líquido cefalorraquídeo mostró 960 leucocitos por mm3 (purulento), proteína 1,000 mg/dL, lactato 7.8 mmol/L y 3,200 eritrocitos por mm3. La secuenciación metagenómica de nueva generación en sangre a las 40 horas y en líquido cefalorraquídeo confirmó Naegleria fowleri (10,314 lecturas, 98.34 por ciento de abundancia relativa); el análisis filogenético identificó un genotipo novedoso k39_3. El tratamiento incluyó ECMO venoarterial, terapia continua de reemplazo renal integrada al circuito ECMO, hipotermia terapéutica, manitol y antimicrobianos de amplio espectro junto con anfotericina B y rifampicina tras el diagnóstico. La familia decidió retirar el soporte vital a las 84 horas del ingreso y la niña falleció (PMID 39606118).",
+  "narrative_en": "A 6-year-old previously healthy female was admitted to the pediatric intensive care unit at West China Second University Hospital in April 2024 with fever, headache, vomiting, and lethargy. Forty-eight hours before admission she had been treated at a local hospital for suspected acute upper respiratory tract infection and gastritis with oral cefaclor; three hours before PICU admission she experienced a 5-minute seizure followed by persistent coma. She had swum in an indoor heated public pool 7 days before symptom onset. On admission temperature was 39.2 C, heart rate 184, GCS 8, and cardiac troponin I 15.239 micrograms per liter with echocardiographic ejection fraction 42 percent supporting fulminant myocarditis. CSF showed white cell count 960 per cubic millimeter (purulent), protein 1,000 mg/dL, lactate 7.8 mmol/L, and red cell count 3,200 per cubic millimeter. Blood metagenomic next-generation sequencing at 40 hours and CSF mNGS confirmed Naegleria fowleri (10,314 reads, 98.34 percent relative abundance); phylogenetic analysis identified a novel genotype k39_3. Treatment included veno-arterial ECMO, continuous renal replacement therapy integrated into the ECMO circuit, therapeutic hypothermia, mannitol, and broad-spectrum antimicrobials plus amphotericin B and rifampicin after diagnosis. The family elected to withdraw care 84 hours after admission and the child died (PMID 39606118)."
+}

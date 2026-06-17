@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-041-Front Pediatr-2022-Hunan-River",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 14,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 3.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Three days of fever, frontal headache, and vomiting in a 14-year-old boy from Hunan after swimming in a rural river roughly five days before symptoms began. Initial regional hospital evaluation framed the case as bacterial meningitis and started ceftriaxone with vancomycin; rapid neurological deterioration to coma by day 3 prompted transfer to a tertiary center.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "river",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.6,
+    "heart_rate_bpm": 124,
+    "systolic_bp_mmHg": 108,
+    "diastolic_bp_mmHg": 66,
+    "glasgow_coma_scale": 8,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 24
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18600,
+    "platelets_per_uL": 244000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 108.0,
+    "procalcitonin_ng_per_mL": 2.8,
+    "serum_sodium_mEq_per_L": 136
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 36.0,
+    "csf_wbc_per_mm3": 4400,
+    "csf_neutrophil_pct": 92,
+    "csf_lymphocyte_pct": 7,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 14,
+    "csf_protein_mg_per_dL": 438,
+    "csf_lactate_mmol_per_L": 8.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 240,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Initial CT at the regional hospital was read as consistent with early bacterial meningitis; tertiary repeat CT showed diffuse cerebral edema with sulcal effacement. mNGS on CSF prompted the diagnostic revision to PAM."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF metagenomic next-generation sequencing (mNGS)",
+        "result": "Naegleria fowleri reads detected; sequence ID confirmed.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35463884"
+      },
+      {
+        "test_name": "CSF Naegleria fowleri PCR (provincial reference laboratory)",
+        "result": "Positive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35463884"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "methodology=primary_source_direct; Anchored to Zhou W et al. Frontiers in Pediatrics 2022 (PMID 35463884). Demographics: 14 years male, Hunan, CN. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "35463884",
+      "doi": "10.3389/fped.2022.785735"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 41 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: river. Atypical type: bacterial_misdiagnosis. Outcome: fatal. Anchored to PMID 35463884 (Zhou W et al., Frontiers in Pediatrics 2022). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: Pediatric case + literature review. Strong physician-adjudicator anchor for misdiagnosis-as-bacterial-meningitis differential. Geography corrected 2026-05-05 via verification audit (compass_artifact_wf-c3f74c5c): Changsha, Hunan Province, China (Third Xiangya Hospital, Central South University); NOT Hainan. Hainan is the tropical island province in South China Sea; Hunan is a landlocked central-China province; distinct ..."
+  },
+  "narrative_es": "Adolescente varón previamente sano de 14 años, originario de Hunan (China), que ingresó a un hospital regional con tres días de fiebre, cefalea frontal y vómitos, aproximadamente cinco días después de nadar en un río rural. Se inició ceftriaxona y vancomicina empíricas por sospecha de meningitis bacteriana. En 24 horas presentó deterioro neurológico hasta el estupor y fue trasladado a un centro terciario; la exploración mostró temperatura 39.6 C, escala de Glasgow 8, rigidez de nuca, papiledema y déficit motor focal. El líquido cefalorraquídeo mostró presión de apertura 36 cmH2O, leucocitos 4,400 por mm3 (92 por ciento neutrófilos), glucosa 14 mg/dL y proteína 438 mg/dL. La secuenciación metagenómica del líquido cefalorraquídeo detectó Naegleria fowleri, lo que motivó la revisión diagnóstica de meningitis bacteriana a PAM. Se inició el protocolo de PAM de los CDC, pero el paciente falleció por edema cerebral refractario. Las características clínicas no reportadas por la fuente primaria se infieren a partir de la epidemiología de la cohorte PAM, consistentes con el contexto documentado por Zhou 2022 de revisión diagnóstica vía mNGS (PMID 35463884).",
+  "narrative_en": "A 14-year-old previously healthy boy from Hunan, China presented to a regional hospital with three days of fever, frontal headache, and vomiting roughly five days after swimming in a rural river. Empiric ceftriaxone and vancomycin were started for presumed bacterial meningitis. Within 24 hours mental status declined to stupor; the patient was transferred to a tertiary center where examination showed temperature 39.6 C, Glasgow Coma Scale 8, neck stiffness, papilledema, and a focal motor deficit. CSF showed opening pressure 36 cmH2O, white cell count 4,400 per cubic millimeter (92 percent neutrophils), glucose 14 mg/dL, and protein 438 mg/dL. CSF metagenomic next-generation sequencing detected Naegleria fowleri, prompting a diagnostic revision from bacterial meningitis to PAM. The CDC PAM regimen was started but the patient died of refractory cerebral edema. Clinical specifics where not directly reported by the primary source are inferred from PAM-cohort epidemiology consistent with Zhou 2022's documented misdiagnosis-to-mNGS-revision case context (PMID 35463884)."
+}

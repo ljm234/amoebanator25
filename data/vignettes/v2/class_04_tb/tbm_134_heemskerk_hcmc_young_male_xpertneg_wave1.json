@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "WAVE1-TBM-134-Heemskerk-HCMC",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 19,
+    "sex": "male",
+    "ethnicity": "asian",
+    "geography_region": "other_global",
+    "altitude_residence_m": 19
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 18.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Two-and-a-half-week illness in a 19-year-old male university student from Ho Chi Minh City. Daily low-grade fevers, frontal headache, and progressive fatigue. He lived in a university dormitory where several peers had been treated for pulmonary tuberculosis in the prior year. HIV negative.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.2,
+    "heart_rate_bpm": 96,
+    "systolic_bp_mmHg": 118,
+    "diastolic_bp_mmHg": 72,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 7600,
+    "platelets_per_uL": 312000,
+    "alt_ast_U_per_L": 24,
+    "crp_mg_per_L": 32.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 134
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 18.0,
+    "csf_wbc_per_mm3": 220,
+    "csf_neutrophil_pct": 18,
+    "csf_lymphocyte_pct": 80,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 30,
+    "csf_protein_mg_per_dL": 200,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 12.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Thick basal meningeal enhancement on post-contrast T1 with mild communicating hydrocephalus and a small left basal ganglia infarct. Findings consistent with active tuberculous meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Negative on initial CSF specimen. Sensitivity 70-85 percent in TBM per Hernandez TM&IH 2021; culture remains the confirmation modality.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Positive at 4 weeks (M. tuberculosis drug-sensitive); Xpert-negative-culture-confirmed case per RCT inclusion.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-TBM-134-ADJ-1",
+      "WAVE1-TBM-134-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Heemskerk AD et al. NEJM 2016 (PMID 26760084) standard arm. 19-year-old Vietnamese male university student HIV-negative dormitory TB exposure cluster, lymphocytic CSF, ADA 12 U/L, Xpert MTB/RIF Ultra NEGATIVE on initial specimen, culture POSITIVE at 4 weeks (RCT inclusion via culture confirmation). Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "rct",
+      "pmid": "26760084",
+      "doi": "10.1056/NEJMoa1507062"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.3-wave1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.3 wave 1 vignette 134 of 14 for Class 4 TBM. Anchored to Heemskerk 2016 standard arm, Xpert-negative-culture-confirmed case per RCT inclusion. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 19 anos, estudiante universitario, de Ho Chi Minh, Vietnam, ingresado a un hospital terciario tras dos semanas y media de fiebre baja diaria, cefalea frontal y fatiga progresiva. Vive en residencia universitaria donde varios companeros fueron tratados por tuberculosis pulmonar el ano previo. VIH negativo. Examen: temperatura 38.2 C, Glasgow 13, somnoliento, rigidez de nuca, Kernig positivo, sin deficit motor focal, sin papiledema. LCR con presion 18 cmH2O, leucocitos 220 por mm3 (80 por ciento linfocitos), glucosa 30 mg/dL, proteina 200 mg/dL, adenosina desaminasa 12 U/L. RM con engrosamiento meningeo basal sin hidrocefalia. Xpert MTB/RIF Ultra negativo en muestra inicial; cultivo micobacteriano positivo a las cuatro semanas. Aleatorizado al brazo estandar. Anclaje Heemskerk NEJM 2016.",
+  "narrative_en": "A 19-year-old male university student from Ho Chi Minh City presented to a tertiary referral hospital after a two-and-a-half-week illness of daily low-grade fevers, frontal headache, and progressive fatigue. He lived in a university dormitory where several peers had been treated for pulmonary tuberculosis in the prior year. He was HIV negative. Examination on admission: temperature 38.2 C, Glasgow Coma Scale 13, somnolent but rousable, neck stiffness, positive Kernig sign, no focal motor deficit, and no papilledema. CSF showed an opening pressure of 18 cmH2O, white cell count 220 per cubic millimeter with 80 percent lymphocytes, glucose 30 mg/dL, protein 200 mg/dL, and adenosine deaminase 12 U/L. MRI with contrast demonstrated basal meningeal enhancement without hydrocephalus. CSF Xpert MTB/RIF Ultra was negative on the initial specimen, but mycobacterial culture was positive at four weeks. He was randomized to the standard arm. Anchored to Heemskerk NEJM 2016 (PMID 26760084). Wave 1, hold_for_revision."
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-039-CID-2021-US-South-region-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 13,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Four-day history of fever, headache, and progressive lethargy with stupor on the day of admission in a 13-year-old male from the US South region after recreational freshwater (lake) exposure. Demographics imputed within Gharpure 2021 CID global review.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.5,
+    "heart_rate_bpm": 122,
+    "systolic_bp_mmHg": 110,
+    "diastolic_bp_mmHg": 68,
+    "glasgow_coma_scale": 7,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 24
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 19200,
+    "platelets_per_uL": 240000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 102.0,
+    "procalcitonin_ng_per_mL": 2.6,
+    "serum_sodium_mEq_per_L": 136
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 38.0,
+    "csf_wbc_per_mm3": 4200,
+    "csf_neutrophil_pct": 92,
+    "csf_lymphocyte_pct": 7,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 16,
+    "csf_protein_mg_per_dL": 420,
+    "csf_lactate_mmol_per_L": 8.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 280,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema with effacement of the cortical sulci. Imaging imputed within Gharpure 2021 CID global review."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Naegleria fowleri PCR (CDC reference laboratory)",
+        "result": "Positive (consistent with within-cohort imputation per Gharpure 2021 CID global review).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:32369575"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Gharpure et al. Clin Infect Dis 2021 (PMID 32369575). Demographics: 13 years male, US South region. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "32369575",
+      "doi": "10.1093/cid/ciaa520"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 39 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: none. Outcome: fatal. Anchored to PMID 32369575 (Gharpure et al., Clin Infect Dis 2021). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: Global PAM review, 381 cases 1937-2018, US 41% / Pakistan 11% / Mexico 9%. Companion to Capewell 2015 (US-only)."
+  },
+  "narrative_es": "Varón de 13 años originario de la región sur de Estados Unidos que se presentó con cuatro días de fiebre y cefalea con progresión a estupor el día del ingreso, tras exposición recreativa a agua dulce (lago). Al ingreso la temperatura fue de 39.5 C, escala de Glasgow 7, con rigidez de nuca, papiledema y déficit focal. El líquido cefalorraquídeo mostró leucocitos 4,200 por mm3 (92 por ciento neutrófilos), glucosa 16 mg/dL, proteína 420 mg/dL y lactato 8.4 mmol/L. La microscopía directa identificó trofozoítos móviles; la PCR del líquido cefalorraquídeo para Naegleria fowleri fue positiva en el laboratorio de referencia de los CDC. La tomografía mostró edema cerebral difuso. Se inició el protocolo de PAM de los CDC; el paciente falleció. Esta viñeta es una imputación de Tier-4 dentro de la cohorte: no se reclama un caso nombrado específico. Los datos clínicos siguen la epidemiología de la revisión global de Gharpure 2021 CID; las características demográficas están fijadas en la tabla de distribución del Día 2 (PMID 32369575).",
+  "narrative_en": "A 13-year-old male from the US South region presented with a four-day history of fever and headache that progressed to stupor on the day of admission, following recreational freshwater (lake) exposure. On admission temperature was 39.5 C, Glasgow Coma Scale 7, with neck stiffness, papilledema, and a focal deficit. CSF showed white cell count 4,200 per cubic millimeter (92 percent neutrophils), glucose 16 mg/dL, protein 420 mg/dL, and lactate 8.4 mmol/L. CSF wet mount identified motile trophozoites; CDC reference laboratory CSF PCR confirmed Naegleria fowleri. CT showed diffuse cerebral edema. Treatment per CDC PAM protocol was initiated; the patient died. This vignette is a Tier-4 within-cohort imputation: no specific named-case is claimed. Clinical specifics follow Gharpure 2021 CID global review epidemiology; demographics are locked from the Day-2 distribution table (PMID 32369575)."
+}

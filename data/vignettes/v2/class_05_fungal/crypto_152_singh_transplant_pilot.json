@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-CRYPTO-152-Singh-Pittsburgh",
+  "ground_truth_class": 5,
+  "demographics": {
+    "age_years": 54,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 224
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 14.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Two-week subacute illness in a 49-year-old man eighteen months post-renal-transplant on tacrolimus, mycophenolate mofetil, and low-dose prednisone. Daily low-grade fevers, gradual frontal headache, and three days of mild confusion noted by his wife. No freshwater exposure. Cadaveric donor; immunosuppression unchanged over the prior twelve months.",
+    "red_flags_present": [
+      "immunocompromise"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "transplant_solid_organ",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.0,
+    "heart_rate_bpm": 88,
+    "systolic_bp_mmHg": 132,
+    "diastolic_bp_mmHg": 84,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 16
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 6400,
+    "platelets_per_uL": 224000,
+    "alt_ast_U_per_L": 26,
+    "crp_mg_per_L": 18.0,
+    "procalcitonin_ng_per_mL": 0.2,
+    "serum_sodium_mEq_per_L": 135
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 22.0,
+    "csf_wbc_per_mm3": 30,
+    "csf_neutrophil_pct": 10,
+    "csf_lymphocyte_pct": 88,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 45,
+    "csf_protein_mg_per_dL": 80,
+    "csf_lactate_mmol_per_L": 2.1,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "positive",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 0,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "dilated_virchow_robin_with_pseudocysts",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Subtle dilated Virchow-Robin spaces in the basal ganglia; no mass lesion, no hydrocephalus. Findings consistent with post-transplant cryptococcal meningitis per Singh JID 2007 cohort phenotype."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF cryptococcal antigen LFA (CrAg LFA)",
+        "result": "Positive, titer 1:256.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17262720"
+      },
+      {
+        "test_name": "CSF India ink microscopy",
+        "result": "Encapsulated yeast forms with characteristic refractile halos.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17262720"
+      },
+      {
+        "test_name": "Serum cryptococcal antigen",
+        "result": "Positive, titer 1:128.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17262720"
+      },
+      {
+        "test_name": "CSF fungal culture",
+        "result": "Pending; reported Cryptococcus neoformans var. grubii at day 4.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17262720"
+      },
+      {
+        "test_name": "Tacrolimus trough level",
+        "result": "9.2 ng/mL (therapeutic for renal transplant maintenance).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17262720"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-CRYPTO-152-ADJ-1",
+      "PILOT-CRYPTO-152-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Singh N et al. JID 2007 transplant cryptococcus calcineurin-inhibitor cohort (PMID 17262720). 49-year-old US renal transplant recipient 18 months post-tx on tacrolimus + MMF + prednisone, csf_crag_lfa positive 1:256, lymphocytic CSF, dilated VR spaces. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "17262720",
+      "doi": "10.1086/511438"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 4 of 6 for Class 5 Cryptococcal transplant stratum (spec 1.4.5 4-slot transplant). Anchored to Singh 2007 JID multicenter transplant cohort; tacrolimus exposure aligns with calcineurin-protective mortality observation. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 49 anos en Pittsburgh, Estados Unidos, evaluado por el servicio de enfermedades infecciosas en transplante con un cuadro subagudo de dos semanas. Diez y ocho meses postransplante renal cadaverico, en tacrolimus, micofenolato mofetil y prednisona en dosis bajas estables el ano previo. Refiere fiebre baja diaria, cefalea frontal gradual y tres dias de confusion leve referida por la esposa. Sin exposicion a agua dulce. Examen: temperatura 38.0 C, Glasgow 14, confusion leve, rigidez de nuca, sin deficit focal. LCR con presion 22 cmH2O, leucocitos 30 por mm3 (88 por ciento linfocitos), glucosa 45 mg/dL, proteina 80 mg/dL. Antigeno criptococico en LCR positivo 1:256, tinta china con levaduras encapsuladas, CrAg serico 1:128. Nivel de tacrolimus 9.2 ng/mL. RM con espacios de Virchow-Robin discretamente dilatados sin masa.",
+  "narrative_en": "A 49-year-old man in Pittsburgh presented to a transplant infectious diseases service with a two-week subacute illness. He was eighteen months post-cadaveric renal transplant on tacrolimus, mycophenolate mofetil, and low-dose prednisone with unchanged dosing over the prior year. He reported daily low-grade fevers, gradual frontal headache, and three days of mild confusion noted by his wife. There was no freshwater exposure. Examination on admission: temperature 38.0 C, Glasgow Coma Scale 14, mild confusion, neck stiffness, and no focal deficit. CSF showed an opening pressure of 22 cmH2O, white cell count 30 per cubic millimeter with 88 percent lymphocytes, glucose 45 mg/dL, and protein 80 mg/dL. CSF cryptococcal antigen lateral flow assay was positive at 1:256, India ink showed encapsulated yeast, and serum CrAg was 1:128. Tacrolimus trough was 9.2 ng/mL. MRI showed subtle dilated Virchow-Robin spaces without mass lesion. Anchored to Singh JID 2007 transplant cohort (PMID 17262720). Subphase 1.4 pilot, hold_for_revision."
+}

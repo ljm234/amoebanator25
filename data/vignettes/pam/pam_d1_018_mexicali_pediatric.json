@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D1-018-JCM-1993-Mexicali-Latam",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 9,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_latam",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.5,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Four days of fever, severe headache, vomiting, photophobia, and increasing irritability after swimming and submerging his head repeatedly in an irrigation canal in the Mexicali Valley approximately five days before symptom onset; on the day of admission he developed neck stiffness and progressive somnolence.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "river",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.7,
+    "heart_rate_bpm": 130,
+    "systolic_bp_mmHg": 104,
+    "diastolic_bp_mmHg": 62,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 24
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 16800,
+    "platelets_per_uL": 232000,
+    "alt_ast_U_per_L": 36,
+    "crp_mg_per_L": 100.0,
+    "procalcitonin_ng_per_mL": 3.6,
+    "serum_sodium_mEq_per_L": 134
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 30.0,
+    "csf_wbc_per_mm3": 2400,
+    "csf_neutrophil_pct": 92,
+    "csf_lymphocyte_pct": 6,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 26,
+    "csf_protein_mg_per_dL": 240,
+    "csf_lactate_mmol_per_L": 5.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 320,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_contrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Contrast-enhanced CT head showing basal cistern enhancement, sulcal effacement, and early diffuse cerebral edema; pattern consistent with primary amebic meningoencephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF wet mount microscopy",
+        "result": "Motile trophozoites consistent with Naegleria fowleri identified at bedside on warmed slide.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:8458963"
+      },
+      {
+        "test_name": "CSF amoeba culture (Mexicali reference laboratory)",
+        "result": "Naegleria fowleri isolated and confirmed by morphology and thermotolerance assay.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:8458963"
+      },
+      {
+        "test_name": "Mexicali Valley irrigation-canal environmental isolate",
+        "result": "N. fowleri recovered from canal water samples collected at the implicated swimming site.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:8458963"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Lares-Villa F et al. J Clin Microbiol 1993 (PMID 8458963). Demographics: 9 years male, Mexicali, MX. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "8458963",
+      "doi": null
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 1 vignette 18 of 20 for Subphase 1.2 PAM corpus. Cluster: latam. Atypical type: irrigation_canal. Outcome: fatal. Anchored to PMID 8458963 (Lares-Villa F et al., J Clin Microbiol 1993). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: First Mexican human N. fowleri isolations. Fernandez-Quintanilla unaccented per original 1993 JCM publication (5-pass diacritic check)."
+  },
+  "narrative_es": "Niño previamente sano de 9 años, residente en Mexicali, México, que presentó cuatro días de fiebre, cefalea severa, vómitos, fotofobia e irritabilidad creciente tras nadar y sumergir la cabeza repetidamente en un canal de irrigación del Valle de Mexicali aproximadamente cinco días antes del inicio de síntomas; el día del ingreso desarrolló rigidez de nuca y somnolencia progresiva. El examen mostró temperatura 39.7 C, taquicardia, rigidez de nuca, signo de Kernig positivo y escala de Glasgow de 12. El líquido cefalorraquídeo mostró presión de apertura 30 cmH2O, leucocitos 2,400 por mm3 (92 por ciento neutrófilos), glucosa 26 mg/dL, proteína 240 mg/dL, lactato 5.8 mmol/L y trofozoítos móviles en frotis directo; el laboratorio de referencia local aisló Naegleria fowleri del LCR y recuperó N. fowleri en muestras de agua del canal en el sitio de baño implicado, representando uno de los primeros aislamientos humanos mexicanos de N. fowleri documentados. Se inició el protocolo de seis fármacos de los CDC en las primeras cuatro horas del ingreso; el niño progresó a coma durante la noche y falleció en el día hospitalario cinco.",
+  "narrative_en": "Nine-year-old previously healthy male from Mexicali, Mexico presented with four days of fever, severe headache, vomiting, photophobia, and increasing irritability after swimming and repeatedly submerging his head in an irrigation canal in the Mexicali Valley approximately five days before symptom onset; on the day of admission he developed neck stiffness and progressive somnolence. Examination showed temperature 39.7 C, tachycardia, neck stiffness, positive Kernig sign, and a Glasgow Coma Scale of 12. Cerebrospinal fluid showed opening pressure 30 cmH2O, white blood cell count 2,400 per cubic millimeter (92 percent neutrophils), glucose 26 mg/dL, protein 240 mg/dL, lactate 5.8 mmol/L, and motile trophozoites on wet mount; the local reference laboratory isolated Naegleria fowleri from CSF and recovered N. fowleri from canal water samples at the implicated swimming site, representing one of the first Mexican human N. fowleri isolations on record. The CDC six-drug protocol was initiated within four hours of admission; the child progressed to coma overnight and died on hospital day five."
+}

@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-102-NEJM-2018-Netherlands-HSV1-Mid",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 50,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 6.0,
+    "chief_complaint": "behavioral_change",
+    "prodrome_description": "50-year-old male, Netherlands. 6-day course: low-grade fever 38.4 C, headache, then progressive behavioral change with disinhibition day 3, anomic aphasia day 4, left-sided focal seizure day 6 prompting tertiary ED Amsterdam. No neck stiffness. No freshwater. Acyclovir hour 4. Outcome: survived with moderate memory deficit.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.4,
+    "heart_rate_bpm": 88,
+    "systolic_bp_mmHg": 132,
+    "diastolic_bp_mmHg": 80,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 9600,
+    "platelets_per_uL": 235000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 24.0,
+    "procalcitonin_ng_per_mL": 0.4,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 24.0,
+    "csf_wbc_per_mm3": 250,
+    "csf_neutrophil_pct": 28,
+    "csf_lymphocyte_pct": 72,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 52,
+    "csf_protein_mg_per_dL": 135,
+    "csf_lactate_mmol_per_L": 2.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": true,
+    "csf_rbc_per_mm3": 40,
+    "csf_rbc_decreasing_across_tubes": false
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "mesial_temporal_t2_flair_hyperintensity",
+    "imaging_finding_count": 1,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: mesial temporal T2/FLAIR hyperintensity asymmetric with basal ganglia sparing. Canonical HSE imaging signature per Tyler 2018 NEJM viral encephalitis review."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_hsv1_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE1-PRE-ADJ-1",
+      "VIRAL-WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.5 VIRAL vignette anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE1-PRE-ADJ-1, VIRAL-WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.5 (2026-05-08). anchor=Tyler-NEJM-2018 stratum=HSV1-adult-bilateral.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "30089069",
+      "doi": "10.1056/NEJMra1708714"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_5",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review). HSV1 mesial-temporal-encephalitis phenotype with frontal-disinhibition + anomic aphasia (limbic + frontal extension). Demographic anchor (50yo M adult HSE) sits in adult-HSE stratum. CSF lymphocytic with hemorrhagic component. MRI mesial temporal pattern with bilateral but asymmetric involvement. Imputation tiers: tier_1_primary={age, sex, hsv1_pcr, imaging_pattern, focal_aphasia, behavioral_change}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, rbc, xanthochromia, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_moderate_memory_deficit. Acyclovir_hours=4. Tier: tier_3_imputation_within_review. 5.3.5 wave1 HSV1-NL-adult-male-bilateral."
+  },
+  "narrative_es": "Varon de 50 anos en Paises Bajos (Amsterdam), ingresado a urgencias terciarias con curso de seis dias: febricula 38.4 C, cefalea, luego cambio conductual progresivo con desinhibicion al tercer dia, afasia anomica al cuarto dia y crisis focal izquierda al sexto dia que motivo consulta. Sin rigidez de nuca al examen. Sin exposicion a agua dulce. Examen: escala de Glasgow 11, deficit focal (afasia anomica, desinhibicion). Liquido cefalorraquideo mostro presion de apertura 24 cmH2O, leucocitos 250 por mm3 (72 por ciento linfocitos), glucosa 52 mg/dL, proteina 135 mg/dL, eritrocitos 40 con xantocromia. PCR de HSV-1 positiva. RM cerebral mostro hiperintensidad temporal mesial T2/FLAIR bilateral con dominancia izquierda. Anclaje en revision Tyler 2018 NEJM (PMID 30089069). Subphase 1.3 commit 5.3.5 wave 1, pre-adjudicacion hold_for_revision.",
+  "narrative_en": "A 50-year-old man in the Netherlands presented to a tertiary emergency department in Amsterdam with a 6-day course: low-grade fever to 38.4 C, headache, then progressive behavioral change with disinhibition on day 3, anomic aphasia on day 4, and a left-sided focal seizure on day 6 prompting ED presentation. He had no neck stiffness on examination and no antecedent freshwater exposure. Examination on admission: Glasgow Coma Scale 11, focal neurological deficit (anomic aphasia and disinhibition). CSF showed opening pressure 24 cmH2O, white cell count 250 per cubic millimeter (72 percent lymphocytes), glucose 52 mg/dL, protein 135 mg/dL, RBC 40 with xanthochromia. CSF HSV-1 PCR positive. Brain MRI with DWI/FLAIR showed mesial temporal T2/FLAIR hyperintensity asymmetric with bilateral but left-dominant involvement and basal ganglia sparing. Acyclovir initiated within four hours. Anchored to Tyler 2018 NEJM viral encephalitis review (PMID 30089069). Outcome: survived with moderate memory deficit. Subphase 1.3 commit 5.3.5 wave 1, pre-adjudication hold_for_revision."
+}

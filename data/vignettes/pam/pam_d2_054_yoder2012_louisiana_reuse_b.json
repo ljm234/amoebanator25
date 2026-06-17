@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-054-CID-2012-Louisiana-Nasal-Irrigation",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 62,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Four days of fever, frontal headache, nasal congestion, and rapid progression to stupor in a 62-year-old woman from Louisiana with several weeks of daily neti-pot tap-water rinses for post-COVID sinus symptoms.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "neti_pot_tap_water",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.3,
+    "heart_rate_bpm": 104,
+    "systolic_bp_mmHg": 130,
+    "diastolic_bp_mmHg": 80,
+    "glasgow_coma_scale": 6,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18800,
+    "platelets_per_uL": 244000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 116.0,
+    "procalcitonin_ng_per_mL": 2.9,
+    "serum_sodium_mEq_per_L": 134
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 38.0,
+    "csf_wbc_per_mm3": 4480,
+    "csf_neutrophil_pct": 92,
+    "csf_lymphocyte_pct": 7,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 14,
+    "csf_protein_mg_per_dL": 446,
+    "csf_lactate_mmol_per_L": 8.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 260,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema with sulcal effacement and narrowed basal cisterns."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF wet mount microscopy",
+        "result": "Motile trophozoites consistent with Naegleria fowleri.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:22919000"
+      },
+      {
+        "test_name": "CSF Naegleria fowleri PCR (CDC reference laboratory)",
+        "result": "Positive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:22919000"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "methodology=day1_pmid_reuse; Anchored to Yoder JS et al. Clin Infect Dis 2012 (PMID 22919000). Demographics: 62 years female, Louisiana, US. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "22919000",
+      "doi": "10.1093/cid/cis626"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 54 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: nasal_irrigation. Atypical type: none. Outcome: fatal. Anchored to PMID 22919000 (Yoder JS et al., Clin Infect Dis 2012). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: PMC11307261 is an NIHMS author-manuscript deposit posted retroactively (2024) for the 2012 paper. Publisher of record is Clin Infect Dis 2012;55(9):e79-e85, DOI 10.1093/cid/cis626."
+  },
+  "narrative_es": "Mujer de 62 años originaria de Luisiana que se presentó con cuatro días de fiebre, cefalea frontal, congestión nasal y progresión rápida hasta el estupor tras varias semanas de lavados nasales diarios con neti pot y agua de grifo por síntomas sinusales post-COVID. La exploración mostró temperatura 39.3 C, escala de Glasgow 6, rigidez de nuca, papiledema y déficit focal. El líquido cefalorraquídeo mostró presión de apertura 38 cmH2O, leucocitos 4,480 por mm3 (92 por ciento neutrófilos), glucosa 14 mg/dL, proteína 446 mg/dL, lactato 8.4 mmol/L y trofozoítos móviles en frotis directo; la PCR del líquido cefalorraquídeo en el laboratorio de referencia de los CDC fue positiva. Se inició el protocolo de PAM de los CDC, pero la paciente falleció. El Día 1 utilizó a Yoder 2012 para v10 (varón de 28 años) y v11 (mujer de 51 años); v54 es una imputación dentro de la cohorte para una mujer adulta mayor (62 años, estadio tardío) dentro del mismo contexto de neti pot con agua de grifo en Luisiana (PMID 22919000).",
+  "narrative_en": "A 62-year-old woman from Louisiana presented with four days of fever, frontal headache, nasal congestion, and rapid progression to stupor after several weeks of daily neti-pot tap-water rinses for post-COVID sinus symptoms. Examination showed temperature 39.3 C, Glasgow Coma Scale 6, neck stiffness, papilledema, and a focal deficit. CSF showed opening pressure 38 cmH2O, white cell count 4,480 per cubic millimeter (92 percent neutrophils), glucose 14 mg/dL, protein 446 mg/dL, lactate 8.4 mmol/L, and motile trophozoites on wet mount; the CDC reference laboratory CSF PCR confirmed Naegleria fowleri. The CDC PAM regimen was started but the patient died. Day-1 used Yoder 2012 for v10 (28-year-old male) and v11 (51-year-old female); v54 is a within-cohort imputation for an older adult female (62 years, late stage) within the same Louisiana neti-pot tap-water case context (PMID 22919000)."
+}

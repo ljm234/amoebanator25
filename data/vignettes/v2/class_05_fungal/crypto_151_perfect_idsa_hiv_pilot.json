@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-CRYPTO-151-Perfect-Kampala",
+  "ground_truth_class": 5,
+  "demographics": {
+    "age_years": 38,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 50
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 21.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Three-week indolent course in a 32-year-old Ugandan man with newly diagnosed HIV. Fever, persistent frontal and bitemporal headache, and progressive nausea. Five-kilogram weight loss over the prior two months. No focal weakness. Antiretroviral therapy not yet started. No recent freshwater exposure or travel.",
+    "red_flags_present": [
+      "immunocompromise"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "hiv_cd4_under100",
+    "hiv_status": "positive_not_on_art",
+    "cd4_count_cells_per_uL": 45
+  },
+  "vitals": {
+    "temperature_celsius": 38.6,
+    "heart_rate_bpm": 102,
+    "systolic_bp_mmHg": 118,
+    "diastolic_bp_mmHg": 74,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 3800,
+    "platelets_per_uL": 198000,
+    "alt_ast_U_per_L": 32,
+    "crp_mg_per_L": 24.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 133
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 38.0,
+    "csf_wbc_per_mm3": 45,
+    "csf_neutrophil_pct": 12,
+    "csf_lymphocyte_pct": 86,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 38,
+    "csf_protein_mg_per_dL": 95,
+    "csf_lactate_mmol_per_L": 2.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "positive",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 1,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "dilated_virchow_robin_with_pseudocysts",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Dilated Virchow-Robin spaces in the basal ganglia bilaterally with small cystic pseudocysts; no parenchymal mass effect, no ring enhancement. Findings characteristic of HIV-associated cryptococcal meningitis per NIH OI guideline imaging spectrum."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF cryptococcal antigen LFA (CrAg LFA)",
+        "result": "Positive, titer 1:2048.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20047480"
+      },
+      {
+        "test_name": "CSF India ink microscopy",
+        "result": "Encapsulated yeast forms with characteristic refractile halos.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20047480"
+      },
+      {
+        "test_name": "Serum cryptococcal antigen",
+        "result": "Positive, titer 1:1024.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20047480"
+      },
+      {
+        "test_name": "CSF fungal culture",
+        "result": "Pending; reported Cryptococcus neoformans var. grubii at day 4.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20047480"
+      },
+      {
+        "test_name": "Therapeutic lumbar puncture",
+        "result": "30 mL CSF removed; opening pressure 38.0 cmH2O reduced to 18.0 cmH2O at closing.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20047480"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-CRYPTO-151-ADJ-1",
+      "PILOT-CRYPTO-151-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Perfect JR et al. CID 2010 IDSA cryptococcal guidelines (PMID 20047480). 32-year-old Ugandan ART-naive HIV+ with CD4 35, opening pressure 38 cmH2O, csf_crag_lfa positive 1:2048, mononuclear CSF, dilated VR spaces on MRI. Therapeutic LP per IDSA. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "guideline",
+      "pmid": "20047480",
+      "doi": "10.1086/649858"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 3 of 6 for Class 5 Cryptococcal (spec 1.4.5 HIV+CD4<100 22-slot bulk stratum). Anchored to Perfect 2010 CID IDSA guidelines. OP 38 satisfies >=25 spec requirement; CrAg LFA positive satisfies >=28/30 requirement. cd4_count_cells_per_uL=35 per Ford CID 2018 validator. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 32 anos de Kampala, Uganda, ingresado a un hospital regional tras tres semanas de fiebre, cefalea frontal y bitemporal persistente, y nauseas progresivas. Diagnostico reciente de VIH (dos semanas antes), sin terapia antirretroviral iniciada; CD4 35 por microlitro. Sin exposicion a agua dulce, sin viajes. Examen: temperatura 38.6 C, Glasgow 14, confuso pero orientado, rigidez de nuca, papiledema bilateral. LCR con presion de apertura 38 cmH2O, leucocitos 45 por mm3 (86 por ciento linfocitos), glucosa 38 mg/dL, proteina 95 mg/dL. Antigeno criptococico en LCR positivo (1:2048) y tinta china con levaduras encapsuladas. CrAg serico 1:1024. Puncion lumbar terapeutica redujo la presion de 38 a 18 cmH2O. RM con espacios de Virchow-Robin dilatados con pseudoquistes. Anclaje Perfect IDSA 2010 (PMID 20047480).",
+  "narrative_en": "A 32-year-old man from Kampala, Uganda, presented to a regional referral hospital with a three-week indolent course of fever, persistent frontal and bitemporal headache, and progressive nausea. He had been diagnosed with HIV two weeks prior and had not yet started antiretroviral therapy; his CD4 count was 35 cells per microliter. He reported no recent freshwater exposure and no travel. Examination on admission: temperature 38.6 C, Glasgow Coma Scale 14, confused but oriented to person, neck stiffness, and bilateral papilledema on fundoscopy. CSF showed an opening pressure of 38 cmH2O, white cell count 45 per cubic millimeter with 86 percent lymphocytes, glucose 38 mg/dL, and protein 95 mg/dL. CSF cryptococcal antigen lateral flow assay was positive at a titer of 1:2048, and India ink microscopy showed encapsulated yeast forms with refractile halos. Serum CrAg was 1:1024. Therapeutic lumbar puncture reduced the pressure from 38 to 18 cmH2O. MRI with contrast showed dilated Virchow-Robin spaces with small pseudocysts. Anchored to Perfect CID 2010 IDSA (PMID 20047480). Pilot, hold_for_revision."
+}

@@ -1,0 +1,92 @@
+{
+  "class_id": 3,
+  "class_name": "VIRAL",
+  "total_n": 30,
+  "spec_anchor": "internal distribution spec",
+  "pathogen_distribution": {
+    "HSV1": 12,
+    "HSV_PCR_negative_72h": 2,
+    "enterovirus": 8,
+    "HSV2": 2,
+    "VZV": 2,
+    "dengue": 3,
+    "EEE": 1
+  },
+  "pathogen_distribution_target_per_spec": {
+    "HSV1": 12,
+    "enterovirus": 8,
+    "HSV2": 2,
+    "VZV": 2,
+    "dengue": 3,
+    "EEE": 1,
+    "HSV_PCR_negative_72h": 2
+  },
+  "age_distribution": {
+    "pediatric_5_18": 9,
+    "adult_18_50": 13,
+    "elderly_50_plus": 7,
+    "pediatric_under_5": 1
+  },
+  "sex_distribution": {
+    "female": 16,
+    "male": 14
+  },
+  "geography_distribution": {
+    "us_south": 9,
+    "other_global": 17,
+    "peru_lima_coast": 2,
+    "peru_loreto_amazon": 1,
+    "peru_tumbes": 1
+  },
+  "csf_profile_ranges": {
+    "wbc_per_mm3_min": 50,
+    "wbc_per_mm3_max": 500,
+    "lymphocyte_pct_min": 50,
+    "glucose_mg_per_dL_status": "normal_to_low",
+    "protein_mg_per_dL_status": "mildly_elevated"
+  },
+  "risk_factors": {},
+  "outcome_distribution": {
+    "survived_with_sequelae": 2,
+    "survived": 25,
+    "fatal": 3
+  },
+  "stage_distribution": {
+    "late": 4,
+    "mid": 25,
+    "early": 1
+  },
+  "cited_anchors": [
+    "PMID_16675036_Whitley_2006_Lancet_Infect_Dis_HSV_encephalitis_review",
+    "PMID_18582201_Tunkel_2008_IDSA_encephalitis_guidelines",
+    "PMID_20952256_Granerod_2010_Lancet_Infect_Dis_England_etiology",
+    "PMID_30089069_Tyler_2018_NEJM_acute_viral_encephalitis_review",
+    "PMID_16675036_Whitley_2006_Antiviral_Res_HSE_adolescents_adults_5_3_2_pilot",
+    "PMID_17668054_Michos_2007_PLoS_One_pediatric_aseptic_pmn_predominant_5_3_2_pilot",
+    "PMID_30540031_Bastos_2018_MIOC_Amazonia_dengue_CNS_DENV2_5_3_2_pilot",
+    "PMID_38157877_PuccioniSohler_2023_ANP_dengue_neuro_review"
+  ],
+  "diagnostic_ambiguity_count": 5,
+  "peru_anchor_count": 3,
+  "peru_anchor_distribution": {
+    "peru_lima_coast": 1,
+    "peru_loreto_amazon": 1,
+    "peru_tumbes": 1
+  },
+  "freshwater_exposure_within_14d_for_all": false,
+  "adjudication_state": "pre_adjudication_hold_for_revision",
+  "pilots_validated_5_3_2": 3,
+  "imaging_mandates": {
+    "HSV1": "mesial_temporal_t2_flair_hyperintensity_required_for_all_12"
+  },
+  "lab_mandates": {
+    "dengue": "platelets_per_uL_below_150000_required_for_all_3"
+  },
+  "peru_dengue_required_per_spec": 3,
+  "diagnostic_ambiguity_types": [
+    "hsv_clinical_phenotype_pcr_negative_at_72h",
+    "csf_neutrophil_predominant_in_confirmed_viral",
+    "dengue_with_prominent_cns_arbo_encephalitis_overlap",
+    "hsv2_first_episode_with_prominent_meningismus_bacterial_ddx"
+  ]
+}

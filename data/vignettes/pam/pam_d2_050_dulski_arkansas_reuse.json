@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-050-MMWR-2025-Arkansas-Splash-Pad",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 5,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Four days of fever, headache, vomiting, and progressive somnolence with neck stiffness in a 5-year-old boy from Pulaski County, Arkansas after splash-pad play one week earlier.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "splash_pad",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.5,
+    "heart_rate_bpm": 134,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 60,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 26
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17200,
+    "platelets_per_uL": 252000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 84.0,
+    "procalcitonin_ng_per_mL": 1.8,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 2840,
+    "csf_neutrophil_pct": 89,
+    "csf_lymphocyte_pct": 10,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 344,
+    "csf_lactate_mmol_per_L": 6.6,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 180,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema with mild basal cistern effacement."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Naegleria fowleri PCR (CDC reference laboratory)",
+        "result": "Positive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:40146665"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "methodology=day1_pmid_reuse; Anchored to Dulski TM et al. MMWR Morb Mortal Wkly Rep 2025 (PMID 40146665). Demographics: 5 years male, Arkansas, US. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "surveillance",
+      "pmid": "40146665",
+      "doi": "10.15585/mmwr.mm7410a2"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 50 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: splash_pad. Atypical type: none. Outcome: fatal. Anchored to PMID 40146665 (Dulski TM et al., MMWR Morb Mortal Wkly Rep 2025). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen."
+  },
+  "narrative_es": "Niño de 5 años previamente sano, originario del condado de Pulaski (Arkansas), que se presentó con cuatro días de fiebre, cefalea, vómitos y somnolencia progresiva con rigidez de nuca una semana después de jugar en una zona de chorros (splash pad). La exploración mostró temperatura 39.5 C, escala de Glasgow 11, rigidez de nuca y signo de Kernig positivo sin déficit focal. El líquido cefalorraquídeo mostró presión de apertura 28 cmH2O, leucocitos 2,840 por mm3 (89 por ciento neutrófilos), glucosa 22 mg/dL, proteína 344 mg/dL y lactato 6.6 mmol/L. La PCR de Naegleria fowleri en el laboratorio de referencia de los CDC fue positiva. Se inició el protocolo de PAM de los CDC, pero el paciente falleció. El Día 1 utilizó a Dulski 2025 (MMWR) para v1 (varón de 16 meses) y v2 (niña de 3 años); v50 es una imputación dentro de la cohorte para un perfil masculino de 5 años dentro del mismo contexto del splash pad del condado de Pulaski, Arkansas (PMID 40146665).",
+  "narrative_en": "A 5-year-old previously healthy boy from Pulaski County, Arkansas presented with four days of fever, headache, vomiting, and progressive somnolence with neck stiffness one week after splash-pad play. Examination showed temperature 39.5 C, Glasgow Coma Scale 11, neck stiffness, and a positive Kernig sign without focal deficit. CSF showed opening pressure 28 cmH2O, white cell count 2,840 per cubic millimeter (89 percent neutrophils), glucose 22 mg/dL, protein 344 mg/dL, and lactate 6.6 mmol/L. CSF PCR for Naegleria fowleri at the CDC reference laboratory was positive. The CDC PAM regimen was started but the patient died. Day-1 used Dulski 2025 MMWR for v1 (16-month-old boy) and v2 (3-year-old girl); v50 is a within-cohort imputation for a 5-year-old male within the same Pulaski County Arkansas splash-pad case context (PMID 40146665)."
+}

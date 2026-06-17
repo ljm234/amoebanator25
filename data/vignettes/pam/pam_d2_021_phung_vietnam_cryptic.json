@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-021-Diagnostics-2025-Mekong-Delta-River",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 0,
+    "sex": "female",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 3.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Three days of high-grade fevers, frequent vomiting, and lethargy in a previously healthy 10-month-old infant from the Mekong Delta region; no apparent signs of meningism, trauma, or contact with sick people. No documented direct exposure to untreated freshwater or recreational water activities; possible cryptic exposure during bathing or contact with contaminated household water (per primary source).",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "none",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.5,
+    "heart_rate_bpm": 175,
+    "systolic_bp_mmHg": 92,
+    "diastolic_bp_mmHg": 56,
+    "glasgow_coma_scale": 3,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 38
+  },
+  "exam": {
+    "mental_status_grade": "comatose",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": null
+  },
+  "labs": {
+    "wbc_blood_per_uL": 13400,
+    "platelets_per_uL": 280000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 151.0,
+    "procalcitonin_ng_per_mL": null,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 38.0,
+    "csf_wbc_per_mm3": 4032,
+    "csf_neutrophil_pct": 88,
+    "csf_lymphocyte_pct": 11,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 21,
+    "csf_protein_mg_per_dL": 690,
+    "csf_lactate_mmol_per_L": 11.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "not_done",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": null,
+    "csf_rbc_per_mm3": null,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Brain ultrasound and CT showed acute hydrocephalus; diffuse cerebral edema with effacement of cortical sulci. Findings supported emergency external ventricular drainage."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "MPL-rPCR (MENINGIcheck multiplex real-time PCR, Vietnam Research and Development Institute of Clinical Microbiology)",
+        "result": "Positive for Naegleria fowleri at Ct 21.92.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39795618"
+      },
+      {
+        "test_name": "CSF direct microscopy (wet mount)",
+        "result": "Motile trophozoites consistent with Naegleria fowleri.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39795618"
+      },
+      {
+        "test_name": "18S rRNA Sanger sequencing",
+        "result": "Confirmed Naegleria fowleri (GenBank accession PQ740299).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:39795618"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Phung NTN et al. Diagnostics (Basel) 2025 (PMID 39795618). Demographics: 10 months female, Mekong Delta, VN. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "39795618",
+      "doi": "10.3390/diagnostics15010089"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 21 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: river. Atypical type: cryptic_exposure. Outcome: fatal. Anchored to PMID 39795618 (Phung NTN et al., Diagnostics (Basel) 2025). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: 10mo F Mekong Delta Vietnam, FATAL: 14 days from disease onset, 11 days hospitalization (Section 2 Case Presentation: 'passed away after 11 days of hospitalization'; Section 3 Discussion: 'passed away 14 days after disease onset'); intensive treatment yielded longest pediatric PAM survival durations on record. MPL-rPCR + microscopy + sequencing diagnosis. Cryptic exposure (no documented direct freshwater exposure). 13 authors...."
+  },
+  "narrative_es": "Lactante femenina de 10 meses, previamente sana, originaria del delta del Mekong (Vietnam), ingresada al Children's Hospital 1 de Ho Chi Minh City con tres días de fiebre alta, vómitos frecuentes y letargia sin signos de meningismo, trauma o contacto con personas enfermas. No se identificó exposición directa a agua dulce no tratada; la fuente criptogénica sospechada fue agua doméstica contaminada durante el baño o lavado nasal. En las primeras 8 horas tras el ingreso presentó crisis tónico-clónicas generalizadas múltiples, deterioro neurológico (U en AVPU) y coma profundo, requiriendo intubación. El líquido cefalorraquídeo mostró leucocitos 4,032 por mm3 (88 por ciento neutrófilos), proteína 690 mg/dL, lactato 11.8 mmol/L y trofozoítos móviles en frotis directo. La ecografía cerebral y la tomografía revelaron hidrocefalia aguda, lo que motivó drenaje ventricular externo de urgencia. La MPL-rPCR resultó positiva para Naegleria fowleri (Ct 21.92) y la secuenciación Sanger del gen ARNr 18S confirmó el diagnóstico (GenBank PQ740299). El tratamiento incluyó fluconazol, anfotericina B, rifampicina, azitromicina y dexametasona (la miltefosina no se encontraba disponible en el contexto local). La paciente falleció a los 11 días de hospitalización (14 días desde el inicio de síntomas), representando una de las duraciones de supervivencia pediátrica más largas reportadas en PAM (PMID 39795618).",
+  "narrative_en": "A previously healthy 10-month-old female infant from the Mekong Delta region of Vietnam presented to Children's Hospital 1 in Ho Chi Minh City with a 3-day history of high-grade fevers, frequent vomiting, and lethargy without signs of meningism, trauma, or contact with sick people. No direct exposure to untreated freshwater was identified; possible exposure during bathing or nasal rinsing with contaminated household water was the suspected cryptic route. Within 8 hours of admission she developed multiple generalized seizures with reduced level of consciousness (U on AVPU) and deep coma, requiring intubation. CSF showed WBC 4,032 per cubic millimeter (88 percent neutrophils), protein 690 mg/dL, lactate 11.8 mmol/L, and motile trophozoites on direct microscopy. CT and brain ultrasound revealed acute hydrocephalus, prompting emergency external ventricular drainage. MPL-rPCR was positive for Naegleria fowleri at Ct 21.92; 18S rRNA Sanger sequencing confirmed the diagnosis (GenBank PQ740299). Treatment included fluconazole, amphotericin B, rifampicin, azithromycin, and dexamethasone (miltefosine was not available in the Vietnam setting). The patient died after 11 days of hospitalization (14 days from symptom onset), representing one of the longest reported pediatric PAM survival durations (PMID 39795618)."
+}

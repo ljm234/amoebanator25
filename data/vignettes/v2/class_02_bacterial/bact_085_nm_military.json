@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-085-OFID-2022-US-South-region-NM-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 22,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 1.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "22-year-old female, US South region. Active-duty military barracks setting. 24-hour fever 39.4 C, severe headache, neck stiffness, petechial rash extremities. Tertiary ED. No freshwater. Outcome: survived no sequelae. Antibiotic at hour 1 plus dexamethasone IDSA young adult NM.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.4,
+    "heart_rate_bpm": 122,
+    "systolic_bp_mmHg": 112,
+    "diastolic_bp_mmHg": 70,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": true,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18800,
+    "platelets_per_uL": 195000,
+    "alt_ast_U_per_L": 38,
+    "crp_mg_per_L": 188.0,
+    "procalcitonin_ng_per_mL": 8.2,
+    "serum_sodium_mEq_per_L": 136
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 26.0,
+    "csf_wbc_per_mm3": 5200,
+    "csf_neutrophil_pct": 90,
+    "csf_lymphocyte_pct": 10,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 200,
+    "csf_lactate_mmol_per_L": 6.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_negative_diplococci",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35493127"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "neisseria_meningitidis_serogroup_B",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35493127"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "neisseria_meningitidis_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35493127"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE2-PRE-ADJ-1",
+      "WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 2 vignette anchored to PMID 35493127 (Marcus 2022 OFID); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE2-PRE-ADJ-1, WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.4 (2026-05-08). anchor=Marcus-2022-OFID-serogroup-B-military-trainee stratum=young-adult-military.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "35493127",
+      "doi": "10.1093/ofid/ofac162"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T15:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_4",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 35493127 (Marcus 2022 OFID serogroup B meningococcal disease in a military trainee). Demographic anchor (22yo F young adult military congregate setting) matches the trainee congregate-setting stratum. CSF profile bacterial range; petechial rash + classic NM serogroup B. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain, petechial_rash, military_barracks_setting}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein}; tier_4_priors={temp, gcs, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_no_sequelae. Tier: tier_4_imputation_literature_anchored. 5.3.4 wave2 NM-young-adult-military."
+  },
+  "narrative_es": "Mujer de 22 anos en region sur de Estados Unidos, en cuartel militar en servicio activo, ingresada a urgencias terciarias con 24 horas de fiebre 39.4 C, cefalea intensa, rigidez de nuca y exantema petequial en extremidades. Examen: temperatura 39.4 C, escala de Glasgow 13, rigidez de nuca, signo de Kernig positivo, exantema petequial, sin deficit focal. Liquido cefalorraquideo mostro presion de apertura 26 cmH2O, leucocitos 5,200 por mm3 (90 por ciento neutrofilos), glucosa 22 mg/dL, proteina 200 mg/dL. Tincion de Gram con diplococos gramnegativos y cultivo Neisseria meningitidis serogrupo B. Anclaje en Marcus 2022 OFID (PMID 35493127, enfermedad meningococica serogrupo B en recluta militar en entorno de congregacion). Subphase 1.3 commit 5.3.4 wave 2.",
+  "narrative_en": "A 22-year-old woman in the US South region in an active-duty military barracks setting presented to a tertiary emergency department with a 24-hour history of fever to 39.4 C, severe headache, neck stiffness, and petechial rash on her extremities. Examination on admission: temperature 39.4 C, Glasgow Coma Scale 13, neck stiffness, positive Kernig sign, petechial rash, no focal deficit. CSF showed opening pressure 26 cmH2O, white cell count 5,200 per cubic millimeter (90 percent neutrophils), glucose 22 mg/dL, protein 200 mg/dL. Gram stain revealed gram-negative diplococci; culture identified Neisseria meningitidis serogroup B. Anchored to Marcus 2022 OFID (PMID 35493127, US serogroup B meningococcal disease in a military trainee in a congregate setting). Outcome: survived no sequelae. Subphase 1.3 commit 5.3.4 wave 2, pre-adjudication hold_for_revision."
+}

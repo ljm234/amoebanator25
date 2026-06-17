@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-022-Emerg Infect Dis-2004-Veneto-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 9,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 1.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "One-day history of fever and persistent right-sided headache in a previously healthy 9-year-old boy who swam and played in a small swimming hole associated with the Po River 10 days before symptom onset; the region was experiencing an unusually hot summer (2003 European heat wave). No meningism initially; rapid progression over days 2-6 to coma and death.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.0,
+    "heart_rate_bpm": 128,
+    "systolic_bp_mmHg": 108,
+    "diastolic_bp_mmHg": 64,
+    "glasgow_coma_scale": 9,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 26
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 13780,
+    "platelets_per_uL": 285000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 1.2,
+    "procalcitonin_ng_per_mL": null,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 32.0,
+    "csf_wbc_per_mm3": 6800,
+    "csf_neutrophil_pct": 90,
+    "csf_lymphocyte_pct": 9,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 45,
+    "csf_protein_mg_per_dL": 454,
+    "csf_lactate_mmol_per_L": null,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "not_done",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": null,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_contrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Repeat CT day 4 showed a right frontal lobe lesion and diffuse cerebral edema. EEG day 4 showed decreased electric activity with short focal convulsive seizures; EEG day 5-6 showed isoelectric activity. Postmortem (autopsy 30 hours postmortem) revealed a swollen and edematous brain with cerebellar tonsillar herniation, soft frontal lobes, and diffuse multiple foci of hemorrhagic necrosis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "Postmortem brain histology with indirect immunofluorescence (IIF) using anti-Naegleria fowleri serum",
+        "result": "Confirmed N. fowleri trophozoites in cerebral parenchyma; high neutrophil infiltrate with hemorrhagic necrosis.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15504272"
+      },
+      {
+        "test_name": "Naegleria fowleri PCR (postmortem brain tissue)",
+        "result": "Positive; characterized as genotype I.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15504272"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Cogo PE et al. Emerging Infectious Diseases 2004 (PMID 15504272). Demographics: 9 years male, Veneto, IT. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "15504272",
+      "doi": "10.3201/eid1010.040273"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 22 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: first_european. Outcome: fatal. Anchored to PMID 15504272 (Cogo PE et al., Emerging Infectious Diseases 2004). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: 9yo immunocompetent boy Italy (Veneto/Padova region, admitted Este hospital); swam in polluted Po River water hole July 2003 ~10d pre-onset; FIRST documented Italian PAM case; postmortem dx by IIF + histology; N. fowleri genotype I (genotype 1) by PCR; FATAL. 9 authors. NLM truncation artifact: PubMed XML shows 'Scagli M' but canonical published byline = 'Scaglia M' (Massimo Scaglia, University-IRCCS S. Matteo, Pavia)...."
+  },
+  "narrative_es": "Niño de 9 años previamente sano, ingresado en un hospital de Este, en la región del Véneto en el norte de Italia, con un día de fiebre y cefalea persistente del lado derecho. Diez días antes del inicio de los síntomas había nadado y jugado en una pequeña poza de baño asociada al río Po durante un verano inusualmente caluroso (la ola de calor europea de 2003). El día 1 presentó temperatura 38 C, leucocitos 13,780 por mm3 y proteína C reactiva 1.2 mg/L. El día 2 la punción lumbar mostró líquido cefalorraquídeo turbio con 6,800 leucocitos por mm3 (90 por ciento neutrófilos), glucosa 45 mg/dL y proteína 454 mg/dL. Se inició ceftriaxona empírica y corticosteroides; fue trasladado a la unidad de cuidados intensivos pediátricos del Hospital Universitario de Padua. El día 4 la escala de Glasgow descendió a 9, la tomografía mostró una lesión en el lóbulo frontal derecho con edema cerebral difuso, y se inició ventilación mecánica. Entre los días 5-6 desarrolló anisocoria severa, midriasis fija y actividad EEG isoeléctrica; el paciente falleció a los 6 días del inicio de síntomas. El diagnóstico de meningoencefalitis por Naegleria fowleri se realizó postmortem en este niño inmunocompetente mediante inmunofluorescencia indirecta en tejido cerebral y confirmación por PCR del genotipo I. Este caso representa el primer diagnóstico documentado de PAM en Italia (PMID 15504272).",
+  "narrative_en": "A 9-year-old previously healthy boy was admitted to a hospital in Este, a small town in the Veneto region of northern Italy, with a 1-day history of fever and persistent right-sided headache. Ten days before symptom onset he had swum and played in a small swimming hole associated with the Po River during an unusually hot summer (the 2003 European heat wave). On day 1 his temperature was 38 C, leukocyte count 13,780 per cubic millimeter, and CRP 1.2 mg/L. By day 2 lumbar puncture showed cloudy CSF with 6,800 white cells per cubic millimeter (90 percent neutrophils), glucose 45 mg/dL, and protein 454 mg/dL. Empiric ceftriaxone and corticosteroids were initiated; he was transferred to the Padua University Hospital pediatric ICU. By day 4 his Glasgow Coma Scale score was 9, repeat CT revealed a right frontal lobe lesion with diffuse cerebral edema, and mechanical ventilation was initiated. Severe anisocoria developed by day 5-6 followed by fixed mydriasis and isoelectric EEG; the patient was pronounced dead 6 days after onset of symptoms. The diagnosis of Naegleria fowleri meningoencephalitis was made postmortem in this immunocompetent child by indirect immunofluorescence on brain tissue and PCR confirmation of genotype I. This case represents the first documented PAM diagnosis in Italy (PMID 15504272)."
+}

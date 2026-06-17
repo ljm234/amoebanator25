@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0",
+  "case_id": "WAVE1-TBM-124-Thwaites-HCMC",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 52,
+    "sex": "male",
+    "ethnicity": "asian",
+    "geography_region": "other_global",
+    "altitude_residence_m": 19
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 35.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Five-week illness in a 52-year-old man from Ho Chi Minh City managed at home with worsening headache, weight loss of 8 kg, and progressive lethargy. Family brought him in obtunded after a witnessed generalized seizure. Type 2 diabetes on metformin.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.2,
+    "heart_rate_bpm": 124,
+    "systolic_bp_mmHg": 108,
+    "diastolic_bp_mmHg": 64,
+    "glasgow_coma_scale": 8,
+    "oxygen_saturation_pct": 92,
+    "respiratory_rate_breaths_per_min": 28
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 11600,
+    "platelets_per_uL": 188000,
+    "alt_ast_U_per_L": 48,
+    "crp_mg_per_L": 78.0,
+    "procalcitonin_ng_per_mL": 0.9,
+    "serum_sodium_mEq_per_L": 126
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 30.0,
+    "csf_wbc_per_mm3": 400,
+    "csf_neutrophil_pct": 26,
+    "csf_lymphocyte_pct": 72,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 18,
+    "csf_protein_mg_per_dL": 380,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 17.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Thick basal meningeal enhancement on post-contrast T1 with mild communicating hydrocephalus and a small left basal ganglia infarct. Findings consistent with active tuberculous meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Positive, rifampicin susceptible. Cycle threshold consistent with TBM.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "CSF AFB smear (Ziehl-Neelsen)",
+        "result": "Positive, scant acid-fast bacilli on concentrated specimen.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Pending at LP; reported positive at 4 weeks (M. tuberculosis drug-sensitive).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15496623"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-TBM-124-ADJ-1",
+      "WAVE1-TBM-124-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Thwaites GE et al. NEJM 2004 (PMID 15496623). 52-year-old Vietnamese male diabetic HIV-negative, late-stage TBM (Glasgow 8 on admission), bilateral basal ganglia infarcts, Xpert MTB/RIF Ultra positive, AFB smear positive; died hospital day five despite full regimen. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "rct",
+      "pmid": "15496623",
+      "doi": "10.1056/NEJMoa040573"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.3-wave1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.3 wave 1 vignette 124 of 14 for Class 4 TBM. Anchored to Thwaites 2004 NEJM HCMC dexamethasone RCT. Late-stage TBM mortality stratum (~31 percent cohort mortality). Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 52 anos de Ho Chi Minh, Vietnam, llevado a urgencias terciarias obnubilado tras una crisis generalizada presenciada. La familia refiere cuadro de cinco semanas con cefalea creciente, perdida de 8 kg, fiebre baja intermitente y letargia progresiva manejada en casa. Diabetes tipo 2 en metformina. Examen: temperatura 39.2 C, Glasgow 8, estuporoso, rigidez de nuca, Kernig positivo, hemiparesia derecha, papiledema bilateral. LCR con presion 30 cmH2O, leucocitos 400 por mm3 (72 por ciento linfocitos), glucosa 18 mg/dL, proteina 380 mg/dL, adenosina desaminasa 17 U/L. RM con engrosamiento meningeo basal, hidrocefalia comunicante moderada e infartos bilaterales de ganglios basales. Xpert MTB/RIF Ultra positivo; baciloscopia positiva. Pese al tratamiento antifimico y dexametasona, fallecio el dia hospitalario cinco. Anclaje Thwaites NEJM 2004.",
+  "narrative_en": "A 52-year-old man from Ho Chi Minh City was brought to a tertiary referral hospital obtunded after a witnessed generalized seizure. His family reported a five-week illness with worsening headache, an eight-kilogram weight loss, intermittent low-grade fevers, and progressive lethargy that had been managed at home. He had type 2 diabetes on metformin. Examination on admission: temperature 39.2 C, Glasgow Coma Scale 8, stuporous, neck stiffness, positive Kernig sign, right-sided motor weakness, and bilateral papilledema. CSF showed an opening pressure of 30 cmH2O, white cell count 400 per cubic millimeter with 72 percent lymphocytes, glucose 18 mg/dL, protein 380 mg/dL, and adenosine deaminase 17 U/L. MRI with contrast showed thick basal meningeal enhancement, moderate communicating hydrocephalus, and bilateral basal ganglia infarcts. CSF Xpert MTB/RIF Ultra was positive and rifampicin susceptible; AFB smear was positive. Despite anti-tuberculous therapy and adjunctive dexamethasone, the patient died on hospital day five. Anchored to Thwaites NEJM 2004 (PMID 15496623). Wave 1, hold_for_revision."
+}

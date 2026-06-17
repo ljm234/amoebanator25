@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-103-Lancet-Infect-Dis-2010-Netherlands-HSV-PCR-neg-Ambiguity",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 42,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 5.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "42-year-old male, Netherlands. 5-day course: low-grade fever 38.4 C, headache, behavioral change day 2, anomic aphasia day 3, focal seizure day 4 prompting tertiary ED. No neck stiffness. No freshwater. Diagnostic_ambiguity=true; type=hsv_clinical_phenotype_pcr_negative_at_72h. Empiric acyclovir continued despite negative HSV-1 PCR at 24h and 72h. Outcome: survived with full recovery on completion of 21-day empiric course.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.4,
+    "heart_rate_bpm": 96,
+    "systolic_bp_mmHg": 122,
+    "diastolic_bp_mmHg": 76,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 8800,
+    "platelets_per_uL": 245000,
+    "alt_ast_U_per_L": 26,
+    "crp_mg_per_L": 22.0,
+    "procalcitonin_ng_per_mL": 0.4,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 22.0,
+    "csf_wbc_per_mm3": 180,
+    "csf_neutrophil_pct": 25,
+    "csf_lymphocyte_pct": 75,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 54,
+    "csf_protein_mg_per_dL": 100,
+    "csf_lactate_mmol_per_L": 2.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 8,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "mesial_temporal_t2_flair_hyperintensity",
+    "imaging_finding_count": 1,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: mesial temporal T2/FLAIR hyperintensity asymmetric supporting clinical HSE phenotype despite negative initial CSF HSV-1 PCR. Granerod 2010 Lancet ID UK encephalitis cohort documented PCR-negative HSE cases where MRI and clinical phenotype supported continued empiric acyclovir."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_hsv1_pcr",
+        "result": "negative_at_72h",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_hsv1_pcr_repeat_at_72h",
+        "result": "negative",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "eeg_temporal_lateralization",
+        "result": "left_temporal_periodic_lateralized_epileptiform_discharges",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE2-PRE-ADJ-1",
+      "VIRAL-WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.6 VIRAL vignette anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE2-PRE-ADJ-1, VIRAL-WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.6 (2026-05-08, FINAL Subphase 1.3 wave). anchor=Granerod-Lancet-ID-2010 type=hsv_clinical_phenotype_pcr_negative_at_72h.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "20952256",
+      "doi": "10.1016/S1473-3099(10)70222-X"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T21:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_6",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort) documenting PCR-negative-but-clinical-HSE phenotype. Diagnostic_ambiguity=true; type=hsv_clinical_phenotype_pcr_negative_at_72h (verbatim from spec). Demographic anchor (42yo M NL adult HSE PCR-neg) sits in PCR-negative-HSE-window stratum. CSF lymphocytic, no hemorrhagic component (atypical for HSE; supports diagnostic uncertainty), MRI consistent with HSE despite negative PCR. EEG temporal lateralization supports clinical HSE. Imputation tiers: tier_1_primary={age, sex, hsv1_pcr_neg, eeg_lateralization, imaging_pattern, empiric_acyclovir_continuation}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=organism-level-confirmation. Outcome=survived_full_recovery. Tier: tier_4_imputation_within_review_ambiguity. 5.3.6 wave2 HSV-PCR-neg-male."
+  },
+  "narrative_es": "Varon de 42 anos en Paises Bajos (Amsterdam), ingresado a urgencias terciarias tras curso de cinco dias: febricula 38.4 C, cefalea, cambio conductual al segundo dia, afasia anomica al tercero y crisis focal al cuarto. Sin rigidez de nuca. Examen: 38.4 C, Glasgow 12, deficit focal (afasia anomica), sin exantema. LCR: presion 22 cmH2O, leucocitos 180/mm3 (75 por ciento linfocitos), glucosa 54 mg/dL, proteina 100 mg/dL. PCR de HSV-1 negativa inicial y a las 72 horas. EEG con descargas lateralizadas temporales izquierdas. RM con hiperintensidad temporal mesial T2/FLAIR asimetrica. Aciclovir empirico continuado por 21 dias completos. Ambiguedad diagnostica: fenotipo clinico de HSE con PCR negativa. Anclaje en cohorte Granerod 2010 Lancet ID (PMID 20952256). Subphase 1.3 commit 5.3.6 wave 2.",
+  "narrative_en": "A 42-year-old man in the Netherlands presented to a tertiary emergency department in Amsterdam after a 5-day course: low-grade fever to 38.4 C, headache, behavioral change on day 2, anomic aphasia on day 3, and a focal seizure on day 4. He had no neck stiffness and no antecedent freshwater exposure. Examination: temperature 38.4 C, Glasgow Coma Scale 12, focal deficit (anomic aphasia), no rash. CSF showed opening pressure 22 cmH2O, WBC 180 per mm3 (75 percent lymphocytes), glucose 54 mg/dL, protein 100 mg/dL. CSF HSV-1 PCR negative at initial sample (24h) and negative on repeat at 72h. EEG showed left temporal periodic lateralized epileptiform discharges. Brain MRI DWI/FLAIR showed asymmetric mesial temporal hyperintensity supporting clinical HSE phenotype despite negative PCR. Empiric acyclovir continued for the full 21-day course. Diagnostic_ambiguity=true; type=hsv_clinical_phenotype_pcr_negative_at_72h. Anchored to Granerod 2010 Lancet ID UK encephalitis cohort (PMID 20952256). Outcome: survived with full recovery. Subphase 1.3 commit 5.3.6 wave 2, pre-adjudication hold."
+}

@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D1-009-IDCases-2021-Florida-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 14,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 6.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Five days of fever, severe headache, photophobia, vomiting, and increasing lethargy after lake swimming and underwater diving approximately one week before symptom onset; one witnessed generalized seizure 18 hours before admission with progressive obtundation.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.8,
+    "heart_rate_bpm": 128,
+    "systolic_bp_mmHg": 102,
+    "diastolic_bp_mmHg": 60,
+    "glasgow_coma_scale": 7,
+    "oxygen_saturation_pct": 93,
+    "respiratory_rate_breaths_per_min": 28
+  },
+  "exam": {
+    "mental_status_grade": "stuporous",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17800,
+    "platelets_per_uL": 218000,
+    "alt_ast_U_per_L": 40,
+    "crp_mg_per_L": 104.0,
+    "procalcitonin_ng_per_mL": 4.0,
+    "serum_sodium_mEq_per_L": 132
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 44.0,
+    "csf_wbc_per_mm3": 4200,
+    "csf_neutrophil_pct": 95,
+    "csf_lymphocyte_pct": 4,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 14,
+    "csf_protein_mg_per_dL": 400,
+    "csf_lactate_mmol_per_L": 8.6,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 680,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Diffuse cerebral edema with effacement of cortical sulci, basal cistern enhancement, and small bilateral temporal hemorrhagic foci; pattern consistent with primary amebic meningoencephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF wet mount microscopy",
+        "result": "Motile trophozoites consistent with Naegleria fowleri identified at bedside on warmed slide.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:34307045"
+      },
+      {
+        "test_name": "CSF Naegleria fowleri real-time PCR (CDC reference laboratory)",
+        "result": "Positive (cycle threshold 22)",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:34307045"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Anjum SK et al. IDCases 2021 (PMID 34307045). Demographics: 14 years male, Florida, US. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "34307045",
+      "doi": "10.1016/j.idcr.2021.e01208"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 1 vignette 9 of 20 for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: none. Outcome: fatal. Anchored to PMID 34307045 (Anjum SK et al., IDCases 2021). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: US tap-water-associated PAM 2020s. Pairs with USVI ablution case (PMID 24226628) for tap-water transmission cluster adjudication. 11 authors confirmed (Saccoccio FM at end). DOI is e01208 (NOT e01218). Author 8 'O'Laughlin K' preserves apostrophe. Author 6 'Ibne Karim M Ali' renders as Vancouver 'Ali IKM' (3 initials). Authors: Saad K Anjum, Karna Mangrola, Garrett Fitzpatrick, Kimberly Stockdale, Laura Matthias, Ibne Karim M Ali, Jennifer R Cope, Kevin O'Laughl..."
+  },
+  "narrative_es": "Adolescente varón previamente sano de 14 años, residente en el norte de Florida, que ingresó en estado estuporoso tras cuadro de seis días de fiebre, cefalea severa, fotofobia, vómitos y letargia progresiva tras nadar y bucear en lago aproximadamente una semana antes del inicio de síntomas, más una crisis generalizada presenciada 18 horas antes del ingreso. El examen mostró temperatura 39.8 C, taquicardia, rigidez de nuca, papiledema y escala de Glasgow de 7. El líquido cefalorraquídeo mostró presión de apertura 44 cmH2O, leucocitos 4,200 por mm3 (95 por ciento neutrófilos), glucosa 14 mg/dL, proteína 400 mg/dL, lactato 8.6 mmol/L y trofozoítos móviles en frotis directo; PCR de Naegleria fowleri en LCR confirmada en el laboratorio de referencia de los CDC. Se inició el protocolo de seis fármacos de los CDC y manejo de presión intracraneal en las primeras dos horas; el paciente falleció en el día hospitalario tres tras deterioro neurológico rápido.",
+  "narrative_en": "Fourteen-year-old previously healthy male from north Florida presented in stuporous mental status after a six-day course of fever, severe headache, photophobia, vomiting, and progressive lethargy following lake swimming and underwater diving approximately one week before symptom onset, plus one witnessed generalized seizure 18 hours before admission. Examination showed temperature 39.8 C, tachycardia, neck stiffness, papilledema, and a Glasgow Coma Scale of 7. Cerebrospinal fluid showed opening pressure 44 cmH2O, white blood cell count 4,200 per cubic millimeter (95 percent neutrophils), glucose 14 mg/dL, protein 400 mg/dL, lactate 8.6 mmol/L, and motile trophozoites on wet mount; CDC reference laboratory CSF real-time PCR confirmed Naegleria fowleri. The CDC six-drug protocol and intracranial pressure management were initiated within two hours of admission; the patient died on hospital day three after rapid neurologic deterioration."
+}

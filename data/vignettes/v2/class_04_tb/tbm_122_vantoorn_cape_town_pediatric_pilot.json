@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-TBM-122-van-CapeTown",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 1,
+    "sex": "female",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 50
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 21.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Eighteen-month-old girl from Cape Town with three weeks of intermittent fever, poor feeding, weight failure, and increasing irritability. The grandmother was treated for sputum-positive pulmonary tuberculosis four months earlier. BCG vaccinated at birth. Progressive lethargy in the final five days with one focal seizure.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.1,
+    "heart_rate_bpm": 142,
+    "systolic_bp_mmHg": 95,
+    "diastolic_bp_mmHg": 58,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 32
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 11200,
+    "platelets_per_uL": 286000,
+    "alt_ast_U_per_L": 22,
+    "crp_mg_per_L": 26.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 124
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 220,
+    "csf_neutrophil_pct": 18,
+    "csf_lymphocyte_pct": 80,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 220,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 12.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Marked basal meningeal enhancement with communicating hydrocephalus requiring ventriculoperitoneal shunt placement. Multiple small basal ganglia infarcts. Findings highly characteristic of pediatric tuberculous meningitis per van Toorn pediatric TBM phenotype."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Positive, rifampicin susceptible. Cycle threshold consistent with TBM.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:24655399"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Pending at LP; reported positive at 4 weeks (M. tuberculosis drug-sensitive).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:24655399"
+      },
+      {
+        "test_name": "Gastric aspirate mycobacterial culture",
+        "result": "Positive at 5 weeks, M. tuberculosis drug-sensitive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:24655399"
+      },
+      {
+        "test_name": "Tuberculin skin test",
+        "result": "Induration 14 mm at 48 hours.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:24655399"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:24655399"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-TBM-122-ADJ-1",
+      "PILOT-TBM-122-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to van Toorn R, Solomons R, Semin Pediatr Neurol 2014 (PMID 24655399), pediatric TBM review. 18-month-old Cape Town girl, BCG vaccinated, household TB contact, lymphocytic CSF with ADA 12, Xpert MTB/RIF Ultra positive, communicating hydrocephalus on MRI requiring VP shunt. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "24655399",
+      "doi": "10.1016/j.spen.2014.01.006"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 2 of 6 for Class 4 TBM pediatric (spec 1.4.4 pediatric median 6mo-2y stratum). Anchored to van Toorn 2014 Semin Pediatr Neurol pediatric TBM review. Hydrocephalus requiring VP shunt is van Toorn signature; hyponatremia 124 reflects SIADH common in pediatric TBM. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Nina de 18 meses de Ciudad del Cabo, Sudafrica, ingresada a un hospital pediatrico terciario tras tres semanas de fiebre intermitente, mala alimentacion, fallo en el crecimiento e irritabilidad creciente. Abuela tratada por tuberculosis pulmonar baciloscopia positiva cuatro meses antes. Vacunada con BCG al nacer. En los ultimos cinco dias progreso a letargia con una crisis focal el dia del ingreso. Examen: temperatura 38.1 C, Glasgow 11, somnolienta, rigidez de nuca, Kernig positivo, hemiparesia derecha, papiledema. LCR con presion 28 cmH2O, leucocitos 220 por mm3 (80 por ciento linfocitos), glucosa 22 mg/dL, proteina 220 mg/dL, adenosina desaminasa 12 U/L. Sodio serico 124 (SIADH). RM con engrosamiento meningeo basal e hidrocefalia comunicante, manejada con derivacion ventriculo-peritoneal. Xpert positivo. Anclaje van Toorn 2014.",
+  "narrative_en": "An 18-month-old girl from Cape Town presented to a pediatric tertiary hospital with three weeks of intermittent fever, poor feeding, failure to thrive, and increasing irritability. Her grandmother had been treated for sputum-positive pulmonary tuberculosis four months earlier. The child had received BCG vaccination at birth. Over the final five days she became progressively lethargic with one focal seizure on the day of admission. Examination: temperature 38.1 C, Glasgow Coma Scale 11, somnolent, neck stiffness, positive Kernig sign, right-sided motor weakness, and papilledema on fundoscopy. CSF showed opening pressure 28 cmH2O, white cell count 220 per cubic millimeter with 80 percent lymphocytes, glucose 22 mg/dL, protein 220 mg/dL, and adenosine deaminase 12 U/L. Serum sodium was 124 mEq/L consistent with SIADH. MRI showed marked basal meningeal enhancement with communicating hydrocephalus that required ventriculoperitoneal shunt placement. CSF Xpert MTB/RIF Ultra was positive. Anchored to van Toorn Semin Pediatr Neurol 2014 (PMID 24655399). Pilot, hold_for_revision."
+}

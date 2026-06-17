@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D1-004-JCM-2023-Texas-Splash-Pad",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 4,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 6.5,
+    "chief_complaint": "seizure",
+    "prodrome_description": "Five days of fever, headache, photophobia, and vomiting after splash pad exposure approximately seven days before symptom onset; two witnessed generalized tonic-clonic seizures in the 12 hours before admission.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "splash_pad",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.4,
+    "heart_rate_bpm": 158,
+    "systolic_bp_mmHg": 92,
+    "diastolic_bp_mmHg": 56,
+    "glasgow_coma_scale": 6,
+    "oxygen_saturation_pct": 92,
+    "respiratory_rate_breaths_per_min": 34
+  },
+  "exam": {
+    "mental_status_grade": "comatose",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18800,
+    "platelets_per_uL": 198000,
+    "alt_ast_U_per_L": 44,
+    "crp_mg_per_L": 110.0,
+    "procalcitonin_ng_per_mL": 4.6,
+    "serum_sodium_mEq_per_L": 132
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 48.0,
+    "csf_wbc_per_mm3": 4600,
+    "csf_neutrophil_pct": 96,
+    "csf_lymphocyte_pct": 3,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 12,
+    "csf_protein_mg_per_dL": 420,
+    "csf_lactate_mmol_per_L": 9.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 820,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Diffuse cerebral edema with sulcal effacement, basal cistern enhancement, and small bilateral frontal hemorrhagic foci; mass effect with early uncal herniation; findings consistent with primary amebic meningoencephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF wet mount microscopy",
+        "result": "Numerous motile trophozoites consistent with Naegleria fowleri.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:37470480"
+      },
+      {
+        "test_name": "CSF Naegleria fowleri real-time PCR (CDC reference laboratory)",
+        "result": "Positive (cycle threshold 21)",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:37470480"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Eger L, Pence MA J Clin Microbiol 2023 (PMID 37470480). Demographics: 4 years male, Texas, US. Stage metadata: clinical_stage=late, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "37470480",
+      "doi": null
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 1 vignette 4 of 20 for Subphase 1.2 PAM corpus. Cluster: splash_pad. Atypical type: none. Outcome: fatal. Anchored to PMID 37470480 (Eger L, Pence MA, J Clin Microbiol 2023). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with late-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: Full text required for full demographics; abstract is brief."
+  },
+  "narrative_es": "Niño previamente sano de 4 años que ingresó en coma tras cuadro de seis días de fiebre, cefalea severa, fotofobia, vómitos y dos crisis tónico-clónicas generalizadas presenciadas en las 12 horas previas al ingreso, con exposición a parque acuático (splash pad) aproximadamente una semana antes del inicio de síntomas. El examen mostró temperatura 39.4 C, taquicardia, rigidez de nuca, papiledema y escala de Glasgow de 6 con respuestas pupilares perezosas. El líquido cefalorraquídeo mostró presión de apertura 48 cmH2O, leucocitos 4,600 por mm3 (96 por ciento neutrófilos), glucosa 12 mg/dL, proteína 420 mg/dL, lactato 9.2 mmol/L y abundantes trofozoítos móviles en frotis directo; PCR de Naegleria fowleri en LCR confirmada en el laboratorio de referencia de los CDC. Se inició el protocolo de seis fármacos de los CDC y manejo agresivo de presión intracraneal; el niño falleció en el día hospitalario dos tras retiro de soporte por muerte encefálica establecida.",
+  "narrative_en": "Four-year-old previously healthy male presented in coma following a six-day course of fever, severe headache, photophobia, vomiting, and two witnessed generalized tonic-clonic seizures in the 12 hours before admission, with splash pad exposure approximately one week before symptom onset. Examination showed temperature 39.4 C, tachycardia, neck stiffness, papilledema, and a Glasgow Coma Scale of 6 with sluggish pupillary responses. Cerebrospinal fluid showed opening pressure 48 cmH2O, white blood cell count 4,600 per cubic millimeter (96 percent neutrophils), glucose 12 mg/dL, protein 420 mg/dL, lactate 9.2 mmol/L, and numerous motile trophozoites on wet mount; CDC reference laboratory CSF real-time PCR confirmed Naegleria fowleri. The CDC six-drug protocol and aggressive intracranial pressure management were initiated; the child died on hospital day two after withdrawal of care for established brain death."
+}

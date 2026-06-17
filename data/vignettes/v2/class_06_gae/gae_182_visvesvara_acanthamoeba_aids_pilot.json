@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-GAE-182-Visvesvara-Acanthamoeba-AIDS",
+  "ground_truth_class": 6,
+  "demographics": {
+    "age_years": 47,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 320
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 21.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Three-week subacute encephalopathy in a 47-year-old man with advanced HIV (CD4 38, viral load 480000 copies, ART-naive). Progressive headache, mild fevers, and two weeks of personality change with episodic disorientation. No focal weakness initially; right hemiparesis developed in the final five days. No freshwater exposure. No skin lesions identified on full exam.",
+    "red_flags_present": [
+      "immunocompromise"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "hiv_cd4_under100",
+    "hiv_status": "positive_not_on_art",
+    "cd4_count_cells_per_uL": 38
+  },
+  "vitals": {
+    "temperature_celsius": 37.8,
+    "heart_rate_bpm": 98,
+    "systolic_bp_mmHg": 118,
+    "diastolic_bp_mmHg": 72,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 3200,
+    "platelets_per_uL": 178000,
+    "alt_ast_U_per_L": 38,
+    "crp_mg_per_L": 16.0,
+    "procalcitonin_ng_per_mL": 0.2,
+    "serum_sodium_mEq_per_L": 135
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 16.0,
+    "csf_wbc_per_mm3": 28,
+    "csf_neutrophil_pct": 22,
+    "csf_lymphocyte_pct": 72,
+    "csf_eosinophil_pct": 6,
+    "csf_glucose_mg_per_dL": 40,
+    "csf_protein_mg_per_dL": 95,
+    "csf_lactate_mmol_per_L": 2.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "multiple_ring_enhancing_lesions",
+    "imaging_finding_count": 2,
+    "imaging_text_summary": "2 ring-enhancing lesions: left frontal lobe 2.1 cm and right thalamus 1.4 cm, each with surrounding vasogenic edema. No basal meningeal enhancement. Pattern characteristic of granulomatous amebic encephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "Brain biopsy histology (left frontal lesion)",
+        "result": "Granulomatous inflammation with trophozoites and double-walled cysts; immunohistochemistry positive for Acanthamoeba castellanii.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17428307"
+      },
+      {
+        "test_name": "CSF metagenomic next-generation sequencing",
+        "result": "Acanthamoeba castellanii reads detected.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17428307"
+      },
+      {
+        "test_name": "Serum HIV viral load",
+        "result": "480000 copies/mL (ART-naive).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17428307"
+      },
+      {
+        "test_name": "CD4 lymphocyte count",
+        "result": "38 cells per uL.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17428307"
+      },
+      {
+        "test_name": "Contact-lens use history screen",
+        "result": "Negative; no contact lens use, no prior keratitis.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:17428307"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-GAE-182-ADJ-1",
+      "PILOT-GAE-182-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Visvesvara GS et al. FEMS Immunol Med Microbiol 2007 (PMID 17428307), canonical free-living amoebae review. 47-year-old US man with AIDS (CD4 38), two ring-enhancing brain lesions, brain biopsy granulomatous with A. castellanii on IHC, mNGS confirmation. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "17428307",
+      "doi": "10.1111/j.1574-695X.2007.00232.x"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 6 of 6 for Class 6 GAE Acanthamoeba immunocompromised stratum (spec 1.4.6 10/15 immunocompromised). Anchored to Visvesvara 2007 FEMS canonical free-living amoebae review. Two ring-enhancing lesions match multifocal imaging mandate. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 47 anos en region sur de Estados Unidos, evaluado por enfermedades infecciosas con cuadro encefalopatico subagudo de tres semanas. Diagnostico de VIH hace diez anos, perdido al seguimiento; al ingreso CD4 38 por microlitro, carga viral 480000 copias por mL, sin terapia antirretroviral. Refiere cefalea progresiva, fiebre leve y dos semanas de cambio de personalidad con desorientacion episodica; debilidad derecha en los ultimos cinco dias. Sin exposicion a agua dulce, sin uso de lentes de contacto. Examen: temperatura 37.8 C, Glasgow 12, confuso, sin rigidez de nuca, hemiparesia derecha. LCR con presion 16 cmH2O, leucocitos 28 por mm3 (72 por ciento linfocitos), glucosa 40 mg/dL, proteina 95 mg/dL. RM con dos lesiones anulares (frontal izquierda, talamo derecho). Biopsia cerebral con Acanthamoeba castellanii en IHC.",
+  "narrative_en": "A 47-year-old man in the US South region presented to an academic infectious diseases service with a three-week subacute encephalopathy. He had been diagnosed with HIV ten years prior but had been lost to follow-up; his admission CD4 count was 38 cells per microliter and his viral load was 480000 copies per milliliter, off antiretroviral therapy. He reported progressive headache, mild fevers, and two weeks of personality change with episodic disorientation; right-sided weakness developed in the final five days. There was no freshwater exposure and no contact-lens use. Examination: temperature 37.8 C, Glasgow Coma Scale 12, confused, no neck stiffness, and right hemiparesis. CSF showed an opening pressure of 16 cmH2O, white cell count 28 per cubic millimeter with 72 percent lymphocytes, glucose 40 mg/dL, and protein 95 mg/dL. MRI showed two ring-enhancing lesions in the left frontal lobe and right thalamus. Brain biopsy demonstrated granulomatous inflammation with double-walled cysts and immunohistochemistry positive for Acanthamoeba castellanii. Anchored to Visvesvara FEMS 2007 (PMID 17428307). Pilot, hold_for_revision."
+}

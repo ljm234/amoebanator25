@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-067-CID-2004-US-South-region-SP-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 3,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 1.5,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "Three-year-old male, US South region. 36-hour fever 39.6 C, vomiting, irritability progressing to lethargy. Recent otitis media. Tertiary pediatric ED. No freshwater. Outcome: survived with mild hearing loss. Antibiotic at hour 1.5 plus dexamethasone per IDSA pediatric protocol.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.6,
+    "heart_rate_bpm": 148,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 60,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 30
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": null
+  },
+  "labs": {
+    "wbc_blood_per_uL": 23500,
+    "platelets_per_uL": 295000,
+    "alt_ast_U_per_L": 26,
+    "crp_mg_per_L": 185.0,
+    "procalcitonin_ng_per_mL": 8.8,
+    "serum_sodium_mEq_per_L": 136
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 30.0,
+    "csf_wbc_per_mm3": 7200,
+    "csf_neutrophil_pct": 90,
+    "csf_lymphocyte_pct": 10,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 20,
+    "csf_protein_mg_per_dL": 240,
+    "csf_lactate_mmol_per_L": 7.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_positive_diplococci",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "streptococcus_pneumoniae",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "streptococcus_pneumoniae_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-PRE-ADJ-1",
+      "WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 1 vignette anchored to PMID 15494903 (Tunkel IDSA 2004); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE1-PRE-ADJ-1, WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.3 (2026-05-08). anchor=Tunkel-IDSA-2004 stratum=pediatric.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "guideline",
+      "pmid": "15494903",
+      "doi": "10.1086/425368"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_3",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 15494903 (Tunkel IDSA 2004 CID guideline) for pediatric pneumococcal meningitis empiric coverage. Demographic anchor (3yo M post-otitis-media) sits in the high-risk pediatric stratum referenced by Tunkel. CSF profile bacterial range per guideline cutoffs. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein}; tier_4_priors={temp, gcs, symptom_days, hr}. Indeterminate=papilledema. Diagnostic_ambiguity=false. Outcome=survived_mild_hearing_loss. Antibiotic_started_hours=1.5. Tier: tier_4_imputation_idsa_guideline_anchored. 5.3.3 wave1 SP-pediatric."
+  },
+  "narrative_es": "Varon de tres anos en region sur de Estados Unidos, ingresado a urgencias pediatricas terciarias con 36 horas de fiebre 39.6 C, vomitos, irritabilidad y respuesta disminuida. Tratamiento previo para otitis media en la semana anterior. Examen: temperatura 39.6 C, escala de Glasgow 12, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Liquido cefalorraquideo mostro presion de apertura 30 cmH2O, leucocitos 7,200 por mm3 (90 por ciento neutrofilos), glucosa 20 mg/dL, proteina 240 mg/dL. Tincion de Gram con diplococos grampositivos y cultivo Streptococcus pneumoniae. Anclaje en guia IDSA Tunkel 2004 (PMID 15494903), recomendaciones pediatricas. Subphase 1.3 commit 5.3.3 wave 1.",
+  "narrative_en": "A three-year-old boy in the US South region presented to a tertiary pediatric emergency department with a 36-hour history of fever to 39.6 C, vomiting, irritability, and decreasing responsiveness. He had been treated for otitis media in the preceding week. Examination on admission: temperature 39.6 C, Glasgow Coma Scale 12, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 30 cmH2O, white cell count 7,200 per cubic millimeter (90 percent neutrophils), glucose 20 mg/dL, protein 240 mg/dL. Gram stain revealed gram-positive diplococci; culture identified Streptococcus pneumoniae. Anchored to Tunkel IDSA 2004 (PMID 15494903) pediatric pneumococcal meningitis recommendations. Outcome: survived with mild hearing loss. Subphase 1.3 commit 5.3.3 wave 1, pre-adjudication hold_for_revision."
+}

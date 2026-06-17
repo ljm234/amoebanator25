@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-053-CID-2012-Louisiana-Nasal-Irrigation",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 35,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 5.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Five days of fever, frontal headache, nasal congestion, and progressive somnolence in a 35-year-old man from Louisiana with daily neti-pot use of municipal tap water for chronic sinus symptoms over the prior month.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "neti_pot_tap_water",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 110,
+    "systolic_bp_mmHg": 124,
+    "diastolic_bp_mmHg": 78,
+    "glasgow_coma_scale": 10,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 20
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17000,
+    "platelets_per_uL": 250000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 84.0,
+    "procalcitonin_ng_per_mL": 1.7,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 2940,
+    "csf_neutrophil_pct": 89,
+    "csf_lymphocyte_pct": 10,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 348,
+    "csf_lactate_mmol_per_L": 6.6,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 180,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "CT showed diffuse cerebral edema with mild basal cistern effacement."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Naegleria fowleri PCR (CDC reference laboratory)",
+        "result": "Positive.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:22919000"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "methodology=day1_pmid_reuse; Anchored to Yoder JS et al. Clin Infect Dis 2012 (PMID 22919000). Demographics: 35 years male, Louisiana, US. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "22919000",
+      "doi": "10.1093/cid/cis626"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 53 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: nasal_irrigation. Atypical type: none. Outcome: fatal. Anchored to PMID 22919000 (Yoder JS et al., Clin Infect Dis 2012). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: PMC11307261 is an NIHMS author-manuscript deposit posted retroactively (2024) for the 2012 paper. Publisher of record is Clin Infect Dis 2012;55(9):e79-e85, DOI 10.1093/cid/cis626."
+  },
+  "narrative_es": "Varón de 35 años originario de Luisiana que se presentó con cinco días de fiebre, cefalea frontal, congestión nasal y somnolencia progresiva tras un mes de lavados nasales diarios con neti pot usando agua de la red municipal por síntomas sinusales crónicos. La exploración mostró temperatura 39.0 C, escala de Glasgow 10, rigidez de nuca y signo de Kernig positivo sin déficit focal. El líquido cefalorraquídeo mostró presión de apertura 28 cmH2O, leucocitos 2,940 por mm3 (89 por ciento neutrófilos), glucosa 22 mg/dL, proteína 348 mg/dL y lactato 6.6 mmol/L. La PCR de Naegleria fowleri en el laboratorio de referencia de los CDC fue positiva. Se inició el protocolo de PAM de los CDC, pero el paciente falleció. El Día 1 utilizó a Yoder 2012 para v10 (varón de 28 años) y v11 (mujer de 51 años); v53 es una imputación dentro de la cohorte para un perfil adulto masculino de 35 años dentro del mismo contexto de neti pot con agua de grifo en Luisiana (PMID 22919000).",
+  "narrative_en": "A 35-year-old man from Louisiana presented with five days of fever, frontal headache, nasal congestion, and progressive somnolence after a month of daily neti-pot rinses with municipal tap water for chronic sinus symptoms. Examination showed temperature 39.0 C, Glasgow Coma Scale 10, neck stiffness, and a positive Kernig sign without focal deficit. CSF showed opening pressure 28 cmH2O, white cell count 2,940 per cubic millimeter (89 percent neutrophils), glucose 22 mg/dL, protein 348 mg/dL, and lactate 6.6 mmol/L. CSF PCR for Naegleria fowleri at the CDC reference laboratory was positive. The CDC PAM regimen was started but the patient died. Day-1 used Yoder 2012 for v10 (28-year-old male) and v11 (51-year-old female); v53 is a within-cohort imputation for a 35-year-old male adult within the same Louisiana neti-pot tap-water case context (PMID 22919000)."
+}

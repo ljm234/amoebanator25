@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "WAVE1-TBM-130-Marais-CapeTown",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 29,
+    "sex": "female",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 50
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 14.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Two-week illness in a 29-year-old woman from Cape Town with subacute headache and intermittent low-grade fevers. She lived in an informal settlement, was HIV negative on rapid testing, and reported no documented tuberculosis contact.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.0,
+    "heart_rate_bpm": 92,
+    "systolic_bp_mmHg": 118,
+    "diastolic_bp_mmHg": 74,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 7400,
+    "platelets_per_uL": 264000,
+    "alt_ast_U_per_L": 22,
+    "crp_mg_per_L": 28.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 134
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 18.0,
+    "csf_wbc_per_mm3": 200,
+    "csf_neutrophil_pct": 22,
+    "csf_lymphocyte_pct": 76,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 36,
+    "csf_protein_mg_per_dL": 180,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 11.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Thick basal meningeal enhancement on post-contrast T1 with mild communicating hydrocephalus and a small left basal ganglia infarct. Findings consistent with active tuberculous meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Negative on initial CSF specimen. Sensitivity 70-85 percent in TBM per Hernandez TM&IH 2021; culture remains the confirmation modality.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20822958"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Positive at 4 weeks (M. tuberculosis drug-sensitive); Xpert-negative-culture-confirmed case per RCT inclusion.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20822958"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20822958"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-TBM-130-ADJ-1",
+      "WAVE1-TBM-130-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Marais S et al. Lancet ID 2010 (PMID 20822958), TBM uniform case definition possible category. 29-year-old South African adult female HIV-negative informal-settlement resident, lymphocytic CSF, ADA 11 U/L, Xpert MTB/RIF Ultra NEGATIVE on initial specimen, culture pending, Marais score 9. Diagnostic ambiguity flag True. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "guideline",
+      "pmid": "20822958",
+      "doi": "10.1016/S1473-3099(10)70138-9"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.3-wave1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.3 wave 1 vignette 130 of 14 for Class 4 TBM. Anchored to Marais 2010 possible category (score 9). Diagnostic ambiguity slot: Xpert NEG with culture pending; empirical anti-TB therapy. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Mujer de 29 anos de Ciudad del Cabo, Sudafrica, ingresada a un hospital terciario tras dos semanas de cefalea subaguda y fiebre baja intermitente. Vive en asentamiento informal, VIH negativo en prueba rapida, sin contacto documentado con tuberculosis. Examen: temperatura 38.0 C, Glasgow 14, confusion leve, rigidez de nuca, Kernig positivo, sin deficit motor focal, sin papiledema. LCR con presion 18 cmH2O, leucocitos 200 por mm3 (76 por ciento linfocitos), glucosa 36 mg/dL, proteina 180 mg/dL, adenosina desaminasa 11 U/L. RM con engrosamiento meningeo basal sutil sin hidrocefalia. Xpert MTB/RIF Ultra negativo en muestra inicial; cultivo micobacteriano pendiente. El caso cumple criterios posibles de Marais 2010 con puntaje 9; tratamiento antifimico empirico iniciado. Anclaje Marais Lancet ID 2010. Wave 1, pre-adjudicacion.",
+  "narrative_en": "A 29-year-old woman from Cape Town presented to a tertiary referral hospital with a two-week illness of subacute headache and intermittent low-grade fevers. She lived in an informal settlement, was HIV negative on rapid testing, and reported no documented tuberculosis contact. Examination on admission: temperature 38.0 C, Glasgow Coma Scale 14, mild confusion, neck stiffness, positive Kernig sign, no focal motor deficit, and no papilledema on fundoscopy. CSF showed an opening pressure of 18 cmH2O, white cell count 200 per cubic millimeter with 76 percent lymphocytes, glucose 36 mg/dL, protein 180 mg/dL, and adenosine deaminase 11 U/L. MRI with contrast demonstrated subtle basal meningeal enhancement without hydrocephalus. CSF Xpert MTB/RIF Ultra was negative on the initial specimen and mycobacterial culture remained pending. The case meets Marais 2010 possible tuberculous meningitis criteria with score 9; empirical anti-tuberculous therapy was initiated. Anchored to Marais Lancet ID 2010 (PMID 20822958). Wave 1, hold_for_revision."
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-078-CID-2004-US-South-region-SP-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 50,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "50-year-old male, US South region. HIV-positive 8 years on antiretroviral therapy (CD4 285). 2-day fever 39.2 C, severe headache, neck stiffness. Tertiary ED. No freshwater. Encapsulated-organism risk per HIV. Outcome: survived. Ceftriaxone-vancomycin-dexamethasone IDSA HIV-specific.",
+    "red_flags_present": [
+      "immunocompromise"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "hiv_cd4_over200",
+    "hiv_status": "positive_on_art",
+    "cd4_count_cells_per_uL": 285
+  },
+  "vitals": {
+    "temperature_celsius": 39.2,
+    "heart_rate_bpm": 112,
+    "systolic_bp_mmHg": 118,
+    "diastolic_bp_mmHg": 72,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 18200,
+    "platelets_per_uL": 235000,
+    "alt_ast_U_per_L": 30,
+    "crp_mg_per_L": 175.0,
+    "procalcitonin_ng_per_mL": 7.0,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 27.0,
+    "csf_wbc_per_mm3": 5200,
+    "csf_neutrophil_pct": 85,
+    "csf_lymphocyte_pct": 15,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 195,
+    "csf_lactate_mmol_per_L": 6.0,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 5,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_positive_diplococci",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "streptococcus_pneumoniae",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "streptococcus_pneumoniae_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15494903"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-PRE-ADJ-1",
+      "WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 1 vignette anchored to PMID 15494903 (Tunkel IDSA 2004); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE1-PRE-ADJ-1, WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.3 (2026-05-08). anchor=Tunkel-IDSA-2004 stratum=HIV-on-ART.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "guideline",
+      "pmid": "15494903",
+      "doi": "10.1086/425368"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_3",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 15494903 (Tunkel IDSA 2004 CID guideline) HIV-specific empiric coverage recommendations. Demographic anchor (50yo M HIV+ ART CD4 285) reflects HIV-on-ART stratum covered by Tunkel for SP empiric vancomycin plus ceftriaxone. CrAg negative excludes co-incident cryptococcal infection. CSF profile bacterial range. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain, hiv_status, cd4}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein}; tier_4_priors={temp, gcs, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived. Antibiotic_started_hours=1. Tier: tier_4_imputation_idsa_guideline_anchored. 5.3.3 wave1 SP-HIV-on-ART."
+  },
+  "narrative_es": "Varon de 50 anos en region sur de Estados Unidos con infeccion por VIH (ocho anos de terapia antirretroviral, CD4 285 celulas por microlitro), ingresado a urgencias terciarias con dos dias de fiebre 39.2 C, cefalea intensa y rigidez de nuca. Examen: temperatura 39.2 C, escala de Glasgow 13, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Liquido cefalorraquideo mostro presion de apertura 27 cmH2O, leucocitos 5,200 por mm3 (85 por ciento neutrofilos), glucosa 22 mg/dL, proteina 195 mg/dL; antigeno criptococico en liquido negativo. Tincion de Gram con diplococos grampositivos y cultivo Streptococcus pneumoniae. Anclaje en guia IDSA Tunkel 2004 (PMID 15494903) recomendaciones VIH-especificas. Subphase 1.3 commit 5.3.3 wave 1.",
+  "narrative_en": "A 50-year-old man in the US South region with HIV (eight years on antiretroviral therapy, CD4 count 285 cells per microliter) presented to a tertiary emergency department with a 2-day history of fever to 39.2 C, severe headache, and neck stiffness. Examination on admission: temperature 39.2 C, Glasgow Coma Scale 13, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 27 cmH2O, white cell count 5,200 per cubic millimeter (85 percent neutrophils), glucose 22 mg/dL, protein 195 mg/dL; CSF cryptococcal antigen negative. Gram stain revealed gram-positive diplococci; culture identified Streptococcus pneumoniae. Anchored to Tunkel IDSA 2004 (PMID 15494903) HIV-specific empiric coverage recommendations. Outcome: survived. Subphase 1.3 commit 5.3.3 wave 1, pre-adjudication hold_for_revision."
+}

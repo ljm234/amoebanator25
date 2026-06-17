@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "WAVE1-TBM-131-Heemskerk-HCMC",
+  "ground_truth_class": 4,
+  "demographics": {
+    "age_years": 36,
+    "sex": "male",
+    "ethnicity": "asian",
+    "geography_region": "other_global",
+    "altitude_residence_m": 19
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 24.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Three-and-a-half-week illness in a 36-year-old male construction worker from Ho Chi Minh City. Persistent fevers, progressive frontal headache, intermittent vomiting, and three days of binocular diplopia in the final week. HIV negative, no prior tuberculosis contact.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.6,
+    "heart_rate_bpm": 104,
+    "systolic_bp_mmHg": 124,
+    "diastolic_bp_mmHg": 78,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "CN_VI",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": true
+  },
+  "labs": {
+    "wbc_blood_per_uL": 9000,
+    "platelets_per_uL": 282000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 46.0,
+    "procalcitonin_ng_per_mL": 0.5,
+    "serum_sodium_mEq_per_L": 130
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 24.0,
+    "csf_wbc_per_mm3": 320,
+    "csf_neutrophil_pct": 20,
+    "csf_lymphocyte_pct": 78,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 26,
+    "csf_protein_mg_per_dL": 280,
+    "csf_lactate_mmol_per_L": 4.4,
+    "csf_ada_U_per_L": 15.0,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 2,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "basal_meningeal_enhancement_with_hydrocephalus",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Thick basal meningeal enhancement on post-contrast T1 with mild communicating hydrocephalus and a small left basal ganglia infarct. Findings consistent with active tuberculous meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF Xpert MTB/RIF Ultra",
+        "result": "Positive, rifampicin susceptible. Cycle threshold consistent with TBM.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      },
+      {
+        "test_name": "CSF mycobacterial culture",
+        "result": "Pending at LP; reported positive at 4 weeks (M. tuberculosis drug-sensitive).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      },
+      {
+        "test_name": "Chest radiograph",
+        "result": "Hilar lymphadenopathy with adjacent parenchymal infiltrate consistent with primary TB.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:26760084"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-TBM-131-ADJ-1",
+      "WAVE1-TBM-131-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Heemskerk AD et al. NEJM 2016 (PMID 26760084), HCMC intensified-anti-TB RCT standard arm. 36-year-old Vietnamese adult male HIV-negative, lymphocytic CSF, ADA 15 U/L, Xpert MTB/RIF Ultra positive, CN VI palsy positive. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "rct",
+      "pmid": "26760084",
+      "doi": "10.1056/NEJMoa1507062"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.3-wave1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.3 wave 1 vignette 131 of 14 for Class 4 TBM. Anchored to Heemskerk 2016 NEJM intensified-anti-TB RCT, standard arm. CN VI palsy positive. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon de 36 anos, obrero de construccion, de Ho Chi Minh, Vietnam, ingresado a un hospital terciario tras tres semanas y media de fiebre persistente, cefalea frontal progresiva, vomitos intermitentes y tres dias de diplopia binocular en la ultima semana. VIH negativo, sin contacto previo con tuberculosis. Examen: temperatura 38.6 C, Glasgow 12, somnoliento, rigidez de nuca, Kernig positivo, paresia del sexto par craneal derecho, papiledema. LCR con presion 24 cmH2O, leucocitos 320 por mm3 (78 por ciento linfocitos), glucosa 26 mg/dL, proteina 280 mg/dL, adenosina desaminasa 15 U/L. RM con engrosamiento meningeo basal e hidrocefalia comunicante leve. Xpert MTB/RIF Ultra positivo en LCR, susceptible a rifampicina. Aleatorizado al brazo estandar. Anclaje Heemskerk NEJM 2016.",
+  "narrative_en": "A 36-year-old male construction worker from Ho Chi Minh City presented to a tertiary referral hospital with a three-and-a-half-week illness of persistent fevers, progressive frontal headache, intermittent vomiting, and three days of binocular diplopia in the final week. He was HIV negative and reported no prior tuberculosis contact. Examination on admission: temperature 38.6 C, Glasgow Coma Scale 12, somnolent but rousable, neck stiffness, positive Kernig sign, right lateral gaze palsy consistent with sixth cranial nerve involvement, and papilledema. CSF showed an opening pressure of 24 cmH2O, white cell count 320 per cubic millimeter with 78 percent lymphocytes, glucose 26 mg/dL, protein 280 mg/dL, and adenosine deaminase 15 U/L. MRI with contrast demonstrated basal meningeal enhancement with mild communicating hydrocephalus. CSF Xpert MTB/RIF Ultra was positive and rifampicin susceptible. He was randomized to the standard anti-tuberculous arm. Anchored to Heemskerk NEJM 2016 (PMID 26760084). Wave 1, hold_for_revision."
+}

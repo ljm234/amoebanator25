@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-027-BMC Infect Dis-2021-China-(province-imputed)-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 8,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 3.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Three-day history of fever, headache, and vomiting in an 8-year-old male after recreational freshwater exposure. China province imputed; demographics imputed within Huang 2021 mainland-China dual-compartment mNGS PAM case-context.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 132,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 62,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 26
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 16400,
+    "platelets_per_uL": 268000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 78.0,
+    "procalcitonin_ng_per_mL": 1.8,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 2400,
+    "csf_neutrophil_pct": 88,
+    "csf_lymphocyte_pct": 11,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 320,
+    "csf_lactate_mmol_per_L": 6.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 120,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "MRI with DWI/FLAIR showed diffuse cerebral edema with basilar meningeal enhancement consistent with fulminant amebic meningoencephalitis. Imaging imputed within Huang 2021 dual-compartment mNGS PAM case-context."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF metagenomic next-generation sequencing (mNGS)",
+        "result": "Naegleria fowleri detected (CSF compartment).",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:34906097"
+      },
+      {
+        "test_name": "Blood metagenomic next-generation sequencing (mNGS)",
+        "result": "Naegleria fowleri detected (blood compartment); dual-compartment confirmation per anchor publication.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:34906097"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Huang S et al. BMC Infectious Diseases 2021 (PMID 34906097). Demographics: 8 years male, China (province imputed). Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "34906097",
+      "doi": "10.1186/s12879-021-06932-9"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 27 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: china_mngs_dual_compartment. Outcome: fatal. Anchored to PMID 34906097 (Huang S et al., BMC Infectious Diseases 2021). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: China pediatric mNGS dual-compartment positivity (CSF + blood, rare blood positivity). Authors 1+2 contributed equally. Author 'Xiu'an Liang' contains apostrophe in given name (UTF-8 preserved); Vancouver renders as 'Liang X'. Authors: Shiqin Huang, Xiu'an Liang, Yunli Han, Yanyan Zhang, Xinhui Li, Zhiyong Yang."
+  },
+  "narrative_es": "Niño de 8 años en China que se presentó con tres días de fiebre, cefalea y vómitos tras exposición recreativa a agua dulce. Al ingreso la temperatura fue de 39.0 C, escala de Glasgow 11, con rigidez de nuca y somnolencia. Los leucocitos periféricos fueron 16,400 por microlitro; el líquido cefalorraquídeo mostró 2,400 leucocitos por mm3 (88 por ciento neutrófilos), glucosa 22 mg/dL, proteína 320 mg/dL y lactato 6.4 mmol/L. La secuenciación metagenómica de nueva generación tanto del líquido cefalorraquídeo como de la sangre periférica identificó a Naegleria fowleri (detección en doble compartimento). La resonancia magnética cerebral con DWI/FLAIR mostró edema cerebral difuso. Se inició el protocolo de PAM de los CDC; el paciente falleció a pesar de la atención multimodal. Esta viñeta utiliza imputación dentro del contexto del caso anclaje: la provincia china no está completamente transcrita en la publicación anclaje, por lo que la especificidad geográfica se imputa a nivel de país, y los datos demográficos están fijados en la tabla de distribución del Día 2 según la epidemiología de Huang 2021 (PMID 34906097).",
+  "narrative_en": "An 8-year-old male in China presented with a three-day history of fever, headache, and vomiting following recreational freshwater exposure. On admission temperature was 39.0 C, Glasgow Coma Scale 11, with neck stiffness and somnolence. Peripheral white cell count was 16,400 per microliter; CSF showed 2,400 white cells per cubic millimeter (88 percent neutrophils), glucose 22 mg/dL, protein 320 mg/dL, and lactate 6.4 mmol/L. Metagenomic next-generation sequencing of both CSF and peripheral blood identified Naegleria fowleri (dual-compartment detection). Brain MRI with DWI/FLAIR showed diffuse cerebral edema. Treatment per CDC PAM protocol was initiated; the patient died despite multimodal care. This vignette uses imputation within the anchor's documented case-context: province within China is not fully transcribed in the anchor publication so geographic specificity is imputed at the country level, and demographics are locked from the Day-2 distribution table per Huang 2021 mainland-China dual-compartment mNGS epidemiology (PMID 34906097)."
+}

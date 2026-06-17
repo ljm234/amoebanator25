@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-093-Lancet-Infect-Dis-2006-Netherlands-HSV1-Late-Fatal",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 67,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 7.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "67-year-old female, Netherlands. 7-day course: low-grade fever 38.3 C, headache, behavioral change with confusion day 2, anomic aphasia day 4, focal seizures day 5, progressive obtundation day 6, coma day 7. Tertiary ED Amsterdam. No freshwater. Acyclovir hour 12 (delayed by atypical presentation). Outcome: fatal hospital day 5 per Whitley HSE elderly-mortality data.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.3,
+    "heart_rate_bpm": 110,
+    "systolic_bp_mmHg": 102,
+    "diastolic_bp_mmHg": 64,
+    "glasgow_coma_scale": 5,
+    "oxygen_saturation_pct": 88,
+    "respiratory_rate_breaths_per_min": 26
+  },
+  "exam": {
+    "mental_status_grade": "comatose",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 8800,
+    "platelets_per_uL": 215000,
+    "alt_ast_U_per_L": 32,
+    "crp_mg_per_L": 28.0,
+    "procalcitonin_ng_per_mL": 0.5,
+    "serum_sodium_mEq_per_L": 132
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 26.0,
+    "csf_wbc_per_mm3": 280,
+    "csf_neutrophil_pct": 28,
+    "csf_lymphocyte_pct": 72,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 50,
+    "csf_protein_mg_per_dL": 145,
+    "csf_lactate_mmol_per_L": 2.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": true,
+    "csf_rbc_per_mm3": 50,
+    "csf_rbc_decreasing_across_tubes": false
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "mesial_temporal_t2_flair_hyperintensity",
+    "imaging_finding_count": 1,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: mesial temporal T2/FLAIR hyperintensity asymmetric with basal ganglia sparing. Canonical HSE imaging signature per Tyler 2018 NEJM viral encephalitis review."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_hsv1_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:16675036"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:16675036"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:16675036"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE2-PRE-ADJ-1",
+      "VIRAL-WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.6 VIRAL vignette anchored to PMID 16675036 (Whitley 2006 Lancet ID HSE pathogenesis review); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE2-PRE-ADJ-1, VIRAL-WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.6 (2026-05-08, FINAL Subphase 1.3 wave). anchor=Whitley-Lancet-ID-2006 stratum=elderly-fatal-delayed-treatment.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "16675036",
+      "doi": "10.1016/S1473-3099(06)70414-6"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T21:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_6",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 16675036 (Whitley 2006 Lancet ID HSE pathogenesis review). Elderly HSE with delayed-acyclovir fatal outcome per Whitley elderly-mortality stratum. Demographic anchor (67yo F NL elderly HSE delayed-treatment) sits in elderly-fatal-HSE stratum. CSF lymphocytic with prominent hemorrhagic component (RBC 50, xanthochromia). MRI bilateral mesial temporal. Imputation tiers: tier_1_primary={age, sex, hsv1_pcr, imaging_pattern, focal_aphasia, delayed_acyclovir}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, rbc, xanthochromia, gcs}; tier_4_priors={temp, symptom_days, hyponatremia}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=fatal_hospital_day_5. Acyclovir_hours=12. Tier: tier_3_imputation_within_review. 5.3.6 wave2 HSV1-Whitley-elderly-fatal."
+  },
+  "narrative_es": "Mujer de 67 anos en Paises Bajos (Amsterdam), ingresada a urgencias terciarias tras curso de siete dias: febricula 38.3 C, cefalea, cambio conductual al segundo dia, afasia anomica al cuarto, crisis focales al quinto, obnubilacion progresiva con coma al septimo. Examen: temperatura 38.3 C, escala de Glasgow 5, comatosa, deficit focal (afasia anomica, postura derecha residual), sin exantema. Liquido cefalorraquideo mostro presion de apertura 26 cmH2O, leucocitos 280 por mm3 (72 por ciento linfocitos), glucosa 50 mg/dL, proteina 145 mg/dL, eritrocitos 50 con xantocromia. PCR de HSV-1 positiva. RM cerebral con hiperintensidad temporal mesial T2/FLAIR bilateral. Aciclovir en hora 12 (retraso por presentacion atipica). Anclaje en revision Whitley 2006 Lancet ID HSE (PMID 16675036). Subphase 1.3 commit 5.3.6 wave 2.",
+  "narrative_en": "A 67-year-old woman in the Netherlands presented to a tertiary emergency department in Amsterdam after a 7-day course: low-grade fever to 38.3 C, headache, behavioral change on day 2, anomic aphasia on day 4, focal seizures on day 5, and progressive obtundation to coma by day 7. Examination on admission: temperature 38.3 C, Glasgow Coma Scale 5, comatose, focal deficit (anomic aphasia, residual right-sided posturing), no rash. CSF showed opening pressure 26 cmH2O, white cell count 280 per cubic millimeter (72 percent lymphocytes), glucose 50 mg/dL, protein 145 mg/dL, RBC 50 with xanthochromia (canonical hemorrhagic component). CSF HSV-1 PCR positive. Brain MRI with DWI/FLAIR showed mesial temporal T2/FLAIR hyperintensity bilateral. Acyclovir initiated at hour 12 (delayed by atypical presentation). Anchored to Whitley 2006 Lancet Infect Dis HSE pathogenesis review (PMID 16675036). Outcome: fatal hospital day 5 per Whitley HSE elderly-mortality data. Subphase 1.3 commit 5.3.6 wave 2, pre-adjudication hold_for_revision."
+}

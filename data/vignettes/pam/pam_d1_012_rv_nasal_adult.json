@@ -1,0 +1,130 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D1-012-MMWR-2025-Texas-Nasal-Irrigation",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 71,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 4.5,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Four days of fever, severe headache, photophobia, vomiting, and progressive lethargy after several days of nasal irrigation using water drawn from a recreational vehicle freshwater holding tank during an extended camping trip; no recreational swimming or lake exposure documented.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "neti_pot_tap_water",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.4,
+    "heart_rate_bpm": 118,
+    "systolic_bp_mmHg": 122,
+    "diastolic_bp_mmHg": 72,
+    "glasgow_coma_scale": 11,
+    "oxygen_saturation_pct": 95,
+    "respiratory_rate_breaths_per_min": 24
+  },
+  "exam": {
+    "mental_status_grade": "somnolent",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 17400,
+    "platelets_per_uL": 224000,
+    "alt_ast_U_per_L": 38,
+    "crp_mg_per_L": 108.0,
+    "procalcitonin_ng_per_mL": 4.2,
+    "serum_sodium_mEq_per_L": 134
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 32.0,
+    "csf_wbc_per_mm3": 2800,
+    "csf_neutrophil_pct": 91,
+    "csf_lymphocyte_pct": 7,
+    "csf_eosinophil_pct": 2,
+    "csf_glucose_mg_per_dL": 24,
+    "csf_protein_mg_per_dL": 260,
+    "csf_lactate_mmol_per_L": 6.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "positive",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 280,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "MRI brain with FLAIR and DWI showing basal cistern enhancement, sulcal effacement, and early diffuse cerebral edema without focal hemorrhage; pattern consistent with primary amebic meningoencephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "CSF wet mount microscopy",
+        "result": "Motile trophozoites consistent with Naegleria fowleri identified within 30 minutes of CSF collection.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:40440212"
+      },
+      {
+        "test_name": "CSF Naegleria fowleri real-time PCR (CDC reference laboratory)",
+        "result": "Positive (cycle threshold 21)",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:40440212"
+      },
+      {
+        "test_name": "RV freshwater holding tank environmental sampling",
+        "result": "N. fowleri PCR-positive in water drawn from the RV freshwater plumbing used by the patient.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:40440212"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Smith et al. MMWR Morb Mortal Wkly Rep 2025 (PMID 40440212). Demographics: 71 years female, Texas, US. Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "surveillance",
+      "pmid": "40440212",
+      "doi": null
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 1 vignette 12 of 20 for Subphase 1.2 PAM corpus. Cluster: nasal_irrigation. Atypical type: rv_plumbing. Outcome: fatal. Anchored to PMID 40440212 (Smith et al., MMWR Morb Mortal Wkly Rep 2025). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: 5-pass verified 14 authors (NOT 13). Kunz J added as author #14 (corresponding author). Citation: MMWR 74(19):334-335."
+  },
+  "narrative_es": "Mujer previamente sana de 71 años, residente en el norte de Texas, que presentó cuatro días de fiebre, cefalea severa, fotofobia, vómitos y letargia progresiva tras varios días de irrigación nasal con agua extraída del tanque de agua dulce de un vehículo recreativo durante una salida de camping prolongada, sin exposición recreativa a piscina o lago documentada. El examen mostró temperatura 39.4 C, taquicardia, rigidez de nuca, signo de Kernig positivo y escala de Glasgow de 11. El líquido cefalorraquídeo mostró presión de apertura 32 cmH2O, leucocitos 2,800 por mm3 (91 por ciento neutrófilos), glucosa 24 mg/dL, proteína 260 mg/dL, lactato 6.4 mmol/L y trofozoítos móviles en frotis directo; PCR de Naegleria fowleri en LCR confirmada en el laboratorio de referencia de los CDC. El muestreo ambiental del tanque de agua dulce del vehículo recreativo fue positivo para N. fowleri por PCR. Se inició el protocolo de seis fármacos de los CDC en las primeras tres horas del ingreso; la paciente progresó a coma en 36 horas y falleció en el día hospitalario cuatro a pesar del manejo agresivo de presión intracraneal.",
+  "narrative_en": "Seventy-one-year-old previously healthy female from north Texas presented with four days of fever, severe headache, photophobia, vomiting, and progressive lethargy after several days of nasal irrigation using water drawn from a recreational vehicle freshwater holding tank during an extended camping trip, with no recreational swimming or lake exposure documented. Examination showed temperature 39.4 C, tachycardia, neck stiffness, positive Kernig sign, and a Glasgow Coma Scale of 11. Cerebrospinal fluid showed opening pressure 32 cmH2O, white blood cell count 2,800 per cubic millimeter (91 percent neutrophils), glucose 24 mg/dL, protein 260 mg/dL, lactate 6.4 mmol/L, and motile trophozoites on wet mount; CDC reference laboratory CSF real-time PCR confirmed Naegleria fowleri. Environmental sampling of the RV freshwater plumbing returned N. fowleri PCR-positive. The CDC six-drug protocol was initiated within three hours of admission; the patient progressed to coma within 36 hours and died on hospital day four despite aggressive intracranial pressure management."
+}

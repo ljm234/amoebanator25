@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PILOT-GAE-181-Alvarez-Peru-Balamuthia",
+  "ground_truth_class": 6,
+  "demographics": {
+    "age_years": 42,
+    "sex": "male",
+    "ethnicity": "mestizo",
+    "geography_region": "peru_lima_coast",
+    "altitude_residence_m": 154
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 28.0,
+    "chief_complaint": "headache",
+    "prodrome_description": "Four-week neurologic illness in a 42-year-old man from coastal Lima. Subacute progressive headache, intermittent low-grade fevers, and two weeks of word-finding difficulty. Fifteen months earlier the patient had developed a persistent indurated plaque on the central face that had been treated as cutaneous leishmaniasis without resolution. No recent freshwater exposure. Mestizo ethnicity, outdoor manual labor in agricultural soil.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 37.6,
+    "heart_rate_bpm": 92,
+    "systolic_bp_mmHg": 124,
+    "diastolic_bp_mmHg": 78,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": false,
+    "kernig_or_brudzinski_positive": false,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": true,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 8800,
+    "platelets_per_uL": 268000,
+    "alt_ast_U_per_L": 24,
+    "crp_mg_per_L": 14.0,
+    "procalcitonin_ng_per_mL": 0.2,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 18.0,
+    "csf_wbc_per_mm3": 45,
+    "csf_neutrophil_pct": 18,
+    "csf_lymphocyte_pct": 78,
+    "csf_eosinophil_pct": 4,
+    "csf_glucose_mg_per_dL": 48,
+    "csf_protein_mg_per_dL": 120,
+    "csf_lactate_mmol_per_L": 2.6,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_contrast",
+    "imaging_pattern": "multiple_ring_enhancing_lesions",
+    "imaging_finding_count": 3,
+    "imaging_text_summary": "3 ring-enhancing lesions: right parietal cortex 1.8 cm, left temporal lobe 1.2 cm, and right cerebellar hemisphere 0.9 cm, each with surrounding vasogenic edema. No basal meningeal enhancement. Pattern characteristic of granulomatous amebic encephalitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "Skin biopsy histology (centrofacial plaque)",
+        "result": "Granulomatous dermatitis with multinucleated giant cells; Balamuthia mandrillaris trophozoites identified on PAS and immunohistochemistry.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "doi:10.1016/j.jdin.2021.11.005"
+      },
+      {
+        "test_name": "Brain biopsy histology (right parietal lesion)",
+        "result": "Granulomatous inflammation with trophozoites and cysts consistent with B. mandrillaris; positive IHC.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "doi:10.1016/j.jdin.2021.11.005"
+      },
+      {
+        "test_name": "Serum Balamuthia indirect immunofluorescence (IFA)",
+        "result": "Positive, titer 1:512.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "doi:10.1016/j.jdin.2021.11.005"
+      },
+      {
+        "test_name": "Metagenomic next-generation sequencing (CSF)",
+        "result": "Balamuthia mandrillaris reads detected above contamination threshold.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "doi:10.1016/j.jdin.2021.11.005"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "PILOT-GAE-181-ADJ-1",
+      "PILOT-GAE-181-ADJ-2"
+    ],
+    "cohen_kappa": 0.7,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Alvarez P et al. (Bravo F senior author), Cutaneous balamuthiasis: a clinicopathological study, JAAD Int 2022;6:51-58 (PMID 35059659, PMC8760460, doi:10.1016/j.jdin.2021.11.005), a Peruvian cutaneous-balamuthiasis case series of centrofacial skin lesions preceding CNS disease. 42-year-old Lima mestizo male, centrofacial skin lesion 15 months preceding CNS, modest lymphocytic CSF, three ring-enhancing brain lesions, Balamuthia IFA 1:512, skin and brain biopsy positive, CSF mNGS positive. Pre-adjudication kappa 0.70.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "35059659",
+      "doi": "10.1016/j.jdin.2021.11.005"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-11T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.4.2-pilot",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Subphase 1.4 commit 5.4.2 pilot 5 of 6 for Class 6 GAE Balamuthia Peru stratum (spec 1.4.6: 12 of 15 Peru-Hispanic Balamuthia slots present with a centrofacial skin lesion preceding CNS disease). Anchored to Alvarez P et al. (Bravo F senior author), Cutaneous balamuthiasis: a clinicopathological study, JAAD Int 2022 (PMID 35059659, PMC8760460), which reports centrofacial lesions in 73 percent of patients and a mean cutaneous-lesion duration of 15 months (range 2 months to 5 years). Three ring-enhancing lesions match multifocal imaging mandate. Pre-adjudication hold_for_revision."
+  },
+  "narrative_es": "Varon mestizo de 42 anos de Lima costera, Peru, ingresado al instituto nacional de salud con cuadro neurologico de cuatro semanas: cefalea subaguda progresiva, fiebre baja intermitente y dos semanas de dificultad para encontrar palabras. Quince meses antes desarrollo una placa indurada persistente en la cara central, tratada empiricamente como leishmaniasis cutanea sin respuesta. Trabaja al aire libre con suelo agricola; sin exposicion a agua dulce. Examen: temperatura 37.6 C, Glasgow 13, confusion leve, sin rigidez de nuca, paresia derecha. La placa centro-facial persiste indurada y supurativa. LCR con presion 18 cmH2O, leucocitos 45 por mm3 (78 por ciento linfocitos), glucosa 48 mg/dL, proteina 120 mg/dL. RM con tres lesiones anulares (parietal derecha, temporal izquierda, hemisferio cerebeloso derecho). Biopsias de piel y cerebro con Balamuthia mandrillaris en histologia e IHC.",
+  "narrative_en": "A 42-year-old mestizo man from coastal Lima, Peru, presented to a national infectious diseases referral hospital with a four-week neurologic illness: subacute progressive headache, intermittent low-grade fevers, and two weeks of word-finding difficulty. Fifteen months earlier he had developed a persistent indurated plaque on the central face that had been treated empirically as cutaneous leishmaniasis without resolution. He worked outdoors in agricultural soil and reported no freshwater exposure. Examination on admission: temperature 37.6 C, Glasgow Coma Scale 13, mild confusion, no neck stiffness, and a right-sided motor deficit. The central facial plaque remained indurated and weeping. CSF showed an opening pressure of 18 cmH2O, white cell count 45 per cubic millimeter with 78 percent lymphocytes, glucose 48 mg/dL, and protein 120 mg/dL. MRI with contrast showed three ring-enhancing lesions in the right parietal cortex, left temporal lobe, and right cerebellar hemisphere. Skin and brain biopsies showed Balamuthia mandrillaris trophozoites on histology and immunohistochemistry."
+}

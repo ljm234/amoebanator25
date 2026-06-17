@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-120-NEJM-2018-US-South-region-EEE-Late-Fatal",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 58,
+    "sex": "male",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "us_south",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 5.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "58-year-old male, US South region. 5-day course: fever 39.0 C, severe headache, neck stiffness, then progressive encephalopathy with stupor day 4 and coma day 5. Recent outdoor activity in mosquito-endemic wooded area. Tertiary ED. Outcome: fatal hospital day 4. EEE per Tyler review case fatality approximately 30 percent.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 124,
+    "systolic_bp_mmHg": 102,
+    "diastolic_bp_mmHg": 64,
+    "glasgow_coma_scale": 6,
+    "oxygen_saturation_pct": 90,
+    "respiratory_rate_breaths_per_min": 28
+  },
+  "exam": {
+    "mental_status_grade": "comatose",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 13500,
+    "platelets_per_uL": 175000,
+    "alt_ast_U_per_L": 38,
+    "crp_mg_per_L": 65.0,
+    "procalcitonin_ng_per_mL": 1.2,
+    "serum_sodium_mEq_per_L": 132
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 350,
+    "csf_neutrophil_pct": 35,
+    "csf_lymphocyte_pct": 60,
+    "csf_eosinophil_pct": 5,
+    "csf_glucose_mg_per_dL": 48,
+    "csf_protein_mg_per_dL": 145,
+    "csf_lactate_mmol_per_L": 3.4,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 5,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": 1,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: diffuse cerebral edema with basal ganglia and thalamic involvement, sulcal effacement. EEE predilection for basal ganglia and thalamus per Tyler 2018 NEJM review (case fatality approximately 30 percent; permanent neurologic sequelae in 50 percent of survivors)."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_eee_igm_serology",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_eee_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:30089069"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE1-PRE-ADJ-1",
+      "VIRAL-WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.5 VIRAL vignette anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE1-PRE-ADJ-1, VIRAL-WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.5 (2026-05-08). anchor=Tyler-NEJM-2018 stratum=EEE-older-adult-fatal mosquito_endemic=true.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "review",
+      "pmid": "30089069",
+      "doi": "10.1056/NEJMra1708714"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T18:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_5",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 30089069 (Tyler 2018 NEJM viral encephalitis review). EEE high-mortality older-adult phenotype (case fatality approximately 30 percent, permanent neurologic sequelae in 50 percent of survivors per Tyler review). Demographic anchor (58yo M US South mosquito-endemic woods) sits in EEE-older-adult stratum. CSF mixed-cellularity leaning lymphocytic (350 WBC, 60 percent lymphocytes, 35 percent neutrophils, 5 percent eosinophils), glucose 48 (near spec 1.3.4 floor), elevated protein 145. EEE IgM + PCR positive. MRI diffuse cerebral edema with basal ganglia and thalamic involvement. Imputation tiers: tier_1_primary={age, sex, eee_igm, eee_pcr, mosquito_endemic_area, imaging_pattern}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days, hr}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=fatal_hospital_day_4. Tier: tier_3_imputation_within_review. 5.3.5 wave1 EEE-older-adult-fatal."
+  },
+  "narrative_es": "Varon de 58 anos en region sur de Estados Unidos, ingresado a urgencias terciarias con curso de cinco dias: fiebre 39.0 C, cefalea intensa, rigidez de nuca, luego encefalopatia progresiva con estupor al cuarto dia y coma al quinto. Actividad reciente al aire libre en area boscosa endemica de mosquitos. Examen: temperatura 39.0 C, escala de Glasgow 6, comatoso, rigidez de nuca, signo de Kernig positivo, deficit focal (debilidad izquierda), sin exantema. Liquido cefalorraquideo mostro presion de apertura 28 cmH2O, leucocitos 350 por mm3 (60 por ciento linfocitos, 35 por ciento neutrofilos), glucosa 48 mg/dL, proteina 145 mg/dL. IgM y PCR de EEE en LCR positivas. RM cerebral con edema cerebral difuso con compromiso de ganglios basales y talamo. Anclaje en revision Tyler 2018 NEJM (PMID 30089069), estrato EEE alta mortalidad. Subphase 1.3 commit 5.3.5 wave 1.",
+  "narrative_en": "A 58-year-old man in the US South region presented to a tertiary emergency department with a 5-day course of fever to 39.0 C, severe headache, neck stiffness, then progressive encephalopathy with stupor on day 4 and coma on day 5. He reported recent outdoor activity in a mosquito-endemic wooded area. Examination on admission: temperature 39.0 C, Glasgow Coma Scale 6, comatose, neck stiffness, positive Kernig sign, focal deficit (left-sided weakness), no rash. CSF showed opening pressure 28 cmH2O, white cell count 350 per cubic millimeter (60 percent lymphocytes, 35 percent neutrophils, 5 percent eosinophils), glucose 48 mg/dL, protein 145 mg/dL. CSF EEE IgM serology positive and CSF EEE PCR positive. Brain MRI with DWI/FLAIR showed diffuse cerebral edema with basal ganglia and thalamic involvement (EEE predilection per Tyler review). Anchored to Tyler 2018 NEJM viral encephalitis review (PMID 30089069), EEE high-mortality older-adult stratum (case fatality approximately 30 percent, permanent sequelae in 50 percent of survivors). Outcome: fatal hospital day 4. Subphase 1.3 commit 5.3.5 wave 1, pre-adjudication hold_for_revision."
+}

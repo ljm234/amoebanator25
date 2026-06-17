@@ -1,0 +1,86 @@
+{
+  "class_id": 2,
+  "class_name": "BACTERIAL",
+  "total_n": 28,
+  "spec_anchor": "internal distribution spec",
+  "pathogen_distribution": {
+    "S_pneumoniae": 21,
+    "N_meningitidis": 4,
+    "H_influenzae": 2,
+    "Listeria_monocytogenes": 0,
+    "gram_negative": 1
+  },
+  "pathogen_distribution_target_per_spec": {
+    "S_pneumoniae": 21,
+    "N_meningitidis": 4,
+    "H_influenzae": 2,
+    "Listeria_monocytogenes": 0,
+    "gram_negative": 1
+  },
+  "age_distribution": {
+    "adult_18_50": 11,
+    "elderly_50_plus": 11,
+    "pediatric_under_5": 5,
+    "pediatric_5_18": 1
+  },
+  "sex_distribution": {
+    "male": 16,
+    "female": 12
+  },
+  "geography_distribution": {
+    "other_global": 14,
+    "peru_lima_coast": 2,
+    "us_south": 10,
+    "peru_loreto_amazon": 1,
+    "peru_cusco_altitude": 1,
+    "peru_tumbes": 0
+  },
+  "csf_profile_ranges": {
+    "wbc_per_mm3_min": 1000,
+    "wbc_per_mm3_max": 10000,
+    "neutrophil_pct_min": 50,
+    "glucose_mg_per_dL_max": 40,
+    "protein_mg_per_dL_min": 100,
+    "gram_stain_positive_pct": "60-90"
+  },
+  "risk_factors": {
+    "none": 15,
+    "age_extreme": 10,
+    "asplenia": 1,
+    "alcohol": 1,
+    "immunocompromise": 2,
+    "pregnancy": 0
+  },
+  "outcome_distribution": {
+    "survived": 20,
+    "fatal": 7,
+    "survived_with_sequelae": 1
+  },
+  "stage_distribution": {
+    "mid": 21,
+    "late": 7
+  },
+  "cited_anchors": [
+    "PMID_15509818_van_de_Beek_2004_NEJM_Netherlands_adult_cohort",
+    "PMID_15494903_Tunkel_2004_IDSA_bacterial_meningitis_guidelines",
+    "PMID_26652862_Bijlsma_2016_Lancet_Infect_Dis_Netherlands_pneumococcal",
+    "PMID_18626301_Heckenberg_2008_Medicine_NM_adult_258_cases",
+    "PMID_29126310_MacNeil_2018_CID_US_meningococcal_epidemiology",
+    "PMID_35493127_Marcus_2022_OFID_serogroup_B_military_trainee",
+    "PMID_35265327_Park_2022_JOGH_Hib_meningitis_burden_children",
+    "PMID_29509834_Soeters_2018_CID_US_invasive_H_influenzae",
+    "PMID_27831604_Davalos_2016_RPMESP_Lima_pediatric_pneumococcal_5_3_2_pilot"
+  ],
+  "diagnostic_ambiguity_count": 5,
+  "peru_anchor_count": 4,
+  "peru_anchor_distribution": {
+    "peru_lima_coast": 2,
+    "peru_loreto_amazon": 1,
+    "peru_cusco_altitude": 1,
+    "peru_tumbes": 0
+  },
+  "freshwater_exposure_within_14d_for_all": false,
+  "adjudication_state": "pre_adjudication_hold_for_revision",
+  "pilots_validated_5_3_2": 3,
+  "diagnostic_ambiguity_type": "partial_antibiotic_pretreatment_sterile_cultures"
+}

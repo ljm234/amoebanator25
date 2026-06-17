@@ -1,0 +1,142 @@
+{
+  "schema_version": "2.0",
+  "case_id": "VIR-D3-116-Lancet-Infect-Dis-2010-Netherlands-VZV-Mid",
+  "ground_truth_class": 3,
+  "demographics": {
+    "age_years": 71,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 14.0,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "71-year-old female, Netherlands. Resolving thoracic dermatomal zoster rash 2 weeks prior, then 4-day course of fever 38.2 C, headache, neck stiffness day 2, gait ataxia day 3, confusion day 4 prompting tertiary ED Amsterdam. No freshwater. Outcome: survived with full recovery on 14-day acyclovir course; post-zoster CNS reactivation phenotype per Granerod cohort.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.2,
+    "heart_rate_bpm": 88,
+    "systolic_bp_mmHg": 134,
+    "diastolic_bp_mmHg": 80,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 18
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": true,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 7200,
+    "platelets_per_uL": 220000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 22.0,
+    "procalcitonin_ng_per_mL": 0.3,
+    "serum_sodium_mEq_per_L": 137
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 20.0,
+    "csf_wbc_per_mm3": 145,
+    "csf_neutrophil_pct": 22,
+    "csf_lymphocyte_pct": 78,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 54,
+    "csf_protein_mg_per_dL": 105,
+    "csf_lactate_mmol_per_L": 2.2,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "mri_with_dwi_flair",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "MRI brain with DWI/FLAIR: normal. VZV reactivation with dermatomal rash and CSF lymphocytic pleocytosis can show normal parenchymal imaging in the absence of overt vasculopathy or cerebellitis; Granerod 2010 Lancet ID cohort documented this benign-imaging VZV phenotype."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_vzv_pcr",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "vzv_igm_serology",
+        "result": "positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "vesicle_swab_tzanck_smear",
+        "result": "multinucleated_giant_cells_seen",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_gram_stain",
+        "result": "no_organisms",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "no_growth",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:20952256"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "VIRAL-WAVE2-PRE-ADJ-1",
+      "VIRAL-WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 5.3.6 VIRAL vignette anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort); external clinical adjudication pending; classification provisional. adjudicator_ids=VIRAL-WAVE2-PRE-ADJ-1, VIRAL-WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.6 (2026-05-08, FINAL Subphase 1.3 wave). anchor=Granerod-Lancet-ID-2010 stratum=post-zoster-cerebellitis.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "20952256",
+      "doi": "10.1016/S1473-3099(10)70222-X"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T21:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_6",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 20952256 (Granerod 2010 Lancet ID UK encephalitis cohort). Post-zoster CNS-reactivation-cerebellitis phenotype: thoracic dermatomal zoster rash 2 weeks prior, then CSF VZV-PCR-positive lymphocytic meningitis with cerebellitis (gait ataxia) phenotype. Demographic anchor (71yo F NL post-zoster cerebellitis) sits in elderly-post-zoster-CNS stratum. CSF lymphocytic (145 WBC, 78 percent lymphocytes), normal glucose 54, mildly elevated protein 105. VZV PCR + IgM positive. Imputation tiers: tier_1_primary={age, sex, vzv_pcr, vzv_igm, post_zoster_window, gait_ataxia_cerebellitis}; tier_3_within_review={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived_full_recovery. Tier: tier_3_imputation_within_review. 5.3.6 wave2 VZV-Granerod-post-zoster-cerebellitis."
+  },
+  "narrative_es": "Mujer de 71 anos en Paises Bajos (Amsterdam), ingresada a urgencias terciarias dos semanas tras exantema dermatomal toracico de zoster en resolucion, con curso de cuatro dias: fiebre 38.2 C, cefalea, rigidez de nuca al segundo dia, ataxia de marcha (fenotipo de cerebelitis) al tercer dia y confusion al cuarto. Examen: temperatura 38.2 C, escala de Glasgow 14, rigidez de nuca, signo de Kernig positivo, deficit focal (ataxia de marcha consistente con cerebelitis por VZV), sin exantema activo actual. Liquido cefalorraquideo mostro leucocitos 145 por mm3 (78 por ciento linfocitos), glucosa 54 mg/dL, proteina 105 mg/dL. PCR de VZV en LCR positiva. IgM VZV positiva. RM cerebral normal. Anclaje en cohorte Granerod 2010 Lancet ID (PMID 20952256). Subphase 1.3 commit 5.3.6 wave 2, pre-adjudicacion hold_for_revision.",
+  "narrative_en": "A 71-year-old woman in the Netherlands presented to a tertiary emergency department in Amsterdam after a resolving thoracic dermatomal zoster rash two weeks prior, then a 4-day course of fever to 38.2 C, headache, neck stiffness on day 2, gait ataxia (cerebellitis phenotype) on day 3, and confusion on day 4. She had no antecedent freshwater exposure. Examination on admission: temperature 38.2 C, Glasgow Coma Scale 14, neck stiffness, positive Kernig sign, focal deficit (gait ataxia consistent with VZV cerebellitis pattern), no rash currently active. CSF showed opening pressure 20 cmH2O, white cell count 145 per cubic millimeter (78 percent lymphocytes), glucose 54 mg/dL, protein 105 mg/dL. CSF VZV PCR positive. VZV IgM serology positive. Brain MRI with DWI/FLAIR was normal. Anchored to Granerod 2010 Lancet Infect Dis UK encephalitis cohort (PMID 20952256), post-zoster-CNS-reactivation-cerebellitis stratum. Outcome: survived with full recovery on 14-day acyclovir course. Subphase 1.3 commit 5.3.6 wave 2, pre-adjudication hold_for_revision."
+}

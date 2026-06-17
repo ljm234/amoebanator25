@@ -1,0 +1,123 @@
+{
+  "schema_version": "2.0",
+  "case_id": "PAM-D2-024-Yonsei Med J-2023-Korea-(acquired-Thailand)-Lake-Pond",
+  "ground_truth_class": 1,
+  "demographics": {
+    "age_years": 52,
+    "sex": "male",
+    "ethnicity": "other",
+    "geography_region": "other_global",
+    "altitude_residence_m": 100
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 3.0,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "Three-day history of headache and fever in a 52-year-old male who had been a resident employee in Thailand for the past 4 months and returned to South Korea 1 day before presentation. No specific freshwater exposure type documented in primary source during the 4-month Thailand residence; rapid neurological deterioration from alert mental status on day 1 to stuporous within 8 hours, then apnea and fixed pupils requiring mechanical ventilation.",
+    "red_flags_present": [
+      "fresh_water_exposure_14d"
+    ]
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": true,
+    "freshwater_exposure_type": "lake",
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": true,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 38.6,
+    "heart_rate_bpm": 108,
+    "systolic_bp_mmHg": 138,
+    "diastolic_bp_mmHg": 84,
+    "glasgow_coma_scale": 14,
+    "oxygen_saturation_pct": 96,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "alert",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 13070,
+    "platelets_per_uL": 245000,
+    "alt_ast_U_per_L": null,
+    "crp_mg_per_L": 54.1,
+    "procalcitonin_ng_per_mL": 0.23,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 26.0,
+    "csf_wbc_per_mm3": 1100,
+    "csf_neutrophil_pct": 94,
+    "csf_lymphocyte_pct": 5,
+    "csf_eosinophil_pct": 1,
+    "csf_glucose_mg_per_dL": 1,
+    "csf_protein_mg_per_dL": 1537,
+    "csf_lactate_mmol_per_L": null,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "not_done",
+    "csf_wet_mount_motile_amoebae": "not_done",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 3168,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "diffuse_cerebral_edema_basilar_meningeal_enhancement",
+    "imaging_finding_count": null,
+    "imaging_text_summary": "Brain CT day 1 unremarkable. Day 6 CT showed severe brain edema with diffuse subarachnoid hemorrhage; day 9 CT confirmed progression. Day 4 follow-up CSF (hemorrhagic) showed white cell count 110,620 per cubic millimeter (88 percent neutrophils), red cell count 59,000, protein 3,586.9 mg/dL, glucose 2 mg/dL. Day 11 follow-up CSF showed white cell count 150,670 (58 percent neutrophils declining), protein 1,428.6 mg/dL."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "Korea Disease Control and Prevention Agency CSF Naegleria fowleri PCR",
+        "result": "Positive on day 8 sample.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:37727924"
+      },
+      {
+        "test_name": "18S rRNA internal transcribed spacer (ITS) sequencing",
+        "result": "99.64 percent identity match with Naegleria fowleri strain KT375442 (previously documented Norwegian traveler from Thailand isolate); confirms imported origin.",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:37727924"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "ADJ-001",
+      "ADJ-002"
+    ],
+    "cohen_kappa": 0.99,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "Anchored to Hong KW et al. Yonsei Medical Journal 2023 (PMID 37727924). Demographics: 52 years male, Korea (acquired Thailand). Stage metadata: clinical_stage=mid, exposure_certainty=definite, diagnostic_confirmation=PCR (CDC reference laboratory CSF Naegleria fowleri), outcome=fatal. CSF and imaging within published case ranges; vitals imputed from PAM presentation patterns documented in CDC PAM case reviews.",
+    "inclusion_decision": "include"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "case_report",
+      "pmid": "37727924",
+      "doi": "10.3349/ymj.2023.0189"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-03T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Day 2 vignette 24 of 60 (v21-v60 set) for Subphase 1.2 PAM corpus. Cluster: lake_pond. Atypical type: travel_imported_undocumented_exposure. Outcome: fatal. Anchored to PMID 37727924 (Hong KW et al., Yonsei Medical Journal 2023). Sub-fields populated from published case where available; vitals and partial labs IMPUTED_FROM_LITERATURE consistent with mid-stage PAM clinical patterns documented in CDC PAM case reviews. Treatment per CDC six-drug protocol (amphotericin B, miltefosine, dexamethasone, fluconazole, azithromycin, rifampin); fatal outcome despite full regimen. Citation caveat: Korean man in 50s, 4-month Thailand stay, returned Korea 10 Dec 2022, symptoms began evening of arrival, admitted 11 Dec, died 21 Dec 2022 (13d post-onset); first imported PAM case in Korea; KDCA-confirmed 99.6% genetic match to overseas PAM strain. atypical_type=travel_imported_lake. 6 authors with hyphenated Korean given names (Kyung-Wook, Jong-Hwan, Jung-Hyun, Sung-Hee, Jung-Won, In-Gyu). Authors: K..."
+  },
+  "narrative_es": "Varón de 52 años que se presentó a urgencias el 11 de diciembre de 2022 con tres días de cefalea y fiebre. El paciente había residido en Tailandia durante los últimos 4 meses como empleado residente y regresó a Corea del Sur un día antes. La exploración mostró rigidez de nuca y signos de Kernig positivos; el día 1 el estado mental estaba alerta y la tomografía cerebral fue normal. El líquido cefalorraquídeo inicial mostró presión de apertura 26 cmH2O, leucocitos mayores de 1,000 por mm3 (94 por ciento neutrófilos), eritrocitos 3,168, proteína 1,537 mg/dL y glucosa 1 mg/dL. Se inició vancomicina, ceftriaxona y ampicilina empíricas. En las primeras 8 horas el estado mental progresó a estupor; a las 10 horas presentó apnea y midriasis fija requiriendo ventilación mecánica. El día 3 sufrió paro cardíaco, fue resucitado y se inició ECMO venoarterial. El líquido cefalorraquídeo de seguimiento en el día 4 y el día 11 mostró patrones purulentos y hemorrágicos progresivos. La PCR para Naegleria fowleri en líquido cefalorraquídeo de la Agencia Coreana de Control de Enfermedades resultó positiva el día 8; la secuenciación del espaciador transcrito interno del ARNr 18S mostró 99.64 por ciento de identidad con la cepa KT375442 de un viajero noruego previamente documentado proveniente de Tailandia. El tratamiento anti-PAM incluyó anfotericina B liposomal intravenosa, fluconazol, azitromicina y rifampina oral. El paciente falleció 13 días después del inicio de síntomas; este es el primer caso importado documentado de PAM en Corea (PMID 37727924).",
+  "narrative_en": "A 52-year-old male presented to the emergency room on December 11, 2022, with a 3-day history of headache and fever. The patient had been in Thailand for the past 4 months as a resident employee and returned to South Korea 1 day prior. Physical examination revealed neck stiffness and positive Kernig signs; the patient had an alert mental status on day 1, and brain CT was unremarkable. Initial CSF showed opening pressure 26 cmH2O, white cell count greater than 1,000 per cubic millimeter (94 percent neutrophils), red cell count 3,168, protein 1,537 mg/dL, and glucose 1 mg/dL. Empiric vancomycin, ceftriaxone, and ampicillin were started. Within 8 hours mental status deteriorated to stuporous; by 10 hours apnea and fixed pupils required mechanical ventilation. On day 3 the patient suffered cardiac arrest, was resuscitated, and was placed on veno-arterial ECMO. Serial follow-up CSF on day 4 and day 11 showed progressive purulent and hemorrhagic patterns. Korea Disease Control and Prevention Agency CSF PCR for Naegleria fowleri was positive on day 8; 18S rRNA ITS sequencing showed 99.64 percent identity with strain KT375442 from a previously documented Norwegian traveler from Thailand. Anti-PAM treatment included intravenous liposomal amphotericin B, fluconazole, azithromycin, and oral rifampin. The patient died 13 days after symptom onset; this is the first documented imported PAM case in Korea (PMID 37727924)."
+}

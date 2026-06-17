@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-077-NEJM-2004-Netherlands-SP-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 18,
+    "sex": "female",
+    "ethnicity": "white_non_hispanic",
+    "geography_region": "other_global",
+    "altitude_residence_m": 5
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 0.5,
+    "chief_complaint": "fever_with_headache",
+    "prodrome_description": "18-year-old female, Netherlands. Sudden onset fever 39.5 C, severe headache, neck stiffness, photophobia within 12 hours. Tertiary ED Amsterdam. No freshwater. Triad present (van de Beek young-adult subgroup). Outcome: survived no sequelae. Antibiotic at hour 1 plus dexamethasone EU guideline.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.5,
+    "heart_rate_bpm": 122,
+    "systolic_bp_mmHg": 115,
+    "diastolic_bp_mmHg": 70,
+    "glasgow_coma_scale": 13,
+    "oxygen_saturation_pct": 97,
+    "respiratory_rate_breaths_per_min": 22
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": false
+  },
+  "labs": {
+    "wbc_blood_per_uL": 21500,
+    "platelets_per_uL": 285000,
+    "alt_ast_U_per_L": 28,
+    "crp_mg_per_L": 195.0,
+    "procalcitonin_ng_per_mL": 8.0,
+    "serum_sodium_mEq_per_L": 138
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 6400,
+    "csf_neutrophil_pct": 88,
+    "csf_lymphocyte_pct": 12,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 24,
+    "csf_protein_mg_per_dL": 210,
+    "csf_lactate_mmol_per_L": 6.6,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 4,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_positive_diplococci",
+        "sensitivity_pct": 80.0,
+        "specificity_pct": 97.0,
+        "citation_pmid_or_doi": "PMID:15509818"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "streptococcus_pneumoniae",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15509818"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "streptococcus_pneumoniae_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:15509818"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE1-PRE-ADJ-1",
+      "WAVE1-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 1 vignette anchored to PMID 15509818 (van de Beek 2004 NEJM); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE1-PRE-ADJ-1, WAVE1-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.3 (2026-05-08). anchor=van-de-Beek-NEJM-2004 stratum=young-adult.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "cohort",
+      "pmid": "15509818",
+      "doi": "10.1056/NEJMoa040845"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T12:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_3",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 15509818 (van de Beek 2004 NEJM), 696-episode prospective Netherlands cohort 1998-2002 (SP 51 percent, classic triad 44 percent). Demographic anchor (18yo F young adult) sits in young-adult subgroup. CSF profile bacterial range. Imputation tiers: tier_1_primary={age, sex, csf_culture, csf_gram_stain, triad}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein, gcs}; tier_4_priors={temp, symptom_days}. Indeterminate=none. Diagnostic_ambiguity=false. Outcome=survived. Antibiotic_started_hours=1. Tier: tier_3_imputation_within_cohort_review. 5.3.3 wave1 SP-young-adult."
+  },
+  "narrative_es": "Mujer de 18 anos en Paises Bajos (Amsterdam), ingresada a urgencias terciarias con inicio subito de fiebre 39.5 C, cefalea intensa, rigidez de nuca y fotofobia en 12 horas. Examen: temperatura 39.5 C, escala de Glasgow 13, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Triada clasica presente (subgrupo de adultos jovenes de la cohorte van de Beek 2004). Liquido cefalorraquideo mostro presion de apertura 28 cmH2O, leucocitos 6,400 por mm3 (88 por ciento neutrofilos), glucosa 24 mg/dL, proteina 210 mg/dL. Tincion de Gram con diplococos grampositivos y cultivo Streptococcus pneumoniae. Anclaje primario en cohorte van de Beek 2004 NEJM (PMID 15509818). Subphase 1.3 commit 5.3.3 wave 1.",
+  "narrative_en": "An 18-year-old woman in the Netherlands presented to a tertiary emergency department in Amsterdam with sudden onset of fever to 39.5 C, severe headache, neck stiffness, and photophobia within 12 hours. Examination on admission: temperature 39.5 C, Glasgow Coma Scale 13, neck stiffness, positive Kernig sign, no focal deficit, no rash. Classic triad present (this case sits in the young-adult subgroup of the van de Beek 2004 cohort). CSF showed opening pressure 28 cmH2O, white cell count 6,400 per cubic millimeter (88 percent neutrophils), glucose 24 mg/dL, protein 210 mg/dL. Gram stain revealed gram-positive diplococci; culture identified Streptococcus pneumoniae. Primary anchor: PMID 15509818 (van de Beek 2004 NEJM), 696-episode prospective Netherlands cohort 1998-2002 (SP 51 percent, classic triad 44 percent). Outcome: survived no sequelae. Subphase 1.3 commit 5.3.3 wave 1, pre-adjudication hold_for_revision."
+}

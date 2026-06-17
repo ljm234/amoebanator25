@@ -1,0 +1,135 @@
+{
+  "schema_version": "2.0",
+  "case_id": "BACT-D3-086-JOGH-2022-Cusco-Hib-Mid",
+  "ground_truth_class": 2,
+  "demographics": {
+    "age_years": 3,
+    "sex": "male",
+    "ethnicity": "mestizo",
+    "geography_region": "peru_cusco_altitude",
+    "altitude_residence_m": 3399
+  },
+  "history": {
+    "symptom_onset_to_presentation_days": 2.5,
+    "chief_complaint": "altered_mental_status",
+    "prodrome_description": "3-year-old male, Cusco Peru highlands (3,399 m). 60-hour gradual progression: fever 39.0 C, vomiting, decreasing responsiveness, neck stiffness. Recent otitis media. No freshwater. Vaccination history incomplete (Hib coverage not yet achieved). Outcome: survived no sequelae. Antibiotic at hour 2 plus dexamethasone.",
+    "red_flags_present": []
+  },
+  "exposure": {
+    "freshwater_exposure_within_14d": false,
+    "freshwater_exposure_type": null,
+    "altitude_exposure_within_7d_m": null,
+    "pork_consumption_or_taenia_contact": false,
+    "mosquito_endemic_area_exposure": false,
+    "immunocompromise_status": "none",
+    "hiv_status": "negative",
+    "cd4_count_cells_per_uL": null
+  },
+  "vitals": {
+    "temperature_celsius": 39.0,
+    "heart_rate_bpm": 142,
+    "systolic_bp_mmHg": 100,
+    "diastolic_bp_mmHg": 60,
+    "glasgow_coma_scale": 12,
+    "oxygen_saturation_pct": 92,
+    "respiratory_rate_breaths_per_min": 30
+  },
+  "exam": {
+    "mental_status_grade": "confused",
+    "neck_stiffness": true,
+    "kernig_or_brudzinski_positive": true,
+    "focal_neurological_deficit": false,
+    "cranial_nerve_palsy": "none",
+    "skin_lesion_centrofacial_chronic": false,
+    "petechial_or_purpuric_rash": false,
+    "papilledema_on_fundoscopy": null
+  },
+  "labs": {
+    "wbc_blood_per_uL": 21500,
+    "platelets_per_uL": 285000,
+    "alt_ast_U_per_L": 26,
+    "crp_mg_per_L": 195.0,
+    "procalcitonin_ng_per_mL": 7.5,
+    "serum_sodium_mEq_per_L": 136
+  },
+  "csf": {
+    "opening_pressure_cmH2O": 28.0,
+    "csf_wbc_per_mm3": 4800,
+    "csf_neutrophil_pct": 88,
+    "csf_lymphocyte_pct": 12,
+    "csf_eosinophil_pct": 0,
+    "csf_glucose_mg_per_dL": 22,
+    "csf_protein_mg_per_dL": 210,
+    "csf_lactate_mmol_per_L": 6.8,
+    "csf_ada_U_per_L": null,
+    "csf_crag_lfa_result": "negative",
+    "csf_wet_mount_motile_amoebae": "negative",
+    "csf_xanthochromia_present": false,
+    "csf_rbc_per_mm3": 5,
+    "csf_rbc_decreasing_across_tubes": null
+  },
+  "imaging": {
+    "imaging_modality": "ct_noncontrast",
+    "imaging_pattern": "normal",
+    "imaging_finding_count": 0,
+    "imaging_text_summary": "CT head non-contrast: normal at admission. No focal lesion, no hydrocephalus, no midline shift, no mass effect. Pattern consistent with early-stage adult community-acquired bacterial meningitis."
+  },
+  "diagnostic_tests": {
+    "results": [
+      {
+        "test_name": "csf_gram_stain",
+        "result": "gram_negative_coccobacilli",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35265327"
+      },
+      {
+        "test_name": "csf_culture",
+        "result": "haemophilus_influenzae_type_b",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35265327"
+      },
+      {
+        "test_name": "blood_culture",
+        "result": "haemophilus_influenzae_type_b_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35265327"
+      },
+      {
+        "test_name": "csf_hib_capsular_antigen",
+        "result": "haemophilus_influenzae_type_b_positive",
+        "sensitivity_pct": null,
+        "specificity_pct": null,
+        "citation_pmid_or_doi": "PMID:35265327"
+      }
+    ]
+  },
+  "adjudication": {
+    "adjudicator_ids": [
+      "WAVE2-PRE-ADJ-1",
+      "WAVE2-PRE-ADJ-2"
+    ],
+    "cohen_kappa": 0.0,
+    "disagreement_resolution": null,
+    "anchoring_documentation": "stage=pre_adjudication; status=pending_external_review; self_review_disposition=hold_for_revision; self_review_notes=wave 2 vignette anchored to PMID 35265327 (Park 2022 JOGH); external clinical adjudication pending; classification provisional. adjudicator_ids=WAVE2-PRE-ADJ-1, WAVE2-PRE-ADJ-2 (sentinel); cohen_kappa=0.0 placeholder; adjudicator_name=null; adjudication_date=null; post_adjudication_disposition=null. Subphase 1.3 commit 5.3.4 (2026-05-08). anchor=Park-2022-JOGH-Hib-meningitis-burden stratum=pediatric-Cusco-altitude.",
+    "inclusion_decision": "hold_for_revision"
+  },
+  "literature_anchors": [
+    {
+      "anchor_type": "meta_analysis",
+      "pmid": "35265327",
+      "doi": "10.7189/jogh.12.04014"
+    }
+  ],
+  "provenance": {
+    "generation_timestamp_utc": "2026-05-08T15:00:00Z",
+    "generator_model_identifier": "scripts.generate_pam_vignettes/v1.subphase_1_3_commit_5_3_4",
+    "prompt_hash_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "schema_version": "2.0",
+    "inclusion_decision_rationale": "Anchored to PMID 35265327 (Park 2022 JOGH systematic review and meta-analysis of Hib meningitis burden in children under 5, pooled case-fatality 11.21 percent, sequelae in 30 to 40 percent of survivors) overlaid with Andean-pediatric incomplete-Hib-coverage stratum (Cusco altitude region 3,399m). Demographic anchor (3yo M Cusco pediatric undervaccinated post-otitis-media) sits in surveillance gap stratum. CSF bacterial range; Gram stain + culture + antigen all confirm Hib. Imputation tiers: tier_1_primary={age, sex, region, csf_culture, csf_gram_stain, csf_hib_antigen, otitis_media}; tier_3_within_cohort={csf_wbc, neutrophil_pct, glucose, protein}; tier_4_priors={temp, gcs, symptom_days}. Indeterminate=papilledema_on_fundoscopy. Diagnostic_ambiguity=false. Outcome=survived. Tier: tier_4_imputation_literature_anchored. 5.3.4 wave2 Hib-Cusco-pediatric."
+  },
+  "narrative_es": "Varon de tres anos de Cusco Peru en sierra andina (3,399 m), ingresado a urgencias pediatricas terciarias con 60 horas de progresion gradual: fiebre 39.0 C, vomitos, respuesta disminuida y rigidez de nuca. Tratamiento previo para otitis media en la semana anterior; cobertura vacunal Hib incompleta. Examen: temperatura 39.0 C, escala de Glasgow 12, rigidez de nuca, signo de Kernig positivo, sin deficit focal, sin exantema. Liquido cefalorraquideo mostro presion de apertura 28 cmH2O, leucocitos 4,800 por mm3 (88 por ciento neutrofilos), glucosa 22 mg/dL, proteina 210 mg/dL. Tincion de Gram con cocobacilos gramnegativos y cultivo Haemophilus influenzae tipo b; antigeno Hib en liquido positivo. Anclaje en Park 2022 JOGH (PMID 35265327, carga global y regional de meningitis por Hib en menores de 5 anos, letalidad combinada 11.21 por ciento). Subphase 1.3 commit 5.3.4 wave 2.",
+  "narrative_en": "A three-year-old boy from Cusco, Peru in the Andean highlands (3,399 m altitude residence) presented to a tertiary pediatric emergency department with a 60-hour gradual progression of fever to 39.0 C, vomiting, decreasing responsiveness, and neck stiffness. He had been treated for otitis media in the preceding week; vaccination history showed incomplete Hib coverage. Examination on admission: temperature 39.0 C, Glasgow Coma Scale 12, neck stiffness, positive Kernig sign, no focal deficit, no rash. CSF showed opening pressure 28 cmH2O, white cell count 4,800 per cubic millimeter (88 percent neutrophils), glucose 22 mg/dL, protein 210 mg/dL. Gram stain revealed gram-negative coccobacilli; culture identified Haemophilus influenzae type b; CSF Hib capsular antigen positive. Anchored to Park 2022 JOGH (PMID 35265327, global and regional burden of Hib meningitis in children under 5, pooled case-fatality 11.21 percent) overlaid with incomplete-vaccination-coverage Andean stratum. Outcome: survived no sequelae. Subphase 1.3 commit 5.3.4 wave 2, pre-adjudication hold_for_revision."
+}
