@@ -1,0 +1,34 @@
+<style>
+/* -- Q15.5.D: WCAG-AA contrast pattern ------------------------------ */
+.stAlert[kind="error"] {
+    background: #FFEBEE;            /* light red wash */
+    border-left: 4px solid #B71C1C; /* deep red accent */
+    color: #B71C1C;                 /* deep red text - contrast 7.18:1 */
+}
+.stAlert[kind="warning"] {
+    background: #FFF8E1;            /* light amber wash */
+    border-left: 4px solid #E65100; /* deep amber accent */
+    color: #E65100;                 /* deep amber text */
+}
+.stAlert[kind="info"] {
+    background: #E3F2FD;            /* light blue wash */
+    border-left: 4px solid #0D47A1; /* deep blue accent (theme primary) */
+    color: #0D47A1;                 /* deep blue text - contrast 8.21:1 */
+}
+.stAlert[kind="success"] {
+    background: #E8F5E9;            /* light green wash */
+    border-left: 4px solid #1B5E20; /* deep green accent */
+    color: #1B5E20;                 /* deep green text - contrast 7.59:1 */
+}
+
+/* -- Q15.5.E: prefers-reduced-motion -------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .stSpinner { display: none !important; }
+}
+</style>
+Research prototype, NOT a medical device. Trained on n=30 synthetic patient vignettes (n_train=24, n_val=6); contains zero real PHI. Outputs are calibrated probabilities, **limited to** the n=30 training distribution - not diagnoses. Not for clinical decision support, not validated. Source + caveats: github.com/ljm234/amoebanator-25 - Contact: lmontenegrocalla@mail.weber.edu (ORCID 0009-0000-7851-7139)

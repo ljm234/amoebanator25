@@ -1,0 +1,40 @@
+<style>
+/* -- Q15.5.D: WCAG-AA contrast pattern ------------------------------ */
+.stAlert[kind="error"] {
+    background: #FFEBEE;            /* light red wash */
+    border-left: 4px solid #B71C1C; /* deep red accent */
+    color: #B71C1C;                 /* deep red text - contrast 7.18:1 */
+}
+.stAlert[kind="warning"] {
+    background: #FFF8E1;            /* light amber wash */
+    border-left: 4px solid #E65100; /* deep amber accent */
+    color: #E65100;                 /* deep amber text */
+}
+.stAlert[kind="info"] {
+    background: #E3F2FD;            /* light blue wash */
+    border-left: 4px solid #0D47A1; /* deep blue accent (theme primary) */
+    color: #0D47A1;                 /* deep blue text - contrast 8.21:1 */
+}
+.stAlert[kind="success"] {
+    background: #E8F5E9;            /* light green wash */
+    border-left: 4px solid #1B5E20; /* deep green accent */
+    color: #1B5E20;                 /* deep green text - contrast 7.59:1 */
+}
+
+/* -- Q15.5.E: prefers-reduced-motion -------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .stSpinner { display: none !important; }
+}
+</style>
+Research prototype, NOT a medical device. Trained on n=30 synthetic patient vignettes (n_train=24, n_val=6); contains zero real PHI. Outputs are calibrated probabilities, **limited to** the n=30 training distribution - not diagnoses. Not for clinical decision support, not validated. Source + caveats: github.com/ljm234/amoebanator-25 - Contact: lmontenegrocalla@mail.weber.edu (ORCID 0009-0000-7851-7139)
+Tabular MLP, 914 parameters, 6.4 KB serialized. `Linear(10, 32) → ReLU → Linear(32, 16) → ReLU → Linear(16, 2)` - binary classifier (PAM risk: Low / High) with two output logits consumed by softmax + temperature scaling at inference time. Architecture verified against `outputs/model/model.pt` tensor shapes during the Phase 4.5 PRE-FLIGHT audit.
+**n=30 synthetic patient vignettes** drawn from published case-series marginals (Yoder 2010, Cope 2016, CDC 2025). Train/val split: n_train=24, n_val=6, `random_state=42`, `test_size=0.2`, `stratify=y`. Zero real PHI; vignettes are reproducibility-friendly but not externally calibrated - Phase 6 (MIMIC-IV cohort, target n ≥ 200) will provide the first contact with real-world clinical data. See `docs/data_card.md` (Gebru et al. 2021 datasheet format) for the full lineage.
+Temperature scaling (Guo et al. 2017) optimised via L-BFGS on the n=6 validation set. Current `T = 0.27`. **T < 1 means the calibrator amplifies the model's raw confidence** - the opposite of typical Guo 2017 behaviour (T > 1 attenuates overconfidence). On n=6 the L-BFGS landscape lacks curvature to constrain T meaningfully; different random subsets of n=6 would produce T values in the range 0.1-2.0. Treat the reported T as a sample-specific point estimate, not as evidence of structural under-/over-confidence. See `docs/model_card.md` §Caveats for the full discussion.
+Move the slider to see how `q-hat` and the regime badge respond to different significance levels. The 3-state regime badge (ASYMPTOTIC / FINITE-SAMPLE / INVALID) is computed from `(n_cal, α, k)` where `k = ⌈(n_cal + 1)(1 − α)⌉`.
+With `n_cal = 6`, `α = 0.10` → `k = ⌈(n+1)(1−α)⌉ = 7`.
+Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - lmontenegrocalla@mail.weber.edu
