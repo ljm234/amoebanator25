@@ -1,0 +1,190 @@
+{
+  "n_steps": 8,
+  "n_ok": 8,
+  "n_fail": 0,
+  "n_artifacts_expected": 17,
+  "n_artifacts_present": 17,
+  "steps": [
+    {
+      "name": "Train MLP + temperature + val_preds",
+      "command": [
+        "python",
+        "-m",
+        "ml.training_calib_dca"
+      ],
+      "artifacts": [
+        "outputs/model/model.pt",
+        "outputs/model/features.json",
+        "outputs/model/temperature_scale.json",
+        "outputs/metrics/val_preds.csv",
+        "outputs/metrics/metrics.json"
+      ],
+      "duration_s": 4.32,
+      "exit_code": 0,
+      "stdout_tail": "Validation AUC (calibrated): 1.0\nRecall(High) @0.5: 1.0\nT (temperature, clamped [0.1,10.0]): 0.2723\nSaved outputs/metrics/val_preds.csv and metrics.json, plus model artifacts.",
+      "artifacts_present": {
+        "outputs/model/model.pt": true,
+        "outputs/model/features.json": true,
+        "outputs/model/temperature_scale.json": true,
+        "outputs/metrics/val_preds.csv": true,
+        "outputs/metrics/metrics.json": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/model/model.pt": 6397,
+        "outputs/model/features.json": 155,
+        "outputs/model/temperature_scale.json": 29,
+        "outputs/metrics/val_preds.csv": 479,
+        "outputs/metrics/metrics.json": 80
+      }
+    },
+    {
+      "name": "Refit Mahalanobis on train split only",
+      "command": [
+        "python",
+        "scripts/ood/refit_mahalanobis_train.py",
+        "--replace"
+      ],
+      "artifacts": [
+        "outputs/metrics/feature_stats.json",
+        "outputs/metrics/feature_stats_train.json"
+      ],
+      "duration_s": 1.67,
+      "exit_code": 0,
+      "stdout_tail": "  ]\n}\n{\n  \"replaced\": \"outputs/metrics/feature_stats.json\"\n}",
+      "artifacts_present": {
+        "outputs/metrics/feature_stats.json": true,
+        "outputs/metrics/feature_stats_train.json": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/feature_stats.json": 1672,
+        "outputs/metrics/feature_stats_train.json": 1672
+      }
+    },
+    {
+      "name": "Fit logit-energy + neg-energy gates",
+      "command": [
+        "python",
+        "scripts/ood/fit_gates.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/energy_threshold.json",
+        "outputs/metrics/ood_energy.json"
+      ],
+      "duration_s": 2.6,
+      "exit_code": 0,
+      "stdout_tail": "    \"tau\": -1.0000000049999991e-08,\n    \"q\": 0.95,\n    \"n\": 6\n  }\n}",
+      "artifacts_present": {
+        "outputs/metrics/energy_threshold.json": true,
+        "outputs/metrics/ood_energy.json": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/energy_threshold.json": 55,
+        "outputs/metrics/ood_energy.json": 85
+      }
+    },
+    {
+      "name": "Fit conformal qhat from probabilities",
+      "command": [
+        "python",
+        "scripts/conformal/conformal_fit_from_probs.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/conformal.json"
+      ],
+      "duration_s": 0.48,
+      "exit_code": 0,
+      "stdout_tail": "  \"alpha\": 0.1,\n  \"qhat\": 0.016156351193785556,\n  \"n\": 6,\n  \"source\": \"val_preds.csv\"\n}",
+      "artifacts_present": {
+        "outputs/metrics/conformal.json": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/conformal.json": 89
+      }
+    },
+    {
+      "name": "Four-cell ablation across baselines",
+      "command": [
+        "python",
+        "scripts/experiments/run_ablation.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/ablation_table.json",
+        "outputs/metrics/ablation_table.csv"
+      ],
+      "duration_s": 53.76,
+      "exit_code": 0,
+      "stdout_tail": "  \"wrote\": [\n    \"outputs/metrics/ablation_table.json\",\n    \"outputs/metrics/ablation_table.csv\"\n  ]\n}",
+      "artifacts_present": {
+        "outputs/metrics/ablation_table.json": true,
+        "outputs/metrics/ablation_table.csv": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/ablation_table.json": 10246,
+        "outputs/metrics/ablation_table.csv": 4611
+      }
+    },
+    {
+      "name": "Empirical coverage sweep across alpha",
+      "command": [
+        "python",
+        "scripts/conformal/eval_coverage_sweep.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/coverage_sweep.json",
+        "outputs/metrics/coverage_sweep.png"
+      ],
+      "duration_s": 1.03,
+      "exit_code": 0,
+      "stdout_tail": "      \"abstain_rate\": 0.0,\n      \"n\": 3\n    }\n  ]\n}",
+      "artifacts_present": {
+        "outputs/metrics/coverage_sweep.json": true,
+        "outputs/metrics/coverage_sweep.png": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/coverage_sweep.json": 492,
+        "outputs/metrics/coverage_sweep.png": 39198
+      }
+    },
+    {
+      "name": "ABSTAIN-rate vs accuracy Pareto",
+      "command": [
+        "python",
+        "scripts/conformal/abstain_pareto.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/abstain_pareto.json",
+        "outputs/metrics/abstain_pareto.png"
+      ],
+      "duration_s": 0.76,
+      "exit_code": 0,
+      "stdout_tail": "    \"outputs/metrics/abstain_pareto.json\",\n    \"outputs/metrics/abstain_pareto.png\"\n  ],\n  \"n_points\": 51\n}",
+      "artifacts_present": {
+        "outputs/metrics/abstain_pareto.json": true,
+        "outputs/metrics/abstain_pareto.png": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/abstain_pareto.json": 5218,
+        "outputs/metrics/abstain_pareto.png": 27795
+      }
+    },
+    {
+      "name": "Synthetic OOD shift benchmarks",
+      "command": [
+        "python",
+        "scripts/ood/synthetic_ood_benchmark.py"
+      ],
+      "artifacts": [
+        "outputs/metrics/synthetic_ood_benchmark.json"
+      ],
+      "duration_s": 2.61,
+      "exit_code": 0,
+      "stdout_tail": "      \"median_in_dist\": -0.020363732328273425,\n      \"median_ood\": -0.020363732328273425\n    }\n  }\n}",
+      "artifacts_present": {
+        "outputs/metrics/synthetic_ood_benchmark.json": true
+      },
+      "artifacts_size_bytes": {
+        "outputs/metrics/synthetic_ood_benchmark.json": 1117
+      }
+    }
+  ]
+}

@@ -1,0 +1,471 @@
+{
+  "lightgbm_available": true,
+  "splits": {
+    "train": {
+      "n": 18,
+      "n_pos": 7,
+      "pos_rate": 0.3888888888888889
+    },
+    "val": {
+      "n": 6,
+      "n_pos": 2,
+      "pos_rate": 0.3333333333333333
+    },
+    "test": {
+      "n": 6,
+      "n_pos": 2,
+      "pos_rate": 0.3333333333333333
+    }
+  },
+  "operating_point": 0.5,
+  "rows": [
+    {
+      "model": "logistic_platt",
+      "cell": "base",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "logistic_platt",
+      "cell": "+cal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "logistic_platt",
+      "cell": "+conformal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "qhat": 0.16878447168592492,
+      "alpha": 0.1
+    },
+    {
+      "model": "logistic_platt",
+      "cell": "+ood",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "ood_abstain_rate": 0.0,
+      "qhat": 0.16878447168592492,
+      "alpha": 0.1
+    },
+    {
+      "model": "rf_calibrated",
+      "cell": "base",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "rf_calibrated",
+      "cell": "+cal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "rf_calibrated",
+      "cell": "+conformal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "qhat": 0.0,
+      "alpha": 0.1
+    },
+    {
+      "model": "rf_calibrated",
+      "cell": "+ood",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "ood_abstain_rate": 0.0,
+      "qhat": 0.0,
+      "alpha": 0.1
+    },
+    {
+      "model": "gbm_isotonic",
+      "cell": "base",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 0.5,
+      "auc_ci": {
+        "point": 0.5,
+        "mean": 0.5,
+        "std": 0.0,
+        "lo": 0.5,
+        "hi": 0.5,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 0.0,
+      "recall_ci": {
+        "point": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "gbm_isotonic",
+      "cell": "+cal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 0.5,
+      "auc_ci": {
+        "point": 0.5,
+        "mean": 0.5,
+        "std": 0.0,
+        "lo": 0.5,
+        "hi": 0.5,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 0.0,
+      "recall_ci": {
+        "point": 0.0,
+        "mean": 0.0,
+        "std": 0.0,
+        "lo": 0.0,
+        "hi": 0.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "gbm_isotonic",
+      "cell": "+conformal",
+      "n": 0,
+      "n_pos": 0,
+      "auc": NaN,
+      "auc_ci": null,
+      "recall_high@0.5": NaN,
+      "recall_ci": null,
+      "abstain_rate": 1.0,
+      "qhat": 0.6166666666666667,
+      "alpha": 0.1
+    },
+    {
+      "model": "gbm_isotonic",
+      "cell": "+ood",
+      "n": 0,
+      "n_pos": 0,
+      "auc": NaN,
+      "auc_ci": null,
+      "recall_high@0.5": NaN,
+      "recall_ci": null,
+      "abstain_rate": 1.0,
+      "ood_abstain_rate": 0.0,
+      "qhat": 0.6166666666666667,
+      "alpha": 0.1
+    },
+    {
+      "model": "amoebanator_mlp",
+      "cell": "base",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "amoebanator_mlp",
+      "cell": "+cal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0
+    },
+    {
+      "model": "amoebanator_mlp",
+      "cell": "+conformal",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "qhat": 0.00016347935888916254,
+      "alpha": 0.1
+    },
+    {
+      "model": "amoebanator_mlp",
+      "cell": "+ood",
+      "n": 6,
+      "n_pos": 2,
+      "auc": 1.0,
+      "auc_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "recall_high@0.5": 1.0,
+      "recall_ci": {
+        "point": 1.0,
+        "mean": 1.0,
+        "std": 0.0,
+        "lo": 1.0,
+        "hi": 1.0,
+        "alpha": 0.05,
+        "n_resamples": 2000,
+        "n_skipped": 0
+      },
+      "abstain_rate": 0.0,
+      "ood_abstain_rate": 0.0,
+      "qhat": 0.00016347935888916254,
+      "alpha": 0.1
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "n_in_dist": 30,
+  "n_covariate_shift": 30,
+  "n_label_shift": 30,
+  "covariate_shift": {
+    "mahalanobis_d2": {
+      "auc": 0.5577777777777778,
+      "n_finite": 60,
+      "median_in_dist": 5.590444159555178,
+      "median_ood": 7.241187362986991
+    },
+    "logit_energy": {
+      "auc": 0.49666666666666665,
+      "n_finite": 60,
+      "median_in_dist": -5.096292226173858,
+      "median_ood": -5.641539575594769
+    },
+    "neg_energy": {
+      "auc": 0.5033333333333333,
+      "n_finite": 60,
+      "median_in_dist": -0.020363732328273425,
+      "median_ood": -0.011690949093578363
+    }
+  },
+  "label_shift": {
+    "mahalanobis_d2": {
+      "auc": 0.5000000000000001,
+      "n_finite": 60,
+      "median_in_dist": 5.590444159555178,
+      "median_ood": 5.590444159555178
+    },
+    "logit_energy": {
+      "auc": 0.5000000000000001,
+      "n_finite": 60,
+      "median_in_dist": -5.096292226173858,
+      "median_ood": -5.096292226173858
+    },
+    "neg_energy": {
+      "auc": 0.5,
+      "n_finite": 60,
+      "median_in_dist": -0.020363732328273425,
+      "median_ood": -0.020363732328273425
+    }
+  }
+}
