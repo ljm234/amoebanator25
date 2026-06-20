@@ -31,7 +31,7 @@
     .stSpinner { display: none !important; }
 }
 </style>
-Research prototype, NOT a medical device. Trained on n=30 synthetic patient vignettes (n_train=24, n_val=6); contains zero real PHI. Outputs are calibrated probabilities, **limited to** the n=30 training distribution - not diagnoses. Not for clinical decision support, not validated. Source + caveats: github.com/ljm234/amoebanator-25 - Contact: lmontenegrocalla@mail.weber.edu (ORCID 0009-0000-7851-7139)
+Research prototype, NOT a medical device. Trained on n=30 synthetic patient vignettes (n_train=24, n_val=6); contains zero real PHI. Outputs are calibrated probabilities, **limited to** the n=30 training distribution - not diagnoses. Not for clinical decision support, not validated. Source + caveats: github.com/ljm234/amoebanator25 - Contact: jordanmontenegroc.99@gmail.com (ORCID 0009-0000-7851-7139)
 - **`cope2016pam`** Cope JR, Ali IKM. *Primary Amebic Meningoencephalitis: What Have We Learned in the Last 5 Years?* **Current Infectious Disease Reports** 2016. PMID 27614893. DOI 10.1007/s11908-016-0539-4.
 - **`yoder2010pam`** Yoder JS, Eddy BA, Visvesvara GS, Capewell L, Beach MJ. *The epidemiology of primary amoebic meningoencephalitis in the USA, 1962-2008.* **Epidemiology and Infection** 2010. PMID 19845995. DOI 10.1017/S0950268809991014.
 - **`capewell2015pam`** Capewell LG, Harris AM, Yoder JS, Cope JR, et al. *Diagnosis, Clinical Course, and Treatment of Primary Amoebic Meningoencephalitis in the United States, 1937-2013: A Review of the Historical Literature.* **Journal of the Pediatric Infectious Diseases Society** 2015. PMID 26582886. DOI 10.1093/jpids/piu103.

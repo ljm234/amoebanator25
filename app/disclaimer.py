@@ -34,16 +34,16 @@ import streamlit as st
 #   - "n=30"
 #   - "limited to"
 #   - "ORCID"
-#   - "lmontenegrocalla@mail.weber.edu"
-# Source URL post Q19.D rename: github.com/ljm234/amoebanator-25
+#   - "jordanmontenegroc.99@gmail.com"
+# Source URL post Q19.D rename: github.com/ljm234/amoebanator25
 DISCLAIMER_TEXT: str = (
     "Research prototype, NOT a medical device. Trained on n=30 "
     "synthetic patient vignettes (n_train=24, n_val=6); contains zero "
     "real PHI. Outputs are calibrated probabilities, **limited to** "
     "the n=30 training distribution - not diagnoses. Not for clinical "
     "decision support, not validated. Source + caveats: "
-    "github.com/ljm234/amoebanator-25 - Contact: "
-    "lmontenegrocalla@mail.weber.edu (ORCID 0009-0000-7851-7139)"
+    "github.com/ljm234/amoebanator25 - Contact: "
+    "jordanmontenegroc.99@gmail.com (ORCID 0009-0000-7851-7139)"
 )
 
 

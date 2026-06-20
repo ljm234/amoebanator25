@@ -13,10 +13,9 @@ Q4.A locked: Advanced expander hosts the α slider so PIs can move
 α ∈ {0.05, 0.10, 0.20} live and watch q-hat + the regime badge
 respond. Pedagogical, not load-bearing for the landing-page render.
 
-Q19.D locked: handle-disclosure one-liner ("Repo: github.com/ljm234/
-amoebanator-25 - HuggingFace Space: huggingface.co/spaces/
-luisjordanmontenegro/amoebanator-25 (same author, separate handles)")
-appears in the authorship section.
+The authorship section names the repository (github.com/ljm234/
+amoebanator25) and notes the companion HuggingFace Space is by the
+same author.
 """
 from __future__ import annotations
 
@@ -174,10 +173,9 @@ with st.expander("Advanced: explore conformal coverage"):
 st.subheader("Authorship")
 st.markdown(
     "Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - "
-    "lmontenegrocalla@mail.weber.edu"
+    "jordanmontenegroc.99@gmail.com"
 )
 st.caption(
-    "Repo: github.com/ljm234/amoebanator-25 - HuggingFace Space: "
-    "huggingface.co/spaces/luisjordanmontenegro/amoebanator-25 "
-    "(same author, separate handles)."
+    "Repo: github.com/ljm234/amoebanator25. The companion "
+    "HuggingFace Space is by the same author."
 )

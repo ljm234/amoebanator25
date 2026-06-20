@@ -21,8 +21,6 @@ Each subdirectory is a Python package, so modules are imported as
   gating.
 - **`vignettes/`** - Clinical vignette and test-fixture generation, plus
   validation-data preparation.
-- **`doc_gen/`** - Generators for the reporting documents: model card,
-  DECIDE-AI checklist, and TRIPOD-AI checklist.
 - **`experiments/`** - Ablation studies.
 
 ## Root orchestrators

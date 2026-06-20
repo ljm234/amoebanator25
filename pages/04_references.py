@@ -78,7 +78,7 @@ st.subheader("Governance & model documentation")
 st.markdown(
     """
 - **`mitchell2019modelcards`** Mitchell M, Wu S, Zaldivar A, et al. *Model Cards for Model Reporting.* **FAccT** 2019. DOI 10.1145/3287560.3287596. Format used for `docs/model_card.md`.
-- **`vasey2022decideai`** Vasey B, Nagendran M, Campbell B, et al. *DECIDE-AI: Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence.* **Nature Medicine** 2022. PMID 35585198. DOI 10.1038/s41591-022-01772-9. Format used for `docs/decide-ai.md`.
+- **`vasey2022decideai`** Vasey B, Nagendran M, Campbell B, et al. *DECIDE-AI: Reporting guideline for the early-stage clinical evaluation of decision support systems driven by artificial intelligence.* **Nature Medicine** 2022. PMID 35585198. DOI 10.1038/s41591-022-01772-9.
 - **`collins2024tripodai`** Collins GS, Moons KGM, Dhiman P, et al. *TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods.* **BMJ** 2024. PMID 38626948. DOI 10.1136/bmj-2023-078378. Format used for `docs/tripod-ai.md`.
 - **`collins2015tripod`** Collins GS, et al. *TRIPOD: Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis.* **BMJ** 2015. Original TRIPOD; comparison anchor for the TRIPOD+AI doc.
 - **`gebru2021datasheets`** Gebru T, Morgenstern J, Vecchione B, et al. *Datasheets for Datasets.* **Communications of the ACM** 2021. Format used for `docs/data_card.md`.
@@ -100,6 +100,6 @@ st.markdown(
 # Footer pointer
 st.caption(
     "Full BibTeX source: `docs/references.bib` in the repo "
-    "(github.com/ljm234/amoebanator-25). Reviewers wanting machine-"
+    "(github.com/ljm234/amoebanator25). Reviewers wanting machine-"
     "readable citations should pull the .bib file directly."
 )
