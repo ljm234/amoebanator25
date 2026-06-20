@@ -40,7 +40,7 @@ def test_weighted_rule_sums_normalized_scores() -> None:
         {"name": "b", "score": 2.0, "threshold": 4.0, "flag": False},
     ]
     out = combine_signals(sigs, rule="WEIGHTED", weighted_threshold=0.0)
-    # contribution: (5-1) + (2-4) = 2 → above 0 → abstain
+    # contribution: (5-1) + (2-4) = 2 -> above 0 -> abstain
     assert out["abstain"] is True
     assert out["weighted_sum"] == pytest.approx(2.0)
 
@@ -51,7 +51,7 @@ def test_weighted_rule_respects_weights_dict() -> None:
         {"name": "b", "score": 2.0, "threshold": 4.0, "flag": False},
     ]
     out = combine_signals(sigs, rule="WEIGHTED", weights={"a": 0.5, "b": 1.0}, weighted_threshold=0.0)
-    # contribution: 0.5 * 4 + 1.0 * (-2) = 0 → not strictly above 0
+    # contribution: 0.5 * 4 + 1.0 * (-2) = 0 -> not strictly above 0
     assert out["weighted_sum"] == pytest.approx(0.0)
     assert out["abstain"] is True  # >= 0
 
@@ -102,4 +102,4 @@ def test_logit_energy_flag_inverted_correctly() -> None:
     out = {"energy": 5.0, "energy_tau": -0.99}
     sigs = signals_from_infer_output(out)
     le = next(s for s in sigs if s["name"] == "logit_energy")
-    assert le["flag"] is True  # energy=5.0 > tau=-0.99 → flag should fire (above OOD shift)
+    assert le["flag"] is True  # energy=5.0 > tau=-0.99 -> flag should fire (above OOD shift)

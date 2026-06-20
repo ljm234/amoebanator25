@@ -57,7 +57,7 @@ def build_row(
     ``";;"``.
 
     The 8 keys returned match the form widget names exactly so a fresh
-    reader of the page can grep keys → widgets without indirection.
+    reader of the page can grep keys -> widgets without indirection.
     """
     cleaned_symptoms = [s for s in symptoms if s and s.strip()]
     return {

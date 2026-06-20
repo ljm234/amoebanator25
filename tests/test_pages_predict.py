@@ -178,12 +178,12 @@ def test_submit_calls_infer_one_with_built_row() -> None:
     }
     assert isinstance(row["age"], int)
     assert isinstance(row["csf_glucose"], float)
-    assert row["pcr"] == 0  # False → 0
+    assert row["pcr"] == 0  # False -> 0
     assert row["symptoms"] == ""
 
 
 # ---------------------------------------------------------------------
-# 8. No submit → no infer_one call
+# 8. No submit -> no infer_one call
 # ---------------------------------------------------------------------
 def test_no_submit_returns_early() -> None:
     """First render with no interaction must not invoke inference."""
@@ -195,7 +195,7 @@ def test_no_submit_returns_early() -> None:
 
 
 # ---------------------------------------------------------------------
-# 9. FileNotFoundError → graceful yellow banner, NOT crash
+# 9. FileNotFoundError -> graceful yellow banner, NOT crash
 # ---------------------------------------------------------------------
 def test_filenotfounderror_renders_graceful_banner() -> None:
     """Q15.B: missing artefact must surface as warning banner, not raise."""
@@ -213,10 +213,10 @@ def test_filenotfounderror_renders_graceful_banner() -> None:
 
 
 # ---------------------------------------------------------------------
-# 10. Generic exception → correlation-ID error + INTEGRITY_VIOLATION audit
+# 10. Generic exception -> correlation-ID error + INTEGRITY_VIOLATION audit
 # ---------------------------------------------------------------------
 def test_uncaught_exception_emits_correlation_id_audit() -> None:
-    """Q15.A: uncaught exception → uuid4 12-char display + INTEGRITY_VIOLATION emit."""
+    """Q15.A: uncaught exception -> uuid4 12-char display + INTEGRITY_VIOLATION emit."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -246,7 +246,7 @@ def test_uncaught_exception_emits_correlation_id_audit() -> None:
 # 11. Double-submit within 30s blocked by debounce
 # ---------------------------------------------------------------------
 def test_double_submit_within_30s_blocked() -> None:
-    """Q15.D: predicting=True with fresh timestamp → second submit aborts."""
+    """Q15.D: predicting=True with fresh timestamp -> second submit aborts."""
     import time
     at = _fresh_app_test()
     at.session_state["predicting"] = True
@@ -262,7 +262,7 @@ def test_double_submit_within_30s_blocked() -> None:
 # 12. Stale lock (>30s old) recovers and allows submission
 # ---------------------------------------------------------------------
 def test_stale_lock_recovers_after_30s() -> None:
-    """Q15.D: predicting=True with timestamp >30s ago → fall through, re-acquire."""
+    """Q15.D: predicting=True with timestamp >30s ago -> fall through, re-acquire."""
     import time
     at = _fresh_app_test()
     at.session_state["predicting"] = True
@@ -342,10 +342,10 @@ def test_smallcalibrationwarning_fires_for_n_below_30() -> None:
 
 
 # ---------------------------------------------------------------------
-# 17. 3-state regime badge: at n=6 alpha=0.10 → INVALID
+# 17. 3-state regime badge: at n=6 alpha=0.10 -> INVALID
 # ---------------------------------------------------------------------
 def test_three_state_regime_badge_invalid_at_n6_alpha010() -> None:
-    """Q4.C: k = ⌈(n+1)(1-α)⌉ = 7 > n=6 → INVALID."""
+    """Q4.C: k = ceil((n+1)(1-alpha)) = 7 > n=6 -> INVALID."""
     fake = _fake_infer_output(n_cal=6, alpha=0.10)
     at = _fresh_app_test()
     at.run(timeout=30)
@@ -376,7 +376,7 @@ def test_d18_limitation_banner_only_on_bacterial_preset() -> None:
         "D18 limitation banner missing on bacterial preset"
     )
 
-    # Now non-bacterial preset → no D18 banner
+    # Now non-bacterial preset -> no D18 banner
     at2 = _fresh_app_test()
     at2.session_state["active_preset"] = "high_risk_pam"
     at2.run(timeout=30)
@@ -391,7 +391,7 @@ def test_d18_limitation_banner_only_on_bacterial_preset() -> None:
 
 
 # ---------------------------------------------------------------------
-# 19. IRB_BYPASS=1 → red banner + IRB_STATUS_CHANGE audit emit
+# 19. IRB_BYPASS=1 -> red banner + IRB_STATUS_CHANGE audit emit
 # ---------------------------------------------------------------------
 def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
     """Mini-1 closure gate criterion #6 - IRB_BYPASS=1 branch."""
@@ -415,7 +415,7 @@ def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
 
 
 # ---------------------------------------------------------------------
-# 20. IRB_BYPASS unset → NO banner + NO event
+# 20. IRB_BYPASS unset -> NO banner + NO event
 # ---------------------------------------------------------------------
 def test_irb_bypass_inactive_no_banner_no_event() -> None:
     """Mini-1 closure gate criterion #6 - IRB_BYPASS=0/unset branch."""

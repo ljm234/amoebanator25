@@ -1,8 +1,8 @@
 """Tests for app/presets.py - Phase 4.5 Mini-1 T1.8 (1 of 3).
 
-20 tests: 5 parametrized × 3 presets + 1 xfail-decorated bacterial
+20 tests: 5 parametrized x 3 presets + 1 xfail-decorated bacterial
 regression + 4 cross-preset invariants. The xfail decorator uses
-``strict=False`` so Phase 6 (MIMIC-IV cohort) success → XPASS as a
+``strict=False`` so Phase 6 (MIMIC-IV cohort) success -> XPASS as a
 "fix this" signal rather than CI breakage.
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ _PRESET_KEYS: tuple[str, ...] = (
 )
 
 
-# --- Per-preset parametrized (5 × 3 = 15 tests) ----------------------
+# --- Per-preset parametrized (5 x 3 = 15 tests) ----------------------
 
 @pytest.mark.parametrize("preset_key", _PRESET_KEYS)
 def test_preset_dict_has_all_required_fields(preset_key: str) -> None:

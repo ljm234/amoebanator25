@@ -1,7 +1,7 @@
 """
 Phase 7.2 - production wiring of ml.data.deidentification into the data load path.
 
-`ml.data.deidentification.SafeHarborProcessor` implements 45 CFR §164.514(b)(2)
+`ml.data.deidentification.SafeHarborProcessor` implements 45 CFR section 164.514(b)(2)
 (removal of the 18 HIPAA identifier categories, age cap at 89, ZIP truncation
 to 3 digits, date generalisation to year). This module wraps it so that every
 training run that touches a real-data CSV first passes through the Safe Harbor

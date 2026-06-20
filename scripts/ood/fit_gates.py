@@ -69,7 +69,7 @@ def fit_logit_energy(logits: np.ndarray, q: float) -> dict[str, float | int]:
 
 
 def fit_neg_energy_from_p(p_high: np.ndarray, q: float) -> dict[str, float | int | str]:
-    """Energy-from-probability gate. Higher entropy → larger neg-energy → flag."""
+    """Energy-from-probability gate. Higher entropy -> larger neg-energy -> flag."""
     e = np.asarray([_neg_energy_from_p(float(p)) for p in p_high], dtype=float)
     tau = float(np.quantile(e, q))
     return {"method": "energy_neg", "tau": tau, "q": float(q), "n": int(len(e))}

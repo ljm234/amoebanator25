@@ -98,7 +98,7 @@ def _build_feature_vector(row: pd.Series, feats: tuple[str, ...]) -> np.ndarray:
     """
     Project a patient row onto the trained model's feature schema.
 
-    Numeric features are read directly from row (NaN or non-numeric → 0).
+    Numeric features are read directly from row (NaN or non-numeric -> 0).
     Symptom indicators (sym_<token>) prefer an explicit column when present;
     otherwise they fall back to parsing row["symptoms"] as a semicolon-
     separated token string. Missing features default to 0.0, matching the
@@ -198,8 +198,8 @@ def infer_one(row_in: dict | pd.Series) -> dict:
     """
     Run the full inference pipeline on one patient row.
 
-    Pipeline order: Mahalanobis OOD gate → trained MLP → temperature scaling
-    → energy gate → split-conformal band assignment → label.
+    Pipeline order: Mahalanobis OOD gate -> trained MLP -> temperature scaling
+    -> energy gate -> split-conformal band assignment -> label.
 
     Returns a dict with `prediction` (one of "Low", "High", "Moderate",
     "ABSTAIN"), calibrated `p_high` in [0, 1], conformal band membership,
@@ -208,7 +208,7 @@ def infer_one(row_in: dict | pd.Series) -> dict:
     "ConformalAmbiguity". The energy-gate reason name is precise on three
     dimensions: (1) signal = logit energy, (2) direction = above OOD shift,
     (3) reference = above the in-distribution validation 95th percentile -
-    Liu 2020 canonical semantics (high energy → OOD). See git log for
+    Liu 2020 canonical semantics (high energy -> OOD). See git log for
     refactor history.
     """
     row = pd.Series(row_in) if not isinstance(row_in, pd.Series) else row_in

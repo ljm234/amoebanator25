@@ -326,7 +326,7 @@ class TestKAnonymityProcessor:
             generalisation_hierarchies={"age": []},
         )
         proc = KAnonymityProcessor(config)
-        # Only 1 record per age → all must be suppressed
+        # Only 1 record per age -> all must be suppressed
         records = [{"age": i} for i in range(5)]
         result = proc.enforce(records)
         assert len(result) == 0
@@ -351,10 +351,10 @@ class TestKAnonymityProcessor:
             },
         )
         proc = KAnonymityProcessor(config)
-        # Unique ages → each equivalence class has size 1, which is < k=2.
+        # Unique ages -> each equivalence class has size 1, which is < k=2.
         # The generaliser raises TypeError (caught by the handler),
         # collapsing every value to "*", which makes a single equivalence
-        # class of size 5 ≥ k=2.
+        # class of size 5 >= k=2.
         records = [{"age": i} for i in range(5)]
         result = proc.enforce(records)
         assert all(r["age"] == "*" for r in result)
@@ -471,7 +471,7 @@ class TestExponentialMechanism:
     def test_handles_zero_weights(self) -> None:
         mech = ExponentialMechanism(epsilon=1.0, seed=42)
         candidates = ["a", "b"]
-        utilities = [-1e10, -1e10]  # very low → near-zero weights
+        utilities = [-1e10, -1e10]  # very low -> near-zero weights
         selected = mech.select(candidates, utilities)
         assert selected in candidates
 
@@ -615,7 +615,7 @@ class TestCoverageGaps:
             generalisation_hierarchies={"age": []},
         )
         proc = KAnonymityProcessor(config)
-        # 3 records per age group, k=5 → all suppressed
+        # 3 records per age group, k=5 -> all suppressed
         records = (
             [{"age": 10}] * 3
             + [{"age": 20}] * 3
@@ -625,7 +625,7 @@ class TestCoverageGaps:
         assert proc.suppressed_count == 6
 
     def test_pipeline_budget_allocation_break(self) -> None:
-        """Line 950: budget.allocate returns False → break out of loop."""
+        """Line 950: budget.allocate returns False -> break out of loop."""
         pipeline = create_deidentification_pipeline(
             privacy_level=PrivacyLevel.FULL_PIPELINE,
             k=2,
@@ -702,9 +702,9 @@ class TestLDiversityProcessor:
         proc = LDiversityProcessor(config)
         records = [
             {"age": 30, "diagnosis": "pam"},
-            {"age": 30, "diagnosis": "pam"},  # only 1 distinct → violates l=2
+            {"age": 30, "diagnosis": "pam"},  # only 1 distinct -> violates l=2
             {"age": 40, "diagnosis": "healthy"},
-            {"age": 40, "diagnosis": "pam"},  # 2 distinct → OK
+            {"age": 40, "diagnosis": "pam"},  # 2 distinct -> OK
         ]
         result = proc.enforce(records)
         assert len(result) == 2  # only age=40 group survives
@@ -814,7 +814,7 @@ class TestTCloseness:
             {"age": 40, "diagnosis": "B"},
             {"age": 40, "diagnosis": "B"},
         ]
-        # Global: 50% A, 50% B. Group age=30: 100% A → EMD = 0.5
+        # Global: 50% A, 50% B. Group age=30: 100% A -> EMD = 0.5
         # With t=0.3, this should fail
         assert check_t_closeness(records, ("age",), "diagnosis", 0.3) is False
 
@@ -949,7 +949,7 @@ class TestRenyiDPAccountant:
         assert all(e == 0.0 for e in acc.rdp_epsilons)
 
     def test_more_noise_yields_lower_epsilon(self) -> None:
-        """More noise (higher sigma) → tighter privacy → lower epsilon."""
+        """More noise (higher sigma) -> tighter privacy -> lower epsilon."""
         from ml.data.deidentification import RenyiDPAccountant
         acc_noisy = RenyiDPAccountant()
         acc_noisy.add_gaussian(sensitivity=1.0, sigma=10.0)
@@ -1078,7 +1078,7 @@ class TestEntropyLDiversityChecker:
             sensitive_attribute="diagnosis",
             quasi_identifiers=("age",),
         )
-        # 98 pam, 1 healthy, 1 other → entropy < log(3)
+        # 98 pam, 1 healthy, 1 other -> entropy < log(3)
         records = [{"age": 30, "diagnosis": "pam"}] * 98
         records.append({"age": 30, "diagnosis": "healthy"})
         records.append({"age": 30, "diagnosis": "other"})
@@ -1112,9 +1112,9 @@ class TestEntropyLDiversityChecker:
         ]
         entropies = checker.class_entropies(records)
         assert len(entropies) == 2
-        # age=30 has 2 distinct → entropy = log(2)
+        # age=30 has 2 distinct -> entropy = log(2)
         assert entropies[(30,)] > 0.5
-        # age=40 has 1 distinct → entropy = 0
+        # age=40 has 1 distinct -> entropy = 0
         assert entropies[(40,)] == 0.0
 
     def test_nulls_and_stars_ignored(self) -> None:
@@ -1129,7 +1129,7 @@ class TestEntropyLDiversityChecker:
             {"age": 30, "diagnosis": "*"},
             {"age": 30, "diagnosis": "pam"},
         ]
-        # Only 1 non-null non-star → entropy 0 < log(2)
+        # Only 1 non-null non-star -> entropy 0 < log(2)
         assert checker.check(records) is False
 
     def test_empty_dataset(self) -> None:

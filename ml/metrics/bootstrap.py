@@ -5,7 +5,7 @@ Phase 3.5. Used by every baseline + ablation report so headline numbers always
 ship with a 95% CI rather than a point estimate.
 
 Implementation notes:
-  * Default n_resamples = 2000, alpha = 0.05 → percentile 95% CI.
+  * Default n_resamples = 2000, alpha = 0.05 -> percentile 95% CI.
   * Stratified resampling preserves the marginal class balance, which matters
     a lot at low prevalence (the unstratified bootstrap would give degenerate
     samples with no positives).

@@ -68,7 +68,7 @@ PRESETS: dict[str, dict[str, Any]] = {
     # has zero non-PAM bacterial cases. We surface this preset
     # deliberately as an honesty signal (Q12.C). The corresponding test
     # in tests/test_app_presets.py uses @pytest.mark.xfail(strict=False)
-    # so Phase 6 (MIMIC-IV) success → XPASS as a "fix this" signal
+    # so Phase 6 (MIMIC-IV) success -> XPASS as a "fix this" signal
     # without breaking CI.
     "bacterial_meningitis_limitation": {
         "label": "Load bacterial meningitis (limitation demo)",
@@ -76,7 +76,7 @@ PRESETS: dict[str, dict[str, Any]] = {
             "This preset is a known model limitation. Training data "
             "(n=30) contains zero non-PAM bacterial meningitis cases, so "
             "the model cannot distinguish bacterial-NOT-PAM from PAM. "
-            "The Phase 6 MIMIC-IV cohort (target n ≥ 200, includes "
+            "The Phase 6 MIMIC-IV cohort (target n >= 200, includes "
             "bacterial vs viral meningitis labels) will fix this. We "
             "surface this preset deliberately as an honesty signal - "
             "every model has limits, and showing them where they bite is "

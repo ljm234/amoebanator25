@@ -32,7 +32,7 @@ def main() -> None:
         "age": [0, 100],
         "csf_glucose": [5, 150],     # mg/dL
         "csf_protein": [5, 1000],    # mg/dL
-        "csf_wbc": [0, 50000]        # cells/µL
+        "csf_wbc": [0, 50000]        # cells/uL
     }
 
     out = {

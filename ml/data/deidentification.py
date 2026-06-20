@@ -13,7 +13,7 @@ The pipeline applies a layered de-identification strategy:
     |              LAYERED DE-IDENTIFICATION PIPELINE              |
     +--------------------------------------------------------------+
     |                                                              |
-    |  LAYER 1 - HIPAA Safe Harbor (§164.514(b)(2))               |
+    |  LAYER 1 - HIPAA Safe Harbor (section 164.514(b)(2))               |
     |  +-- Remove 18 identifier categories                        |
     |  +-- Date generalization to year only                       |
     |  +-- Geographic truncation (3-digit ZIP)                    |
@@ -23,7 +23,7 @@ The pipeline applies a layered de-identification strategy:
     |  +-- Quasi-identifier detection                             |
     |  +-- Generalization hierarchies for each QI                 |
     |  +-- Suppression for low-frequency cells                    |
-    |  +-- Verification: every equivalence class ≥ k              |
+    |  +-- Verification: every equivalence class >= k              |
     |                                                              |
     |  LAYER 3 - Differential Privacy (Dwork & Roth, 2024 bounds) |
     |  +-- Calibrated Laplace mechanism for numeric values        |
@@ -33,12 +33,12 @@ The pipeline applies a layered de-identification strategy:
     |                                                              |
     |  LAYER 4 - Enhanced Anonymity (beyond k-Anonymity)          |
     |  +-- l-Diversity: at least l distinct sensitive values/class |
-    |  +-- t-Closeness: QI-group distribution ≤ t from global     |
+    |  +-- t-Closeness: QI-group distribution <= t from global     |
     |  +-- Truncated Laplace for bounded-range outputs            |
     |  +-- Rényi DP composition with optimal conversion bounds    |
     |                                                              |
     |  OUTPUT - De-identified dataset with privacy guarantee:      |
-    |  (ε, δ)-differentially private, k-anonymous, l-diverse,     |
+    |  (epsilon, delta)-differentially private, k-anonymous, l-diverse,     |
     |  t-close, HIPAA Safe Harbor compliant                        |
     +--------------------------------------------------------------+
 
@@ -49,7 +49,7 @@ Standards Implemented
 - k-Anonymity: Sweeney/Samarati formalization (2024 adaptation)
 - l-Diversity: Machanavajjhala et al. (distinct & entropy variants, 2024)
 - t-Closeness: Li, Li & Venkatasubramanian (Earth Mover's Distance, 2024)
-- (ε, δ)-Differential Privacy: Dwork & Roth framework (2024 bounds)
+- (epsilon, delta)-Differential Privacy: Dwork & Roth framework (2024 bounds)
 - Rényi Differential Privacy: Mironov, Balle et al. (2025 accounting)
 - Concentrated DP: Bun & Steinke (2024 composition theorems)
 """
@@ -511,8 +511,8 @@ class KAnonymityProcessor:
         """Calculate normalised information loss from generalisation.
 
         Uses the Discernability Metric (DM) as the loss function:
-        DM = Σ |E_i|² for each equivalence class E_i.
-        Normalised by n² where n is the original dataset size.
+        DM = sum |E_i|^2 for each equivalence class E_i.
+        Normalised by n^2 where n is the original dataset size.
 
         Returns
         -------
@@ -595,13 +595,13 @@ class PrivacyBudget:
 class LaplaceMechanism:
     """Calibrated Laplace noise mechanism for numeric queries.
 
-    For a numeric function f with global sensitivity Δf, adding
-    Lap(Δf / ε) noise achieves ε-differential privacy.
+    For a numeric function f with global sensitivity Delta f, adding
+    Lap(Delta f / epsilon) noise achieves epsilon-differential privacy.
 
     Parameters
     ----------
     sensitivity : float
-        Global sensitivity Δf of the query function.
+        Global sensitivity Delta f of the query function.
     epsilon : float
         Privacy parameter.
     """
@@ -626,7 +626,7 @@ class LaplaceMechanism:
 
     @property
     def scale(self) -> float:
-        """Laplace distribution scale parameter b = Δf / ε."""
+        """Laplace distribution scale parameter b = Delta f / epsilon."""
         return self._sensitivity / self._epsilon
 
     def add_noise(self, value: float) -> float:
@@ -676,16 +676,16 @@ class LaplaceMechanism:
 
 
 class GaussianMechanism:
-    """Calibrated Gaussian noise for (ε, δ)-differential privacy.
+    """Calibrated Gaussian noise for (epsilon, delta)-differential privacy.
 
-    For a numeric function f with L2 sensitivity Δf, adding
-    N(0, σ²) noise where σ = Δf · √(2 ln(1.25/δ)) / ε achieves
-    (ε, δ)-differential privacy (Balle et al. 2025 optimal bound).
+    For a numeric function f with L2 sensitivity Delta f, adding
+    N(0, sigma^2) noise where sigma = Delta f * sqrt(2 ln(1.25/delta)) / epsilon achieves
+    (epsilon, delta)-differential privacy (Balle et al. 2025 optimal bound).
 
     Parameters
     ----------
     sensitivity : float
-        L2 sensitivity Δf.
+        L2 sensitivity Delta f.
     epsilon : float
         Privacy parameter.
     delta : float
@@ -711,7 +711,7 @@ class GaussianMechanism:
 
     @property
     def sigma(self) -> float:
-        """Gaussian standard deviation calibrated for (ε, δ)-DP."""
+        """Gaussian standard deviation calibrated for (epsilon, delta)-DP."""
         return (
             self._sensitivity
             * math.sqrt(2 * math.log(1.25 / self._delta))
@@ -733,8 +733,8 @@ class ExponentialMechanism:
     """Exponential mechanism for categorical/discrete outputs.
 
     Samples an output o with probability proportional to
-    exp(ε · u(x, o) / (2 Δu)) where u is the utility function
-    and Δu is the sensitivity of u.
+    exp(epsilon * u(x, o) / (2 Delta u)) where u is the utility function
+    and Delta u is the sensitivity of u.
 
     Parameters
     ----------
@@ -1317,9 +1317,9 @@ class RenyiDPAccountant:
     sequential composition (Mironov 2024; Balle, Gaboardi,
     Zanella-Béguelin 2025).
 
-    The accountant stores (α, ε_R) pairs and converts to standard
-    (ε, δ)-DP using the optimal conversion:
-      ε = ε_R + log(1/δ) / (α − 1)
+    The accountant stores (alpha, epsilon_R) pairs and converts to standard
+    (epsilon, delta)-DP using the optimal conversion:
+      epsilon = epsilon_R + log(1/delta) / (alpha - 1)
 
     Attributes
     ----------
@@ -1344,8 +1344,8 @@ class RenyiDPAccountant:
     def add_laplace(self, sensitivity: float, epsilon: float) -> None:
         """Account for a Laplace mechanism invocation.
 
-        RDP of Laplace: ε_R(α) = (1/(α−1)) · log(
-            α/(2α−1) · exp((α−1)/b) + (α−1)/(2α−1) · exp(−α/b)
+        RDP of Laplace: epsilon_R(alpha) = (1/(alpha-1)) * log(
+            alpha/(2alpha-1) * exp((alpha-1)/b) + (alpha-1)/(2alpha-1) * exp(-alpha/b)
         ) where b = sensitivity / epsilon.
 
         Parameters
@@ -1375,7 +1375,7 @@ class RenyiDPAccountant:
     ) -> None:
         """Account for a Gaussian mechanism invocation.
 
-        RDP of Gaussian: ε_R(α) = α · sensitivity² / (2 · σ²).
+        RDP of Gaussian: epsilon_R(alpha) = alpha * sensitivity^2 / (2 * sigma^2).
 
         Parameters
         ----------
@@ -1390,9 +1390,9 @@ class RenyiDPAccountant:
         self.mechanisms_applied += 1
 
     def get_epsilon(self, delta: float) -> float:
-        """Convert accumulated RDP to (ε, δ)-DP.
+        """Convert accumulated RDP to (epsilon, delta)-DP.
 
-        Uses optimal conversion: ε = min_α [ε_R(α) + log(1/δ)/(α−1)].
+        Uses optimal conversion: epsilon = min_alpha [epsilon_R(alpha) + log(1/delta)/(alpha-1)].
 
         Parameters
         ----------
@@ -1402,7 +1402,7 @@ class RenyiDPAccountant:
         Returns
         -------
         float
-            Minimum ε satisfying (ε, δ)-DP.
+            Minimum epsilon satisfying (epsilon, delta)-DP.
         """
         if delta <= 0:
             return float("inf")

@@ -121,7 +121,7 @@ def test_verify_csv_chain_integrity_fail_on_tamper(tmp_audit_log: Path) -> None:
     _emit_n_events(3)
     csv_bytes = export_audit_to_csv(tmp_audit_log)
     # Tamper the metadata cell. CSV quotes JSON's double-quotes as ""
-    # so the bytes pattern is ""index"":0 → ""index"":999.
+    # so the bytes pattern is ""index"":0 -> ""index"":999.
     tampered = csv_bytes.replace(b'""index"":0', b'""index"":999', 1)
     assert tampered != csv_bytes, (
         f"tamper pattern didn't match; CSV preview: {csv_bytes[:300]!r}"
@@ -147,7 +147,7 @@ def test_export_filename_format() -> None:
     assert ":" not in filename  # filesystem-safe
 
 
-# --- Test 8: empty log → header-only CSV -----------------------------
+# --- Test 8: empty log -> header-only CSV -----------------------------
 
 def test_export_handles_empty_log(tmp_audit_log: Path) -> None:
     csv_bytes = export_audit_to_csv(tmp_audit_log)
@@ -180,7 +180,7 @@ def test_export_preserves_metadata_json(tmp_audit_log: Path) -> None:
 def test_export_emits_audit_event(tmp_audit_log: Path) -> None:
     """Calling export_audit_to_csv must emit AUDIT_EXPORT_REQUESTED.
 
-    The first export reads the file (3 events), self-emits → 4 events
+    The first export reads the file (3 events), self-emits -> 4 events
     on disk. A second export reads 4 events; this is how we verify
     the self-emission landed."""
     _emit_n_events(3)

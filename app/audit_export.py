@@ -23,7 +23,7 @@ Two public functions:
                                                  recomputation.
 
 The Mini-1 closure gate criterion #4 round-trip test:
-write 10 events → ``export_audit_to_csv`` → re-parse → byte-equal hash
+write 10 events -> ``export_audit_to_csv`` -> re-parse -> byte-equal hash
 chain.
 """
 from __future__ import annotations

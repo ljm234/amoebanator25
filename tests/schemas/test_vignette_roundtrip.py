@@ -1,6 +1,6 @@
 """Roundtrip serialization test for VignetteSchema fixtures.
 
-For each fixture: load JSON → validate → dump → re-validate → assert deep equality.
+For each fixture: load JSON -> validate -> dump -> re-validate -> assert deep equality.
 Confirms idempotent serialization across all 9 ClassLabel values.
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ FIXTURE_PATHS = sorted(FIXTURES_DIR.glob("valid_*_fixture.json"))
     ids=[p.stem for p in FIXTURE_PATHS],
 )
 def test_vignette_roundtrip(fixture_path: Path) -> None:
-    """Load → validate → serialize → re-validate → assert equality."""
+    """Load -> validate -> serialize -> re-validate -> assert equality."""
     raw = json.loads(fixture_path.read_text())
     obj1 = VignetteSchema.model_validate(raw)
     serialized = obj1.model_dump_json()

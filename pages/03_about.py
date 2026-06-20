@@ -9,8 +9,8 @@ page) because |w_i| is model-level, not per-prediction; rendering
 adjacent to a result would falsely imply input-specificity. The
 caption is fixed, model-level text.
 
-Q4.A locked: Advanced expander hosts the α slider so PIs can move
-α ∈ {0.05, 0.10, 0.20} live and watch q-hat + the regime badge
+Q4.A locked: Advanced expander hosts the alpha slider so PIs can move
+alpha in {0.05, 0.10, 0.20} live and watch q-hat + the regime badge
 respond. Pedagogical, not load-bearing for the landing-page render.
 
 The authorship section names the repository (github.com/ljm234/
@@ -56,7 +56,7 @@ def _compute_feature_importance() -> pd.DataFrame:
     if hasattr(state, "state_dict"):
         state = state.state_dict()
     w = state["net.0.weight"]  # shape (32, 10) - Linear(in=10, out=32)
-    imp = w.abs().mean(dim=0).numpy()  # mean across 32 output dims → (10,)
+    imp = w.abs().mean(dim=0).numpy()  # mean across 32 output dims -> (10,)
     imp_norm = imp / imp.sum()
     return pd.DataFrame({"feature": list(_FEATURE_NAMES), "|w_i|": imp_norm})
 
@@ -67,11 +67,11 @@ render_disclaimer()
 st.title("About Amoebanator 25")
 
 
-# -- §1. Model architecture --------------------------------------------
+# -- section 1. Model architecture --------------------------------------------
 st.subheader("Model architecture")
 st.markdown(
     "Tabular MLP, 914 parameters, 6.4 KB serialized. "
-    "`Linear(10, 32) → ReLU → Linear(32, 16) → ReLU → Linear(16, 2)` - "
+    "`Linear(10, 32) -> ReLU -> Linear(32, 16) -> ReLU -> Linear(16, 2)` - "
     "binary classifier (PAM risk: Low / High) with two output logits "
     "consumed by softmax + temperature scaling at inference time. "
     "Architecture verified against `outputs/model/model.pt` "
@@ -79,7 +79,7 @@ st.markdown(
 )
 
 
-# -- §2. Training summary ----------------------------------------------
+# -- section 2. Training summary ----------------------------------------------
 st.subheader("Training data")
 st.markdown(
     "**n=30 synthetic patient vignettes** drawn from published case-series "
@@ -87,13 +87,13 @@ st.markdown(
     "n_train=24, n_val=6, `random_state=42`, `test_size=0.2`, "
     "`stratify=y`. Zero real PHI; vignettes are reproducibility-friendly "
     "but not externally calibrated - Phase 6 (MIMIC-IV cohort, target "
-    "n ≥ 200) will provide the first contact with real-world clinical data. "
+    "n >= 200) will provide the first contact with real-world clinical data. "
     "See `docs/data_card.md` (Gebru et al. 2021 datasheet format) for "
     "the full lineage."
 )
 
 
-# -- §3. Calibration summary -------------------------------------------
+# -- section 3. Calibration summary -------------------------------------------
 st.subheader("Calibration")
 st.markdown(
     "Temperature scaling (Guo et al. 2017) optimised via L-BFGS on the "
@@ -104,11 +104,11 @@ st.markdown(
     "different random subsets of n=6 would produce T values in the "
     "range 0.1-2.0. Treat the reported T as a sample-specific point "
     "estimate, not as evidence of structural under-/over-confidence. "
-    "See `docs/model_card.md` §Caveats for the full discussion."
+    "See `docs/model_card.md` section Caveats for the full discussion."
 )
 
 
-# -- §4. Feature importance via |w_i| (Q17.A/B/C) ----------------------
+# -- section 4. Feature importance via |w_i| (Q17.A/B/C) ----------------------
 st.subheader("Feature importance (model-level)")
 imp_df = _compute_feature_importance()
 st.bar_chart(imp_df, x="feature", y="|w_i|", horizontal=True)
@@ -117,42 +117,42 @@ st.bar_chart(imp_df, x="feature", y="|w_i|", horizontal=True)
 st.caption(
     "Feature importance via |w_i| (model-level mean of first Linear "
     "layer weights, normalized). NOT per-prediction attribution - for "
-    "that, see SHAP (deferred to Phase 6 with MIMIC-IV n ≥ 200). "
+    "that, see SHAP (deferred to Phase 6 with MIMIC-IV n >= 200). "
     f"Current range: {imp_df['|w_i|'].min():.1%} to "
     f"{imp_df['|w_i|'].max():.1%}, max/min ratio "
-    f"{imp_df['|w_i|'].max() / imp_df['|w_i|'].min():.2f}×. "
+    f"{imp_df['|w_i|'].max() / imp_df['|w_i|'].min():.2f}x. "
     "Interpretation: the model treats all 10 features near-equally, "
     "consistent with the n=30 training set limitation. SHAP on n=30 "
     "background data is mathematically vacuous; this panel is the "
     "honest substitute at current scale. See `docs/model_card.md` "
-    "§Caveats for full discussion."
+    "section Caveats for full discussion."
 )
 
 
-# -- §5. Conformal advanced expander (Q4.A α slider) -------------------
+# -- section 5. Conformal advanced expander (Q4.A alpha slider) -------------------
 with st.expander("Advanced: explore conformal coverage"):
     st.markdown(
         "Move the slider to see how `q-hat` and the regime badge "
         "respond to different significance levels. The 3-state regime "
         "badge (ASYMPTOTIC / FINITE-SAMPLE / INVALID) is "
-        "computed from `(n_cal, α, k)` where "
-        "`k = ⌈(n_cal + 1)(1 − α)⌉`."
+        "computed from `(n_cal, alpha, k)` where "
+        "`k = ceil((n_cal + 1)(1 - alpha))`."
     )
     alpha = st.slider(
-        "α (significance level)",
+        "alpha (significance level)",
         min_value=0.05, max_value=0.20, value=0.10, step=0.05,
         key="conformal_alpha_slider",
     )
-    n_cal = 6  # current n; Phase 6 will lift this to ≥200
+    n_cal = 6  # current n; Phase 6 will lift this to >=200
     k = math.ceil((n_cal + 1) * (1 - alpha))
     st.markdown(
-        f"With `n_cal = {n_cal}`, `α = {alpha:.2f}` → "
-        f"`k = ⌈(n+1)(1−α)⌉ = {k}`."
+        f"With `n_cal = {n_cal}`, `alpha = {alpha:.2f}` -> "
+        f"`k = ceil((n+1)(1-alpha)) = {k}`."
     )
     if n_cal >= k and n_cal >= 100:
         st.success(
             "ASYMPTOTIC: Guarantee holds; "
-            "finite-sample bound 1−α + 2/(n+2) is tight."
+            "finite-sample bound 1-alpha + 2/(n+2) is tight."
         )
     elif n_cal >= k:
         st.info(
@@ -162,14 +162,14 @@ with st.expander("Advanced: explore conformal coverage"):
     else:
         st.error(
             f"INVALID: Order-statistic clamped (k clipped from {k} "
-            f"to n={n_cal}); the formal guarantee 1−α is mathematically "
+            f"to n={n_cal}); the formal guarantee 1-alpha is mathematically "
             "inapplicable. Reported coverage is the empirical hit-rate "
             "on the validation set only. Phase 6 MIMIC-IV (target "
-            "n ≥ 200) will fix this."
+            "n >= 200) will fix this."
         )
 
 
-# -- §6. Authorship + handle disclosure (Q19.D) ------------------------
+# -- section 6. Authorship + handle disclosure (Q19.D) ------------------------
 st.subheader("Authorship")
 st.markdown(
     "Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - "

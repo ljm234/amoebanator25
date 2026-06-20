@@ -60,7 +60,7 @@ class TestTemperatureScaler:
 
         scaler = TemperatureScaler()
         with torch.no_grad():
-            scaler.logT.fill_(1.0)  # T = e^1 ≈ 2.718
+            scaler.logT.fill_(1.0)  # T = e^1 ~= 2.718
         assert abs(scaler.temperature() - math.e) < 0.01
 
     def test_forward_scales_correctly_with_temperature_2(self) -> None:
@@ -124,7 +124,7 @@ class TestFitTemperature:
             logits[i, 1 - yi] = -3.0
         model = TemperatureScaler()
         T = fit_temperature(model, logits, y, max_iter=30)
-        # Well-separated logits → temperature close to 1 or slightly < 1
+        # Well-separated logits -> temperature close to 1 or slightly < 1
         assert 0.01 < T < 5.0
 
 
@@ -165,14 +165,14 @@ class TestSetFromPHigh:
     def test_exact_boundary_high(self) -> None:
         from ml.conformal import set_from_p_high
 
-        # p_high == 1 - qhat exactly → include_high
+        # p_high == 1 - qhat exactly -> include_high
         low, high = set_from_p_high(0.8, 0.2)
         assert high is True
 
     def test_exact_boundary_low(self) -> None:
         from ml.conformal import set_from_p_high
 
-        # p_high == qhat exactly → include_low
+        # p_high == qhat exactly -> include_low
         low, high = set_from_p_high(0.2, 0.2)
         assert low is True
 
@@ -285,7 +285,7 @@ class TestDecisionCurve:
         p = [0.95, 0.90, 0.05, 0.10]
         thresholds = np.array([0.3, 0.5, 0.7])
         df = decision_curve(y, p, thresholds=thresholds)
-        # At t=0.5, perfect separator → net_benefit = 2/4 - 0 = 0.5
+        # At t=0.5, perfect separator -> net_benefit = 2/4 - 0 = 0.5
         row = df[df["threshold"] == 0.5].iloc[0]
         assert row["net_benefit"] > 0
 
@@ -319,7 +319,7 @@ class TestOodRobustZ:
 
         x = np.array([np.nan])
         median = np.array([5.0])
-        mad = np.array([0.0])  # mad=0 → z = nan/0 = nan → becomes 0
+        mad = np.array([0.0])  # mad=0 -> z = nan/0 = nan -> becomes 0
         z = _robust_z(x, median, mad)
         assert z[0] == 0.0
 
@@ -552,7 +552,7 @@ class TestOodAbstainEnergy:
         original = oe.ENERGY_JSON
         try:
             oe.ENERGY_JSON = gate_file
-            # p=0.99 → energy ≈ -4.6... more negative than -0.1 → no abstain
+            # p=0.99 -> energy ~= -4.6... more negative than -0.1 -> no abstain
             result = oe.ood_abstain_energy(0.99)
             assert "energy_neg" in result
             assert isinstance(result["ood_abstain_energy"], bool)
@@ -1245,7 +1245,7 @@ class TestOodScoreTabularNoneStats:
         from ml.ood import load_stats, score_tabular
 
         # Explicitly pass the result of load_stats(non-existent) as stats
-        # This exercises the same code path as stats=None → load_stats() → {}
+        # This exercises the same code path as stats=None -> load_stats() -> {}
         empty_stats = load_stats(tmp_path / "nonexistent.json")  # returns {}
         row = pd.Series({"age": 40.0})
         result = score_tabular(row, empty_stats)
@@ -1310,7 +1310,7 @@ class TestEnsureCovGaps:
 
         stats = {
             "numeric_cols": ["a", "b"],
-            "S": [[1.0, 0.0, 0.0]],  # wrong shape: 1×3 instead of 2×2
+            "S": [[1.0, 0.0, 0.0]],  # wrong shape: 1x3 instead of 2x2
         }
         cov = _ensure_cov(stats)
         assert cov.shape == (2, 2)
@@ -1345,7 +1345,7 @@ class TestOodScoreRangeViolations:
         try:
             os_mod.STATS_JSON = str(sp)
             os_mod.ENERGY_JSON = str(ep)
-            # age = 120 is extremely far from median=40 (z-score ≈ 16)
+            # age = 120 is extremely far from median=40 (z-score ~= 16)
             result = os_mod.ood_score({"age": 120.0})
             # Should flag as a range violation
             assert result["range_violations"].get("age") is True
@@ -1378,7 +1378,7 @@ class TestOodScoreRangeViolations:
             "mu": [0.0],
             "median": [40.0],
             "mad": [5.0],
-            "cov": [[1.0, 0.0], [0.0, 1.0]],  # 2×2 but only 1 col → mismatch
+            "cov": [[1.0, 0.0], [0.0, 1.0]],  # 2x2 but only 1 col -> mismatch
             "tau": 100.0,
         }
         sp = tmp_path / "stats.json"

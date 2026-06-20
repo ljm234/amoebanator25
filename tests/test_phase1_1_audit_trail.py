@@ -367,7 +367,7 @@ class TestAuditLog:
 
     def test_record_with_metadata(self) -> None:
         log = create_audit_log()
-        # Q7.A substitution: ENCRYPTION_APPLIED → DATA_VERIFIED
+        # Q7.A substitution: ENCRYPTION_APPLIED -> DATA_VERIFIED
         # (test verifies metadata persistence; event type is arbitrary fixture)
         entry = log.record(
             AuditEventType.DATA_VERIFIED,
@@ -1045,12 +1045,12 @@ class TestAuditSearchEngine:
             "Verified checksums", metadata={"batch": "B001"},
         )
         log.record(
-            # Q7.A substitution: ACCESS_GRANTED → DATA_RELEASED
+            # Q7.A substitution: ACCESS_GRANTED -> DATA_RELEASED
             AuditEventType.DATA_RELEASED, "alice", "file2.csv",
             "Granted access to dataset", metadata={"role": "pi"},
         )
         log.record(
-            # Q7.A substitution: DATA_DELETED → SESSION_END
+            # Q7.A substitution: DATA_DELETED -> SESSION_END
             AuditEventType.SESSION_END, "system", "file3.csv",
             "Purged expired data",
         )
@@ -1294,7 +1294,7 @@ class TestAuditLogArchiver:
         assert len(review) == 1
 
     def test_retention_review_tz_naive_archived_at(self) -> None:
-        """Cover tz-naive archived_at → replace(tzinfo=UTC) branch."""
+        """Cover tz-naive archived_at -> replace(tzinfo=UTC) branch."""
         from ml.data.audit_trail import ArchiveSegment
 
         archiver = AuditLogArchiver()
@@ -1324,7 +1324,7 @@ class TestAuditLogArchiver:
             entry_id="SEARCH-PRE-000000",
             sequence_number=0,
             timestamp="2020-01-01T00:00:00+00:00",
-            # Q7.A substitution: ACCESS_GRANTED → DATA_RECEIVED
+            # Q7.A substitution: ACCESS_GRANTED -> DATA_RECEIVED
             event_type=AuditEventType.DATA_RECEIVED.value,
             actor="analyst@lab.org",
             resource="/data/old.csv",
@@ -1337,7 +1337,7 @@ class TestAuditLogArchiver:
             entry_id="SEARCH-PRE-000001",
             sequence_number=1,
             timestamp="2024-06-01T00:00:00+00:00",
-            # Q7.A substitution: ACCESS_GRANTED → DATA_RECEIVED
+            # Q7.A substitution: ACCESS_GRANTED -> DATA_RECEIVED
             event_type=AuditEventType.DATA_RECEIVED.value,
             actor="analyst@lab.org",
             resource="/data/new.csv",
@@ -1478,7 +1478,7 @@ def _build_populated_log() -> AuditLog:
         action_detail="Received 500 records from WHO portal",
     )
     log.record(
-        # Q7.A substitution: ACCESS_GRANTED → DATA_VERIFIED
+        # Q7.A substitution: ACCESS_GRANTED -> DATA_VERIFIED
         event_type=AuditEventType.DATA_VERIFIED,
         actor="researcher@university.edu",
         resource="/data/batch_001.csv",
@@ -1619,7 +1619,7 @@ class TestAuditExporter:
         assert report.first_entry_timestamp is not None
         assert report.last_entry_timestamp is not None
         assert report.events_by_type[AuditEventType.DATA_RECEIVED.value] == 1
-        # Q7.A substitution: ACCESS_GRANTED → DATA_VERIFIED (matches fixture above)
+        # Q7.A substitution: ACCESS_GRANTED -> DATA_VERIFIED (matches fixture above)
         assert report.events_by_type[AuditEventType.DATA_VERIFIED.value] == 1
         assert report.events_by_type[AuditEventType.COMPLIANCE_CHECK.value] == 1
 

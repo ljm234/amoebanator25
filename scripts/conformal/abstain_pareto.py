@@ -68,7 +68,7 @@ def main() -> int:
     ax.plot(xs, ys, "o-", color="C0")
     ax.set_xlabel("Abstain rate")
     ax.set_ylabel("Accuracy on retained predictions")
-    ax.set_title(f"ABSTAIN ↔ accuracy Pareto (n={n})")
+    ax.set_title(f"ABSTAIN <-> accuracy Pareto (n={n})")
     ax.set_xlim(-0.02, 1.02)
     ax.set_ylim(-0.02, 1.05)
     ax.grid(True, alpha=0.3)

@@ -94,7 +94,7 @@ class CopeQualitativeCSF:
     """
     glucose_pattern: str = "low (typically <40 mg/dL)"
     protein_pattern: str = "elevated (typically >100 mg/dL)"
-    wbc_pattern: str = "neutrophilic pleocytosis (typically >1000 cells/µL)"
+    wbc_pattern: str = "neutrophilic pleocytosis (typically >1000 cells/uL)"
     incubation_days_median: float = 5.0
     onset_to_death_days_median: float = 5.0
     citation: str = (
@@ -155,7 +155,7 @@ def synthesize_yoder_cohort(
         glucose = np.clip(rng.normal(20.0, 8.0, size=n), 5.0, 60.0)
         # Protein ~ Lognormal anchored at 200 mg/dL
         protein = np.exp(rng.normal(np.log(200.0), 0.6, size=n)).clip(40.0, 1500.0)
-        # WBC ~ Lognormal anchored at 1500 cells/µL
+        # WBC ~ Lognormal anchored at 1500 cells/uL
         wbc = np.exp(rng.normal(np.log(1500.0), 0.7, size=n)).clip(100.0, 12000.0)
     else:
         raise ValueError(f"unknown csf_pattern={csf_pattern!r}")

@@ -407,7 +407,7 @@ sub-model. Tests verify each fires correctly with appropriate error messages.
 - **Trigger:** `csf_wbc_per_mm3 > 5` AND `(neutrophil + lymphocyte + eosinophil) not in [98, 102]`
 - **Action:** raise ValueError with explicit cell counts
 - **Rationale:** IDSA Tunkel 2004 reference. Acellular CSF (WBC<=5) is exempt.
-  Allows ±2 percentage points for rounding artifacts in clinical reporting.
+  Allows +/-2 percentage points for rounding artifacts in clinical reporting.
 - **Test:** `test_csf_differential_must_sum_to_100` (smoke test 5)
 
 ### 4.3 `_at_least_one_id` (LiteratureAnchor)
@@ -573,7 +573,7 @@ python -m pytest tests/schemas/ -v
 ```
 
 **Performance benchmark (P99 validation latency):** 0.0265 ms (188x under 5 ms
-target). At training-loop scale (e.g., 270 vignettes × 30 epochs = 8,100
+target). At training-loop scale (e.g., 270 vignettes x 30 epochs = 8,100
 validations per training run) total validation overhead is ~215 ms.
 
 ---

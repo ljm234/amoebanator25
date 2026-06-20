@@ -193,7 +193,7 @@ def record_data_loaded(
         AuditEventType.DATA_RECEIVED,
         actor=(actor or _DEFAULT_ACTOR).render(),
         resource=resource,
-        action_detail=f"loaded {n_rows} rows × {n_features} features",
+        action_detail=f"loaded {n_rows} rows x {n_features} features",
         metadata={"n_rows": int(n_rows), "n_features": int(n_features)},
         path=path,
     )

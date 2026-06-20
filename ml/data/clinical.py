@@ -26,8 +26,8 @@ Clinical records follow a standardized schema:
     |  Laboratory Values                                          |
     |  +-- csf_glucose: float (mg/dL)                           |
     |  +-- csf_protein: float (mg/dL)                           |
-    |  +-- csf_wbc: int (cells/μL)                              |
-    |  +-- csf_rbc: int (cells/μL)                              |
+    |  +-- csf_wbc: int (cells/uL)                              |
+    |  +-- csf_rbc: int (cells/uL)                              |
     |                                                             |
     |  Diagnostic Tests                                           |
     |  +-- microscopy: int (0=neg, 1=pos)                        |
@@ -1136,7 +1136,7 @@ CSF_REFERENCE_RANGES: Final[dict[str, CSFReferenceRange]] = {
     ),
     "wbc": CSFReferenceRange(
         parameter="wbc",
-        unit="cells/μL",
+        unit="cells/uL",
         normal_min=0.0,
         normal_max=5.0,
         critical_low=None,
@@ -1145,7 +1145,7 @@ CSF_REFERENCE_RANGES: Final[dict[str, CSFReferenceRange]] = {
     ),
     "rbc": CSFReferenceRange(
         parameter="rbc",
-        unit="cells/μL",
+        unit="cells/uL",
         normal_min=0.0,
         normal_max=0.0,
         critical_low=None,

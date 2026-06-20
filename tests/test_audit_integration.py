@@ -3,8 +3,8 @@ Phase 7.1 - integration tests for audit-trail wiring.
 
 Verifies that:
   * a full training run emits the five expected event types
-  * the persisted JSONL chain is hash-valid (verify_chain → VALID)
-  * tampering with the file is detected (verify_chain → TAMPERED)
+  * the persisted JSONL chain is hash-valid (verify_chain -> VALID)
+  * tampering with the file is detected (verify_chain -> TAMPERED)
   * AMOEBANATOR_AUDIT_PATH env var redirects writes
 """
 from __future__ import annotations
@@ -103,7 +103,7 @@ def test_tampering_detected(isolated_audit_path: Path) -> None:
 
     status, tampered = verify_persisted_chain(isolated_audit_path)
     assert status != IntegrityStatus.VALID
-    # The mutated entry's hash is now stale → either it itself is flagged or
+    # The mutated entry's hash is now stale -> either it itself is flagged or
     # every later entry's previous_hash mismatch is flagged.
     assert tampered, "tampered list should be non-empty"
 

@@ -19,7 +19,7 @@ from ml.conformal_advanced import (
 
 
 def test_compute_qhat_matches_vovk_formula() -> None:
-    """qhat = ⌈(n+1)(1-α)⌉-th smallest score with finite-sample correction."""
+    """qhat = ceil((n+1)(1-alpha))-th smallest score with finite-sample correction."""
     scores = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
     n = len(scores)
     alpha = 0.10

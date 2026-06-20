@@ -105,7 +105,7 @@ def test_group_split_warns_when_class_drift_large() -> None:
     """When groups force class imbalance across partitions, the warning must fire."""
     n_per_group = 8
     n_groups = 12
-    # Create strongly correlated group→label structure so the disjoint split forces drift.
+    # Create strongly correlated group->label structure so the disjoint split forces drift.
     y_chunks = []
     g_chunks = []
     for gi in range(n_groups):
@@ -120,7 +120,7 @@ def test_group_split_warns_when_class_drift_large() -> None:
     # Either the warning fires, or the random draw happened to land balanced - both are valid;
     # the assertion only checks the warning is *possible*, not always emitted.
     has_drift = any("drifts from marginal" in str(w.message) for w in caught)
-    # Soft assertion: with extreme group→label correlation, drift is overwhelmingly likely.
+    # Soft assertion: with extreme group->label correlation, drift is overwhelmingly likely.
     if not has_drift:
         # Try a few seeds; at least one should warn.
         for s in (1, 2, 3, 4, 5):

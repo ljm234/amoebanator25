@@ -47,7 +47,7 @@ DISCLAIMER_TEXT: str = (
 )
 
 
-# Locked WCAG-AA color combos (Q15.5.D). Each combo achieves ≥7.18:1
+# Locked WCAG-AA color combos (Q15.5.D). Each combo achieves >=7.18:1
 # contrast (well above the AA threshold of 4.5:1). The wash+border+
 # deep-text pattern preserves visual hierarchy without alarmist tone:
 # light wash background + 4px deep-saturation accent border + deep
@@ -93,7 +93,7 @@ def _channel_to_linear(c_srgb_byte: int) -> float:
     """Convert one sRGB channel byte (0-255) to linear-light (0-1).
 
     Per WCAG 2.0 relative-luminance formula:
-      if c_srgb ≤ 0.03928: c_linear = c_srgb / 12.92
+      if c_srgb <= 0.03928: c_linear = c_srgb / 12.92
       else:                c_linear = ((c_srgb + 0.055) / 1.055) ** 2.4
     """
     c_srgb = c_srgb_byte / 255.0

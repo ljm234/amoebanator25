@@ -92,7 +92,7 @@ def test_paired_ci_detects_better_scorer() -> None:
     p_random = rng.random(n)
     p_perfect = y.astype(float) + rng.normal(0, 0.05, size=n)
     out = bootstrap_ci_paired(_auc, y, p_random, p_perfect, n_resamples=300, seed=4)
-    # B should beat A → positive difference
+    # B should beat A -> positive difference
     assert out["point"] > 0.3
     assert out["lo"] > 0
 

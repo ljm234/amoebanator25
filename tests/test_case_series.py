@@ -28,7 +28,7 @@ def test_yoder_constants_match_paper() -> None:
 
 
 def test_cdc_constants_have_correct_cfr() -> None:
-    """CDC: 167 cases, 4 survivors → CFR ≈ 97.6%."""
+    """CDC: 167 cases, 4 survivors -> CFR ~= 97.6%."""
     assert CDC_AGGREGATE.cumulative_cases_through_2024 == 167
     assert CDC_AGGREGATE.cumulative_survivors_through_2024 == 4
     assert CDC_AGGREGATE.case_fatality_rate == pytest.approx(163 / 167, rel=1e-9)
@@ -52,7 +52,7 @@ def test_exposure_probabilities_sum_to_one() -> None:
 
 
 def test_exposure_probabilities_lake_dominant() -> None:
-    """Lakes/ponds/reservoirs is 67/91 ≈ 73.6% of known exposures."""
+    """Lakes/ponds/reservoirs is 67/91 ~= 73.6% of known exposures."""
     probs = yoder_exposure_probabilities()
     assert probs["lake_pond_reservoir"] == pytest.approx(67 / 91, rel=1e-9)
     # Lake-class > sum of all others combined

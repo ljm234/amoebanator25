@@ -75,10 +75,10 @@ def main() -> int:
     target = [1.0 - r["alpha"] for r in results]
     empirical = [r["coverage"] for r in results]
     abstain = [r["abstain_rate"] for r in results]
-    ax.plot(ALPHAS, target, "k--", label="target coverage = 1 - α")
+    ax.plot(ALPHAS, target, "k--", label="target coverage = 1 - alpha")
     ax.plot(ALPHAS, empirical, "o-", label="empirical coverage")
     ax.plot(ALPHAS, abstain, "s-", label="abstain rate")
-    ax.set_xlabel("α (target miscoverage)")
+    ax.set_xlabel("alpha (target miscoverage)")
     ax.set_ylabel("rate")
     ax.set_ylim(-0.05, 1.05)
     ax.set_title(f"Conformal coverage sweep (n_cal={len(cal_idx)}, n_test={len(test_idx)})")

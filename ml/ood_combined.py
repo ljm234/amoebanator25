@@ -12,7 +12,7 @@ them into a single decision under one of three rules:
 
   * "OR"        - abstain if any gate fires (most conservative)
   * "AND"       - abstain only if all gates fire (least conservative)
-  * "WEIGHTED"  - sum of weighted scores ≥ threshold → abstain
+  * "WEIGHTED"  - sum of weighted scores >= threshold -> abstain
 
 A simple wrapper takes the dict that infer_one returns and produces the
 combined decision plus a per-gate breakdown so a reviewer can see why.
@@ -63,8 +63,8 @@ def combine_signals(
     """
     Combine a list of GateSignal dicts under the chosen rule.
 
-    For "WEIGHTED", `weights` maps signal name → coefficient (default 1.0)
-    and the gate fires if Σ wᵢ · (scoreᵢ - thresholdᵢ) ≥ weighted_threshold.
+    For "WEIGHTED", `weights` maps signal name -> coefficient (default 1.0)
+    and the gate fires if sum w_i * (score_i - threshold_i) >= weighted_threshold.
     Signals without a threshold contribute 0 to the weighted sum.
     """
     # Runtime validation guards against callers that bypass the type system
@@ -119,7 +119,7 @@ def signals_from_infer_output(out: dict[str, object]) -> list[GateSignal]:
             e_f = float(e)  # type: ignore[arg-type]
             tau_f = float(e_tau) if e_tau is not None else None  # type: ignore[arg-type]
             # ml/infer.py treats `energy > tau` as "above the in-dist 95th percentile
-            # → likely OOD → abstain" (Liu 2020 canonical semantics).
+            # -> likely OOD -> abstain" (Liu 2020 canonical semantics).
             # score_for_combo = (energy - tau): larger positive == further above the
             # OOD shift threshold == stronger trigger for the WEIGHTED rule.
             flag = (tau_f is not None) and (e_f > tau_f)

@@ -12,7 +12,7 @@ threshold-band decision rule) by adding:
 
 References:
   - Vovk V, Gammerman A, Shafer G. Algorithmic Learning in a Random World.
-    Springer, 2005. (split conformal coverage bound 1 - α - 1/(n+1) ≤ E[cov] ≤ 1 - α + 1/(n+1))
+    Springer, 2005. (split conformal coverage bound 1 - alpha - 1/(n+1) <= E[cov] <= 1 - alpha + 1/(n+1))
   - Lei J, G'Sell M, Rinaldo A, Tibshirani RJ, Wasserman L. "Distribution-Free
     Predictive Inference for Regression." JASA 2018.
   - Vovk V. "Conditional Validity of Inductive Conformal Predictors."
@@ -53,8 +53,8 @@ def _check_calibration_size(n: int) -> None:
         warnings.warn(
             f"Conformal calibration set size n={n} is below the recommended "
             f"floor of {SMALL_CAL_FLOOR}. The finite-sample bound from Vovk et "
-            f"al. (1 - α - 1/(n+1) ≤ coverage ≤ 1 - α + 1/(n+1)) implies a "
-            f"slack of ±{1.0 / (n + 1):.3f} around the target. Treat coverage "
+            f"al. (1 - alpha - 1/(n+1) <= coverage <= 1 - alpha + 1/(n+1)) implies a "
+            f"slack of +/-{1.0 / (n + 1):.3f} around the target. Treat coverage "
             f"reports on this set as empirical, not population-level guarantees.",
             SmallCalibrationWarning,
             stacklevel=3,
@@ -70,8 +70,8 @@ def compute_qhat(
     Split-conformal qhat from nonconformity scores at miscoverage level alpha.
 
     With the finite-sample correction (default), the threshold is the
-    ⌈(n+1)(1-α)⌉-th smallest score, which yields the Vovk bound. Without the
-    correction it falls back to the (1-α) sample quantile.
+    ceil((n+1)(1-alpha))-th smallest score, which yields the Vovk bound. Without the
+    correction it falls back to the (1-alpha) sample quantile.
 
     Issues SmallCalibrationWarning when n < SMALL_CAL_FLOOR.
     """
@@ -95,7 +95,7 @@ def label_conditional_qhats(
     """
     Vovk 2013 label-conditional (Mondrian) conformal: a separate qhat per class.
 
-    Returns {class_label: qhat}. Per-class coverage holds at 1-α conditional on
+    Returns {class_label: qhat}. Per-class coverage holds at 1-alpha conditional on
     each class label, which is what you want for low-prevalence triage where
     the marginal positive rate would otherwise dominate the threshold.
     """

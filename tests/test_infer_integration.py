@@ -9,7 +9,7 @@ fitted temperature, and runs a real forward pass.
 Coverage:
   * end-to-end integration: distinct patient rows produce distinct p_high
   * directional sanity: severe presentation scores higher than benign
-  * determinism: same input → identical output (process-cached model)
+  * determinism: same input -> identical output (process-cached model)
   * unit tests for _build_feature_vector (symptom parsing, NaN handling,
     direct-column override, missing features, non-numeric strings)
   * unit tests for _real_logits (cache reuse, temperature scaling math)
@@ -193,8 +193,8 @@ def test_build_feature_vector_explicit_sym_column_overrides_string() -> None:
 def test_build_feature_vector_handles_nan_and_garbage() -> None:
     row = pd.Series({"age": float("nan"), "csf_glucose": "not-a-number", "csf_protein": 2.0})
     x = _build_feature_vector(row, _FEATS)
-    assert x[0] == 0.0  # NaN → 0
-    assert x[1] == 0.0  # non-numeric string → 0
+    assert x[0] == 0.0  # NaN -> 0
+    assert x[1] == 0.0  # non-numeric string -> 0
     assert x[2] == pytest.approx(2.0)
 
 

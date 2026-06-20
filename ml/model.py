@@ -11,7 +11,7 @@ refactor (Q2.2) to:
 
 Architecture (matches the saved state_dict in outputs/model/model.pt):
 
-    Linear(input_dim, 32) → ReLU → Linear(32, 16) → ReLU → Linear(16, 2)
+    Linear(input_dim, 32) -> ReLU -> Linear(32, 16) -> ReLU -> Linear(16, 2)
 
 For the bundled 10-feature schema this is 914 parameters total.
 """

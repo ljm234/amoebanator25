@@ -21,7 +21,7 @@ Verified itemids (from PhysioNet d_labitems, MIMIC-IV demo v2.2 / v3.1):
   |--------|----------------------------|--------------------------------------|
   | 51790  | Glucose, CSF               | csf_glucose (mg/dL)                  |
   | 51802  | Total Protein, CSF         | csf_protein (mg/dL)                  |
-  | 52286  | Total Nucleated Cells, CSF | csf_wbc surrogate (cells/µL)         |
+  | 52286  | Total Nucleated Cells, CSF | csf_wbc surrogate (cells/uL)         |
   | 52281  | Polys                      | neutrophil % of CSF nucleated cells  |
   | 52264  | Lymphs                     | lymphocyte %                         |
 
@@ -92,7 +92,7 @@ def label_from_icd(
     cfg: MimicCohortConfig | None = None,
 ) -> dict[int, str]:
     """
-    Map subject_id → label in {"bacterial","viral","amebic","other"} given
+    Map subject_id -> label in {"bacterial","viral","amebic","other"} given
     the diagnoses_icd table for one cohort. Multiple matching codes
     resolve in priority order: amebic > bacterial > viral > other.
     """

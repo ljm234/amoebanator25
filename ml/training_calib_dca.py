@@ -94,7 +94,7 @@ def main() -> None:
         loss.backward()
         opt.step()
 
-    # Validation logits → CPU numpy
+    # Validation logits -> CPU numpy
     model.eval()
     with torch.no_grad():
         logits_val = model(torch.tensor(Xva, dtype=torch.float32, device=device)).cpu().numpy()

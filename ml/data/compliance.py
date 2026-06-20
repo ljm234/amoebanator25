@@ -20,7 +20,7 @@ The compliance module enforces a gated workflow:
     |                                                              |
     |  STAGE 2 - IRB Application Tracking                         |
     |  +-- Protocol document SHA-256 fingerprint                  |
-    |  +-- Status state machine (DRAFT → SUBMITTED → APPROVED)    |
+    |  +-- Status state machine (DRAFT -> SUBMITTED -> APPROVED)    |
     |  +-- Expiration monitoring with renewal alerts              |
     |                                                              |
     |  STAGE 3 - CDC Data Request (Form 0.1310)                   |
@@ -485,7 +485,7 @@ class IRBApplication:
         allowed = _IRB_TRANSITIONS.get(self.status, frozenset())
         if new_status not in allowed:
             msg = (
-                f"Invalid transition: {self.status.value} → {new_status.value}. "
+                f"Invalid transition: {self.status.value} -> {new_status.value}. "
                 f"Allowed targets: {[s.value for s in allowed]}"
             )
             raise ValueError(msg)
@@ -509,7 +509,7 @@ class IRBApplication:
             )
 
         logger.info(
-            "IRB %s transitioned: %s → %s",
+            "IRB %s transitioned: %s -> %s",
             self.application_id,
             transition.from_status.value,
             transition.to_status.value,
@@ -2081,7 +2081,7 @@ class ConsentRegistry:
     ) -> dict[str, Any]:
         """Generate a consent summary for data-subject access requests.
 
-        Supports GDPR Art. 15 and HIPAA §164.524 right-of-access.
+        Supports GDPR Art. 15 and HIPAA section 164.524 right-of-access.
         """
         all_recs = [
             r for r in self._records.values()

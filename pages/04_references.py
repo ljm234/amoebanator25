@@ -2,8 +2,8 @@
 
 Renders the 22 BibTeX entries from ``docs/references.bib`` as a
 reviewer-friendly grouped list, ordered by category to mirror the
-research-narrative structure (clinical → calibration → OOD →
-governance → tools).
+research-narrative structure (clinical -> calibration -> OOD ->
+governance -> tools).
 
 Q8.C locked: full references page is the discovery surface;
 inline-tooltip references on the Predict page (heuristic per
@@ -53,10 +53,10 @@ st.markdown(
 st.subheader("Calibration & conformal prediction")
 st.markdown(
     """
-- **`guo2017calibration`** Guo C, Pleiss G, Sun Y, Weinberger KQ. *On Calibration of Modern Neural Networks.* **ICML** 2017. The Phase 4.5 demo applies temperature scaling per this paper; T=0.27 amplification is disclosed on the Predict page badge + About-page §3.
+- **`guo2017calibration`** Guo C, Pleiss G, Sun Y, Weinberger KQ. *On Calibration of Modern Neural Networks.* **ICML** 2017. The Phase 4.5 demo applies temperature scaling per this paper; T=0.27 amplification is disclosed on the Predict page badge + About-page section 3.
 - **`vovk2005alrw`** Vovk V, Gammerman A, Shafer G. *Algorithmic Learning in a Random World.* Springer 2005. Foundational split-conformal reference.
 - **`vovk2013mondrian`** Vovk V. *Conditional validity of inductive conformal predictors.* **Machine Learning** 2013. DOI 10.1007/s10994-013-5355-6. Source for the label-conditional Mondrian split conformal in `ml/conformal_advanced.py`.
-- **`lei2018distributionfree`** Lei J, G'Sell M, Rinaldo A, Tibshirani RJ, Wasserman L. *Distribution-Free Predictive Inference for Regression.* **Journal of the American Statistical Association** 2018. DOI 10.1080/01621459.2017.1307116. Source for the split-conformal coverage bound `1 − α + 2/(n+2)` cited in `ml/conformal_advanced.py`.
+- **`lei2018distributionfree`** Lei J, G'Sell M, Rinaldo A, Tibshirani RJ, Wasserman L. *Distribution-Free Predictive Inference for Regression.* **Journal of the American Statistical Association** 2018. DOI 10.1080/01621459.2017.1307116. Source for the split-conformal coverage bound `1 - alpha + 2/(n+2)` cited in `ml/conformal_advanced.py`.
 - **`platt1999probabilistic`** Platt J. *Probabilistic outputs for support vector machines.* **Advances in Large-Margin Classifiers** 1999. Used by `ml/baselines/logistic.py` (Platt-scaled LR).
 - **`niculescu2005calibration`** Niculescu-Mizil A, Caruana R. *Predicting good probabilities with supervised learning.* **ICML** 2005. Used by `ml/baselines/random_forest.py` (isotonic calibration fallback).
 """
@@ -68,7 +68,7 @@ st.subheader("Out-of-distribution detection")
 st.markdown(
     """
 - **`lee2018mahalanobis`** Lee K, Lee K, Lee H, Shin J. *A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks.* **NeurIPS** 2018. Source for the Mahalanobis OOD gate at `ml/ood_simple.py` + `ml/robust.py`.
-- **`liu2020energy`** Liu W, Wang X, Owens JD, Li Y. *Energy-based Out-of-distribution Detection.* **NeurIPS** 2020. Source for the canonical "energy > τ → ABSTAIN" semantics fixed in commit `b8f62e3` (Q5 / Q11.A.fix gate inversion); the Phase 4.5 web demo's OOD abstain reason `LogitEnergyAboveOODShift` is named directly after this paper's framing.
+- **`liu2020energy`** Liu W, Wang X, Owens JD, Li Y. *Energy-based Out-of-distribution Detection.* **NeurIPS** 2020. Source for the canonical "energy > tau -> ABSTAIN" semantics fixed in commit `b8f62e3` (Q5 / Q11.A.fix gate inversion); the Phase 4.5 web demo's OOD abstain reason `LogitEnergyAboveOODShift` is named directly after this paper's framing.
 """
 )
 

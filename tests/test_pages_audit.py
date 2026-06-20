@@ -88,7 +88,7 @@ def test_ephemerality_banner_present(populated_audit_log: Path) -> None:
 
 
 def test_no_audit_log_renders_info_pointer(empty_audit_log: Path) -> None:
-    """Empty log → st.info pointer + st.stop, no table render."""
+    """Empty log -> st.info pointer + st.stop, no table render."""
     at = AppTest.from_file(PAGE_PATH)
     at.run(timeout=30)
     infos = [i.value for i in at.info]
@@ -122,7 +122,7 @@ def test_audit_page_uses_default_path_when_env_unset(populated_audit_log: Path) 
     """The page resolves the audit path via ml.audit_hooks.default_audit_path,
     which respects AMOEBANATOR_AUDIT_PATH (set by the fixture)."""
     from ml.audit_hooks import default_audit_path
-    # macOS symlinks /var/folders → /private/var/folders; resolve both
+    # macOS symlinks /var/folders -> /private/var/folders; resolve both
     # sides before comparing so the symlink expansion doesn't break us.
     assert default_audit_path().resolve() == populated_audit_log.resolve()
 
