@@ -202,3 +202,17 @@ __marimo__/
 outputs/audit/
 
 
+
+# MIMIC-IV / PhysioNet credentialed-access data - never commit (the DUA prohibits redistribution)
+labevents.csv
+diagnoses_icd.csv
+microbiologyevents.csv
+patients.csv
+admissions.csv
+**/mimic/
+**/mimic-iv/
+**/mimic_iv/
+**/mimiciv/
+**/physionet.org/
+mimic_*.csv
+*_mimic.csv
