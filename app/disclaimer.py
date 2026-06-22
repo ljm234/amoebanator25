@@ -47,9 +47,10 @@ DISCLAIMER_TEXT: str = (
 )
 
 
-# WCAG-AA color combos. Each combo achieves >=7.18:1
-# contrast (well above the AA threshold of 4.5:1). The wash+border+
-# deep-text pattern preserves visual hierarchy without alarmist tone:
+# WCAG-AA color combos. Each combo clears the AA threshold of 4.5:1;
+# measured contrast ranges 5.27:1 (warning) to 7.56:1 (info). The
+# wash+border+deep-text pattern preserves visual hierarchy without
+# alarmist tone:
 # light wash background + 4px deep-saturation accent border + deep
 # saturation text on the wash.
 _INJECTED_CSS: str = """
@@ -58,22 +59,22 @@ _INJECTED_CSS: str = """
 .stAlert[kind="error"] {
     background: #FFEBEE;            /* light red wash */
     border-left: 4px solid #B71C1C; /* deep red accent */
-    color: #B71C1C;                 /* deep red text - contrast 7.18:1 */
+    color: #B71C1C;                 /* deep red text - contrast 5.75:1 */
 }
 .stAlert[kind="warning"] {
     background: #FFF8E1;            /* light amber wash */
-    border-left: 4px solid #E65100; /* deep amber accent */
-    color: #E65100;                 /* deep amber text */
+    border-left: 4px solid #BF360A; /* deep orange accent */
+    color: #BF360A;                 /* deep orange text - contrast 5.27:1 */
 }
 .stAlert[kind="info"] {
     background: #E3F2FD;            /* light blue wash */
     border-left: 4px solid #0D47A1; /* deep blue accent (theme primary) */
-    color: #0D47A1;                 /* deep blue text - contrast 8.21:1 */
+    color: #0D47A1;                 /* deep blue text - contrast 7.56:1 */
 }
 .stAlert[kind="success"] {
     background: #E8F5E9;            /* light green wash */
     border-left: 4px solid #1B5E20; /* deep green accent */
-    color: #1B5E20;                 /* deep green text - contrast 7.59:1 */
+    color: #1B5E20;                 /* deep green text - contrast 7.00:1 */
 }
 
 /* -- prefers-reduced-motion -------------------------------- */
