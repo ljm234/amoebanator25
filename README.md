@@ -7,7 +7,7 @@ app_port: 8501
 tags:
 - streamlit
 pinned: false
-short_description: Calibrated, abstention-aware triage signal for PAM, with reviewer-grade safety machinery.
+short_description: Calibrated, abstention-aware PAM triage (synthetic data)
 license: mit
 ---
 
