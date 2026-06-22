@@ -1,0 +1,28 @@
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+*.egg-info/
+.git/
+.gitignore
+.DS_Store
+.idea/
+.vscode/
+.env
+.venv/
+venv/
+build/
+dist/
+htmlcov/
+docs/_build/
+# Exclude the entire audit dir, not just the file. The dev-machine audit log
+# carries dev-side actor strings + filesystem paths that should never ship to
+# a public HF Space build. The container starts with an empty audit dir on
+# every cold-boot; the genesis entry is emitted on first prediction.
+outputs/audit/
+outputs/metrics/*.png
+outputs/model/__pycache__/

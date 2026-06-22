@@ -1,0 +1,32 @@
+# Streamlit configuration.
+# All keys verified against Streamlit 1.52: zero deprecations.
+
+[server]
+# Hot-reload off - HF free-tier inotify watches consume CPU we need
+# for inference; we don't edit the Space at runtime.
+runOnSave = false
+fileWatcherType = "none"
+# Port verified against HF auto-Dockerfile (EXPOSE 8501 +
+# --server.port=8501). NOT 7860 (Gradio default).
+port = 8501
+
+[global]
+developmentMode = false
+# Hide the dev-mode deprecation warnings overlay; reviewers should
+# never see "this feature is deprecated" toasts on a public demo.
+suppressDeprecationWarnings = true
+
+[client]
+# Force-show the multi-page sidebar nav. Streamlit 1.36+ hides it on
+# narrow viewports by default; PIs reading from email-on-phone need
+# to see all 4 pages.
+showSidebarNavigation = true
+
+[theme]
+# Neutral-medical palette: clinical-adjacent demo, NOT branded.
+# Material Design 900 family - harmonises with the WCAG-AA wash+border
+# colours in app/disclaimer.py _INJECTED_CSS.
+primaryColor = "#0D47A1"            # Material Blue 900
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F5F5F5"
+textColor = "#212121"               # dark slate
