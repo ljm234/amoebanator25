@@ -10,8 +10,9 @@ This guard keeps the public repository free of two classes of artifact:
 
 2. Internal process language - checked in every tracked text file EXCEPT the
    vignette data lineage: phase / mini / sprint / closure-gate / spec-gap
-   labels, dotted and bare question ids, task ids, "Subphase N" labels, and the
-   version-pinning word "locked".
+   labels, dotted and bare question ids, task ids, "Subphase N" labels, the
+   version-pinning word "locked", acceptance-criteria and gate numbering
+   ("criterion #N", "gate #N"), and "Day-N" data-batch labels.
 
 The vignette data lineage is exempt from the process-language check only. Those
 provenance labels live in the immutable vignette corpus and in the code that
@@ -53,10 +54,13 @@ PROCESS_PATTERNS = {
     "question-id": re.compile(r"\bQ[0-9]+"),
     "task-id": re.compile(r"\bT[0-9]\.[0-9]"),
     "subphase-label": re.compile(r"\bSubphase\s+[0-9]"),
-    "closure-gate": re.compile(r"closure\s+gate"),
+    "closure-gate": re.compile(r"closure[ -]gate"),
     "sprint": re.compile(r"\b[Ss]print\b"),
     "spec-gap": re.compile(r"spec-?gap"),
     "version-locked": re.compile(r"\b[Ll]ocked\b"),
+    "criterion-id": re.compile(r"\bcriterion\s+#[0-9]"),
+    "gate-id": re.compile(r"\bgate\s+#[0-9]"),
+    "day-label": re.compile(r"\bDay-[0-9]"),
 }
 
 # Vignette data lineage: the immutable corpus, the generators that emit it, and

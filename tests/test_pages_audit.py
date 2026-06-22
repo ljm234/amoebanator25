@@ -142,7 +142,7 @@ def test_audit_page_uses_st_table_not_dataframe(populated_audit_log: Path) -> No
 
 
 def test_audit_page_renders_under_5s(populated_audit_log: Path) -> None:
-    """Boot-time budget - acceptance criterion #3 inherits this."""
+    """Boot-time budget - the audit page renders within 5s."""
     import time
     t0 = time.time()
     at = AppTest.from_file(PAGE_PATH)

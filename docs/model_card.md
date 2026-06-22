@@ -208,7 +208,7 @@ pipeline; every claim is defensible against a current run.
   work.
 * **No neonatal PAM in the corpus.** The 60-vignette PAM corpus does not
   include extreme-age (neonatal) PAM presentations, because neonatal PAM is
-  a distinct epidemiologic category that does not fit the Day-2
+  a distinct epidemiologic category that does not fit the
   cluster structure (lake_pond, river, splash_pad, nasal_irrigation,
   hot_springs, pakistan_ablution). Reserved for a future extension. **Model
   performance on neonatal PAM is undefined.** See `docs/rare_class_design.md`

@@ -1,7 +1,7 @@
 """Tests for app/audit_export.py (3 of 3).
 
-10 tests covering CSV export contract, hash-chain round-trip
-(acceptance criterion #4), tamper detection, schema
+10 tests covering CSV export contract, hash-chain round-trip,
+tamper detection, schema
 preservation, and the AUDIT_EXPORT_REQUESTED self-emission contract.
 """
 from __future__ import annotations
@@ -101,7 +101,7 @@ def test_export_preserves_all_rows(tmp_audit_log: Path) -> None:
 # --- Test 4: round-trip hash chain byte-equal ------------------------
 
 def test_round_trip_hash_chain_byte_equal(tmp_audit_log: Path) -> None:
-    """Acceptance criterion #4 - the load-bearing test."""
+    """The load-bearing round-trip test."""
     _emit_n_events(10)
     csv_bytes = export_audit_to_csv(tmp_audit_log)
     assert verify_csv_chain_integrity(csv_bytes) is True

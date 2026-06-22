@@ -1,9 +1,8 @@
 """Tests for pages/01_predict.py.
 
 18 spec-enumerated tests covering form, presets, error paths, badges,
-debounce, and D18 banner. Plus 2 IRB_BYPASS branch tests (acceptance
-criterion #6) and 1 visual snapshot baseline test
-(criterion #7) - total 21 tests.
+debounce, and D18 banner. Plus 2 IRB_BYPASS branch tests and 1 visual
+snapshot baseline test - total 21 tests.
 
 AppTest is the load-bearing fixture. We mock ``infer_one`` for tests
 that don't need real inference (most of them) and let the real model
@@ -394,7 +393,7 @@ def test_d18_limitation_banner_only_on_bacterial_preset() -> None:
 # 19. IRB_BYPASS=1 -> red banner + IRB_STATUS_CHANGE audit emit
 # ---------------------------------------------------------------------
 def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
-    """Acceptance criterion #6 - IRB_BYPASS=1 branch."""
+    """IRB_BYPASS=1 branch."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -418,7 +417,7 @@ def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
 # 20. IRB_BYPASS unset -> NO banner + NO event
 # ---------------------------------------------------------------------
 def test_irb_bypass_inactive_no_banner_no_event() -> None:
-    """Acceptance criterion #6 - IRB_BYPASS=0/unset branch."""
+    """IRB_BYPASS=0/unset branch."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -438,7 +437,7 @@ def test_irb_bypass_inactive_no_banner_no_event() -> None:
 
 
 # ---------------------------------------------------------------------
-# 21. Visual regression text-snapshot drift <5% chars (acceptance gate #7)
+# 21. Visual regression text-snapshot drift <5% chars
 # ---------------------------------------------------------------------
 def test_visual_snapshot_baseline() -> None:
     """Capture markdown blob from page render; compare to committed baseline.
