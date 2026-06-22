@@ -1,15 +1,15 @@
-"""About page - Phase 4.5 Mini-2 T2.2.
+"""About page.
 
 Reviewer-grade landing page for the model card excerpt + feature
 importance panel + interactive conformal regime explorer + authorship
 disclosure. The panels follow a standard reporting order: architecture, training, calibration, explainability, uncertainty, authorship.
 
-Q17.A/B/C locked: |w_i| panel renders ONLY here (NOT on the predict
+The |w_i| panel renders ONLY here (NOT on the predict
 page) because |w_i| is model-level, not per-prediction; rendering
 adjacent to a result would falsely imply input-specificity. The
 caption is fixed, model-level text.
 
-Q4.A locked: Advanced expander hosts the alpha slider so PIs can move
+The Advanced expander hosts the alpha slider so PIs can move
 alpha in {0.05, 0.10, 0.20} live and watch q-hat + the regime badge
 respond. Pedagogical, not load-bearing for the landing-page render.
 
@@ -75,7 +75,7 @@ st.markdown(
     "binary classifier (PAM risk: Low / High) with two output logits "
     "consumed by softmax + temperature scaling at inference time. "
     "Architecture verified against `outputs/model/model.pt` "
-    "tensor shapes during the Phase 4.5 PRE-FLIGHT audit."
+    "tensor shapes."
 )
 
 
@@ -86,7 +86,7 @@ st.markdown(
     "marginals (Yoder 2010, Cope 2016, CDC 2025). Train/val split: "
     "n_train=24, n_val=6, `random_state=42`, `test_size=0.2`, "
     "`stratify=y`. Zero real PHI; vignettes are reproducibility-friendly "
-    "but not externally calibrated - Phase 6 (MIMIC-IV cohort, target "
+    "but not externally calibrated - a future MIMIC-IV cohort (target "
     "n >= 200) will provide the first contact with real-world clinical data. "
     "See `docs/data_card.md` (Gebru et al. 2021 datasheet format) for "
     "the full lineage."
@@ -108,16 +108,16 @@ st.markdown(
 )
 
 
-# -- section 4. Feature importance via |w_i| (Q17.A/B/C) ----------------------
+# -- section 4. Feature importance via |w_i| ----------------------
 st.subheader("Feature importance (model-level)")
 imp_df = _compute_feature_importance()
 st.bar_chart(imp_df, x="feature", y="|w_i|", horizontal=True)
 
-# Q17.C verbatim caption - locked text, do not reword.
+# Feature-importance caption (model-level text).
 st.caption(
     "Feature importance via |w_i| (model-level mean of first Linear "
     "layer weights, normalized). NOT per-prediction attribution - for "
-    "that, see SHAP (deferred to Phase 6 with MIMIC-IV n >= 200). "
+    "that, see SHAP (deferred to a future MIMIC-IV retrain, n >= 200). "
     f"Current range: {imp_df['|w_i|'].min():.1%} to "
     f"{imp_df['|w_i|'].max():.1%}, max/min ratio "
     f"{imp_df['|w_i|'].max() / imp_df['|w_i|'].min():.2f}x. "
@@ -129,7 +129,7 @@ st.caption(
 )
 
 
-# -- section 5. Conformal advanced expander (Q4.A alpha slider) -------------------
+# -- section 5. Conformal advanced expander (alpha slider) -------------------
 with st.expander("Advanced: explore conformal coverage"):
     st.markdown(
         "Move the slider to see how `q-hat` and the regime badge "
@@ -143,7 +143,7 @@ with st.expander("Advanced: explore conformal coverage"):
         min_value=0.05, max_value=0.20, value=0.10, step=0.05,
         key="conformal_alpha_slider",
     )
-    n_cal = 6  # current n; Phase 6 will lift this to >=200
+    n_cal = 6  # current n
     k = math.ceil((n_cal + 1) * (1 - alpha))
     st.markdown(
         f"With `n_cal = {n_cal}`, `alpha = {alpha:.2f}` -> "
@@ -164,12 +164,12 @@ with st.expander("Advanced: explore conformal coverage"):
             f"INVALID: Order-statistic clamped (k clipped from {k} "
             f"to n={n_cal}); the formal guarantee 1-alpha is mathematically "
             "inapplicable. Reported coverage is the empirical hit-rate "
-            "on the validation set only. Phase 6 MIMIC-IV (target "
+            "on the validation set only. A future MIMIC-IV cohort (target "
             "n >= 200) will fix this."
         )
 
 
-# -- section 6. Authorship + handle disclosure (Q19.D) ------------------------
+# -- section 6. Authorship + handle disclosure ------------------------
 st.subheader("Authorship")
 st.markdown(
     "Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - "

@@ -1,22 +1,22 @@
-"""Predict page - Phase 4.5 Mini-1.
+"""Predict page.
 
 Form-based PAM risk prediction using the n=30 MLP at outputs/model/model.pt.
 Wires the existing ml.infer.infer_one path (frozen - do not modify) through:
 
-- 8 form widgets with NEUTRAL clinical defaults (Q11.A locked).
+- 8 form widgets with NEUTRAL clinical defaults.
 - 3 preset buttons (high_risk_pam / bacterial_meningitis_limitation /
-  normal_csf) per Q12.A locked spec.
+  normal_csf).
 - D18 limitation banner adjacent to result when bacterial preset
-  active (Q12.C locked: post-result, NOT pre-inference).
-- Q15.A correlation-ID error path: uuid4 full server-side, 12-char
+  active (post-result, NOT pre-inference).
+- Correlation-ID error path: uuid4 full server-side, 12-char
   display + INTEGRITY_VIOLATION audit emit.
-- Q15.B graceful FileNotFoundError banner when Mahalanobis stats
+- Graceful FileNotFoundError banner when Mahalanobis stats
   missing.
-- Q15.D session-state debounce with 30s stale-lock recovery.
-- 4 result badges: decision (Q15.5.A), T=0.27 calibration tooltip
-  (Q3), SmallCalibrationWarning if n_cal<30, 3-state conformal regime
-  badge green/yellow/red (Q4.C).
-- IRB_BYPASS env-var branch (Mini-1 closure gate criterion #6):
+- Session-state debounce with 30s stale-lock recovery.
+- 4 result badges: decision, T=0.27 calibration tooltip
+  SmallCalibrationWarning if n_cal<30, 3-state conformal regime
+  badge green/yellow/red.
+- IRB_BYPASS env-var branch:
   AMOEBANATOR_IRB_BYPASS=1 -> red banner + IRB_STATUS_CHANGE emit.
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ st.set_page_config(page_title="Predict - Amoebanator 25")
 render_disclaimer()
 
 
-# -- IRB_BYPASS branch (Mini-1 closure gate criterion #6) -------------
+# -- IRB_BYPASS branch -------------
 _irb_bypass_active = os.environ.get("AMOEBANATOR_IRB_BYPASS") == "1"
 if _irb_bypass_active and not st.session_state.get("_irb_bypass_emitted"):
     _emit(
@@ -56,14 +56,14 @@ if _irb_bypass_active and not st.session_state.get("_irb_bypass_emitted"):
 if _irb_bypass_active:
     st.error(
         "IRB bypass active - research mode only. "
-        "Synthetic n=30 data; no PHI. Phase 6 with MIMIC-IV will require "
+        "Synthetic n=30 data; no PHI. A future MIMIC-IV cohort will require "
         "AMOEBANATOR_IRB_BYPASS=0 + a real IRB record."
     )
 
 st.title("PAM Risk Prediction")
 
 
-# -- Preset buttons (Q12.A: 3 buttons + neutral default state) --------
+# -- Preset buttons (3 buttons + neutral default state) --------
 _preset_cols = st.columns(3)
 for _col, _key in zip(
     _preset_cols,
@@ -84,7 +84,7 @@ for _col, _key in zip(
         )
 
 
-# -- Form (Q11.A locked NEUTRAL defaults) -----------------------------
+# -- Form (NEUTRAL defaults) -----------------------------
 with st.form("predict_form"):
     col1, col2 = st.columns(2)
     age = col1.number_input(
@@ -129,11 +129,11 @@ with st.form("predict_form"):
 
 
 def _render_result(out: dict[str, Any]) -> None:
-    """Render the 4 locked badges + key metrics."""
+    """Render the 4 badges + key metrics."""
     badge = decision_badge(str(out.get("prediction", "")), out.get("reason"))
     st.markdown(f"### Result: {badge}")
 
-    # Q3: T=0.27 amplification badge with hover tooltip.
+    # T=0.27 amplification badge with hover tooltip.
     st.markdown(
         '<span title="Calibrated by temperature scaling (Guo 2017, '
         "L-BFGS, n=6 validation). T=0.27 means the calibrator amplifies "
@@ -145,7 +145,7 @@ def _render_result(out: dict[str, Any]) -> None:
         unsafe_allow_html=True,
     )
 
-    # Q3: SmallCalibrationWarning banner when n_cal < 30.
+    # SmallCalibrationWarning banner when n_cal < 30.
     n_cal = int(out.get("n_cal", 6))
     if n_cal < 30:
         st.warning(
@@ -153,7 +153,7 @@ def _render_result(out: dict[str, Any]) -> None:
             "are indicative only. Do not use as a clinical confidence score."
         )
 
-    # Q4.C: 3-state conformal regime badge from (n, alpha, k).
+    # 3-state conformal regime badge from (n, alpha, k).
     alpha = float(out.get("alpha", 0.10))
     n = int(out.get("n_cal", 6))
     k = math.ceil((n + 1) * (1 - alpha))
@@ -172,7 +172,7 @@ def _render_result(out: dict[str, Any]) -> None:
             f"INVALID: Order-statistic clamped (k clipped from {k} to "
             f"n={n}); the formal guarantee 1-alpha is mathematically inapplicable. "
             "Reported coverage is the empirical hit-rate on the validation set "
-            "only. Phase 6 MIMIC-IV (target n>=200) will fix this."
+            "only. A future MIMIC-IV cohort (target n>=200) will fix this."
         )
 
     # Key numeric metrics - _fmt_metric tolerates missing/None/garbage.
@@ -187,7 +187,7 @@ def _render_result(out: dict[str, Any]) -> None:
 
 # -- Submit handler ---------------------------------------------------
 if submitted:
-    # Q15.D: session-state debounce with 30s stale-lock recovery.
+    # Session-state debounce with 30s stale-lock recovery.
     if st.session_state.get("predicting"):
         lock_age = time.time() - float(
             st.session_state.get("predicting_at", 0.0)
@@ -222,7 +222,7 @@ if submitted:
         )
         out = infer_one(row)
         _render_result(out)
-        # Q12.C: D18 banner ONLY when bacterial preset is active, AND
+        # D18 banner ONLY when bacterial preset is active, AND
         # adjacent to result (post-inference, not pre-inference).
         if (
             st.session_state.get("active_preset")
@@ -240,7 +240,7 @@ if submitted:
             },
         )
     except FileNotFoundError as e:
-        # Q15.B: Mahalanobis stats / model.pt missing -> graceful banner,
+        # Mahalanobis stats / model.pt missing -> graceful banner,
         # NOT crash. Disable submit on next render via session_state flag.
         st.warning(
             "OOD gate is unconfigured (required artefact missing: "
@@ -248,8 +248,8 @@ if submitted:
             "re-fit. See README section Quickstart for refit instructions."
         )
         st.session_state["_artefact_missing"] = True
-    except Exception as e:  # noqa: BLE001 - Q15.A correlation-ID catch-all
-        # Q15.A: uuid4 full server-side, 12-char display, audit emit.
+    except Exception as e:  # noqa: BLE001 - correlation-ID catch-all
+        # uuid4 full server-side, 12-char display, audit emit.
         error_id_full = uuid.uuid4().hex
         error_id_user = error_id_full[:12]
         st.error(

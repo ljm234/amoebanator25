@@ -1,11 +1,10 @@
-"""Audit log viewer - Phase 4.5 Mini-2 T2.1.
+"""Audit log viewer.
 
-Renders the current session's audit chain via ``st.table`` (Q15.5.C
-locked: HTML <table> semantics for screen readers, NOT
-``st.dataframe``'s virtualised React grid). Capped at 10,000 rows
-per Q15.C; full chain stays intact in the underlying JSONL file.
+Renders the current session's audit chain via ``st.table`` (HTML <table> semantics for screen readers, NOT
+``st.dataframe``'s virtualised React grid). Capped at 10,000 rows;
+full chain stays intact in the underlying JSONL file.
 
-CSV download button (Q13.A) emits a fresh export-bytes blob each
+CSV download button emits a fresh export-bytes blob each
 click, preserving every row + the hash chain pointers, so reviewers
 can verify integrity post-download against a cloned repo.
 
@@ -26,7 +25,7 @@ from app.disclaimer import render_disclaimer
 from ml.audit_hooks import default_audit_path
 
 
-_ROW_CAP = 10_000  # Q15.C locked
+_ROW_CAP = 10_000
 
 
 st.set_page_config(page_title="Audit - Amoebanator 25")
@@ -34,7 +33,7 @@ render_disclaimer()
 
 st.title("Audit Log (Current Session)")
 
-# Q13.B: ephemerality banner above the table.
+# Ephemerality banner above the table.
 st.warning(
     "Showing all events from current session. Earlier sessions wiped "
     "on container restart (HF free-tier ephemeral disk). "
@@ -74,11 +73,11 @@ if total_rows > _ROW_CAP:
 else:
     df_display = df
 
-# Q15.5.C: st.table - true HTML <table> semantics for screen readers.
+# st.table - true HTML <table> semantics for screen readers.
 st.table(df_display)
 
 
-# CSV download button (Q13.A).
+# CSV download button.
 session_id = st.session_state.get("session_id", "unknown")
 ts = (
     datetime.datetime.now(datetime.timezone.utc)
