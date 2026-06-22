@@ -10,8 +10,8 @@ distinguishes what the current V1.0 release reports, a calibration /
 conformal / out-of-distribution / decision-curve infrastructure exercised on
 a 30-row synthetic dataset with a 6-row validation split, from the planned
 clinical prediction study, a MIMIC-IV bacterial-vs-viral meningitis proxy
-with Naegleria fowleri (PAM) held out for out-of-distribution evaluation and
-gated on PhysioNet credentialed access. Items that only the planned study can
+with Naegleria fowleri (PAM) held out for out-of-distribution evaluation,
+with PhysioNet credentialed access now in place. Items that only the planned study can
 satisfy are marked **Planned**. The pre-specified analysis protocol for that
 study is `docs/rare_class_design.md`; model and dataset specifics are in
 `docs/model_card.md` and `docs/data_card.md` and are not duplicated here.
@@ -204,7 +204,7 @@ reporting of this work.
 * **Limitations.** The load-bearing limitations are the 6-row validation set,
   the 30-row synthetic training data, the conformal coverage guarantee holding
   only as the calibration set grows, the absence of real bacterial, viral, and
-  fungal labels (blocked on PhysioNet), and undefined performance on neonatal
+  fungal labels (pending the planned MIMIC-IV proxy study), and undefined performance on neonatal
   PAM (`model_card.md` Section 9; `data_card.md` Sections 5 and 7).
 * **Usability and future research.** Out-of-scope uses, namely no clinical
   triage, no PAM diagnosis or rule-out, and no EHR or clinical-decision-support

@@ -105,10 +105,10 @@ chance, distinctly below the perfect 1.0 that would suggest data leakage.
   machinery*; the PAM-specific deployment claim requires the prospective
   validation flagged in the Limitations section.
 
-## 6. Open dependencies
+## 6. Dependencies
 
-* PhysioNet credentialed access (CITI training + DUA). Blocks all real-data
-  evaluation.
+* PhysioNet credentialed access (CITI training + DUA): obtained; required
+  for all real-data evaluation.
 * Optional: Capewell LG et al., *J Pediatric Infect Dis Soc* 2015;4(4):e68-e75
   (PMID 26582886) for tabulated per-case PAM CSF values. Cope 2016 reports
   the patterns qualitatively only.

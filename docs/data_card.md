@@ -85,7 +85,8 @@ traceable.
 * **Timeframe.** 2025-2026 (the `timestamp_tz` field carries plausible but
   synthetic dates within this window).
 * **Ethical review.** Not required; no human subjects. Real-data extension
-  via MIMIC-IV is gated by institutional IRB exemption and PhysioNet DUA.
+  via MIMIC-IV uses de-identified records under the signed PhysioNet DUA;
+  secondary analysis is IRB-exempt.
 * **Data relate to people?** No real people.
 * **Notification / consent / impact analysis.** Not applicable.
 
@@ -159,7 +160,7 @@ traceable.
   repository's release notes.
 * **Will the dataset be updated?** Yes, the V1.1 milestone replaces the
   bundled 30-row synthetic CSV with a MIMIC-IV-derived bacterial-vs-viral
-  meningitis cohort once PhysioNet credentialed access lands. The bundled
+  meningitis cohort, now that PhysioNet credentialed access is in place. The bundled
   synthetic CSV will remain in the repository as a fixture for the test
   suite, but headline metrics will switch to the real-data cohort.
 * **Retention limits?** Not applicable (synthetic).
@@ -173,9 +174,9 @@ traceable.
 
 ---
 
-## Planned dataset (V1.1, gated on PhysioNet)
+## Planned dataset (V1.1, de-identified MIMIC-IV)
 
-When the PhysioNet credentialed-access blocker clears, the V1.1 dataset
+With PhysioNet credentialed access in place, the V1.1 dataset
 will be a MIMIC-IV cohort with the schema below. Documenting it here so the
 lineage of any future preprint figure is traceable from this card.
 

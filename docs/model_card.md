@@ -113,8 +113,8 @@ pipeline; every claim is defensible against a current run.
 * **Motivation.** The project's V1.0 goal was to ship a defensible
   *infrastructure* (calibration, conformal, OOD, DCA) end-to-end, not a
   clinically valid model. Planned work swaps the evaluation set for a
-  MIMIC-IV bacterial-vs-viral meningitis cohort once PhysioNet credentialed
-  access clears.
+  MIMIC-IV bacterial-vs-viral meningitis cohort, now that PhysioNet
+  credentialed access is in place.
 * **Preprocessing.** `pd.read_csv` -> Safe Harbor scrub via
   `ml/data_loader.deidentify_dataframe` (caps ages at 89, blanks
   `physician`, generalises dates to year, scrubs free text > 20 chars) ->
@@ -157,8 +157,8 @@ pipeline; every claim is defensible against a current run.
 ## 8. Ethical considerations
 
 * **Sensitive data.** None in the shipped dataset (synthetic, no
-  identifiers). Real-data extension via MIMIC-IV is gated by IRB exemption
-  and PhysioNet DUA.
+  identifiers). Real-data extension via MIMIC-IV uses de-identified records under the
+  signed PhysioNet DUA; secondary analysis is IRB-exempt.
 * **Model effects on human life / rights / safety.** *Potential* effects in
   the deployment scenario the model targets are catastrophic; PAM is
   near-uniformly fatal. The model card's *Out-of-scope use cases*
@@ -197,8 +197,8 @@ pipeline; every claim is defensible against a current run.
   `SmallCalibrationWarning` makes this explicit and the held-out framework
   refuses to ship a population-level claim until n >= 100.
 * **No bacterial / viral / fungal class labels yet.** Planned real OOD
-  evaluation (B45.x fungal vs B60.2 PAM via MIMIC-IV) remains blocked on
-  PhysioNet credentialing. The bundled synthetic OOD benchmark honestly
+  evaluation (B45.x fungal vs B60.2 PAM via MIMIC-IV) is the planned next
+  step now that PhysioNet credentialing is in place. The bundled synthetic OOD benchmark honestly
   reports AUC ~= 0.5 on label-shift (correctly, because flipping labels does
   not change the feature distribution).
 * **Cope 2016 CSF numerics not encoded.** The Cope JR & Ali IK 2016 review

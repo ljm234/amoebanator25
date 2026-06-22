@@ -14,7 +14,8 @@ A clean checkout reproduces every V1.0 synthetic-data result: the trained
 model, its calibration, and the conformal, out-of-distribution, and
 decision-curve artefacts, along with the full test suite. The planned
 MIMIC-IV proxy study is not reproducible from this repository, because that
-data is gated on PhysioNet credentialing; its pre-specified protocol is in
+data is not redistributable and must be obtained from PhysioNet under
+credentialed access; its pre-specified protocol is in
 `docs/rare_class_design.md`.
 
 ## 2. Environment
@@ -88,7 +89,7 @@ The synthetic-data results are fully and deterministically reproducible, but
 reproducing them reproduces an infrastructure proof on a 6-row validation
 split, not clinical performance. The headline metrics carry their n caveat in
 the model card, and the real-data study that would produce clinically
-meaningful numbers is gated on PhysioNet. Reproducibility here means the
+meaningful numbers is the planned MIMIC-IV proxy study, not yet run. Reproducibility here means the
 pipeline is honest and re-runnable, not that the numbers are clinically
 validated.
 
