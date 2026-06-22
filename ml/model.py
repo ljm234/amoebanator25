@@ -1,7 +1,7 @@
 """
 Canonical model architecture for Amoebanator V1.0.
 
-Single source of truth for the trained MLP. Moved here in pre-Phase-4.5
+Single source of truth for the trained MLP. Moved here in an earlier
 refactor to:
   * de-duplicate the class definition that previously lived in both
     ml/training.py and ml/training_calib_dca.py
