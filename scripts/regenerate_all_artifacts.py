@@ -1,5 +1,5 @@
 """
-Phase 9.4 - Python orchestrator that re-emits every JSON / CSV / PNG under
+Python orchestrator that re-emits every JSON / CSV / PNG under
 outputs/. Cleaner error reporting than the bash equivalent: every step
 records its name, command, exit code, duration, and a short message.
 

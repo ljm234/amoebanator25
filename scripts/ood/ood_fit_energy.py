@@ -20,7 +20,7 @@ def neg_energy_from_p(p: float) -> float:
 def main(q: float = 0.95) -> None:
     METRICS_DIR.mkdir(parents=True, exist_ok=True)
     if not VAL_PREDS.exists():
-        raise SystemExit("Missing outputs/metrics/val_preds.csv. Run Phase 1 training first.")
+        raise SystemExit("Missing outputs/metrics/val_preds.csv. Run training first.")
 
     df = pd.read_csv(VAL_PREDS)
     if "p_high_cal" not in df.columns:

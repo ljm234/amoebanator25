@@ -1,5 +1,5 @@
 """
-Phase 4.4 - empirical conformal coverage across alpha in {0.05, 0.10, 0.20}.
+Empirical conformal coverage across alpha in {0.05, 0.10, 0.20}.
 
 Uses ml/conformal_advanced.coverage_sweep. Splits val_preds.csv into a
 calibration half and a held-out half (proper conformal protocol; current
@@ -10,7 +10,7 @@ Output: outputs/metrics/coverage_sweep.json (table) + coverage_sweep.png (figure
 
 Note: with the bundled n=6 val_preds the per-alpha numbers are noisy by
 construction; the SmallCalibrationWarning is intentional and documented.
-The script is the framework Phase 4.1 will populate with n>=200.
+The script is the framework a future run will populate with n>=200.
 """
 from __future__ import annotations
 

@@ -1,5 +1,5 @@
 """
-Phase 4.5 - ABSTAIN-rate vs accuracy Pareto frontier.
+ABSTAIN-rate vs accuracy Pareto frontier.
 
 Sweeps qhat across the unit interval, computes the conformal abstain rate
 at each setting, and plots the resulting trade-off between abstain rate

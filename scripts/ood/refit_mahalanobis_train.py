@@ -1,5 +1,5 @@
 """
-Phase 5.1 - Refit Mahalanobis OOD on the TRAIN split only.
+Refit Mahalanobis OOD on the TRAIN split only.
 
 Audit context: ml.robust.fit_tabular_stats currently fits per-feature stats
 over the entire diagnosis_log_pro.csv, including rows that may end up in

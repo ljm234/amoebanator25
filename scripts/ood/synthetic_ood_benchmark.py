@@ -1,5 +1,5 @@
 """
-Phase 5.4 - Synthetic OOD shift benchmarks.
+Synthetic OOD shift benchmarks.
 
 Generates two adversarial shifts of the bundled simulated data and reports
 the detection rate of each OOD/uncertainty gate (Mahalanobis, logit-energy,

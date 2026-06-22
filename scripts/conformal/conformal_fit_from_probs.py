@@ -1,7 +1,7 @@
 """
 Fit a split-conformal qhat from calibrated probabilities in val_preds.csv.
 
-Pre-Phase-4.5 refactor (Q4.B): all conformal math now routes through
+All conformal math now routes through
 `ml.conformal_advanced.compute_qhat` + `nonconformity_from_p`. The previous
 inline implementation here duplicated the math (3rd duplication caught in
 the discovery audit, alongside the MLP one) and silently bypassed the

@@ -1,9 +1,9 @@
 """
-Phase 3.4 - Four-cell ablation across baselines and the Amoebanator MLP.
+Four-cell ablation across baselines and the Amoebanator MLP.
 
 For each (model, ablation cell) pair, we fit on the training split, evaluate on
 the held-out test split, and report AUC + recall@operating-point with bootstrap
-95% CIs (Phase 3.5). The four cells are:
+95% CIs. The four cells are:
 
     base       - model alone, raw probabilities
     +cal       - Platt or isotonic calibration on the model output
@@ -21,7 +21,7 @@ plus a CSV mirror at outputs/metrics/ablation_table.csv.
 
 This script runs to completion on the bundled simulated data so the wiring is
 proven; the headline numbers should be read with the README's Limitations
-section in mind (n=24 train, n=6 val/test). Real metrics come in Phase 2.
+section in mind (n=24 train, n=6 val/test). Real metrics come from a future cohort.
 """
 from __future__ import annotations
 
