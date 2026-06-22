@@ -1,9 +1,9 @@
 """
-Phase 1.1 / 1.2 - wired-inference test suite.
+Wired-inference test suite.
 
 This module is the regression boundary for the audit's #1 credibility-killer:
 ml.infer used to return a constant (0.0, 0.3) from _toy_logits regardless of
-input. After Phase 1.1, infer_one loads outputs/model/model.pt, applies the
+input. After training, infer_one loads outputs/model/model.pt, applies the
 fitted temperature, and runs a real forward pass.
 
 Coverage:
@@ -71,7 +71,7 @@ _SEVERE: dict[str, Any] = _row(
 
 
 # -----------------------------------------------------------------------------
-# Phase 1.2 - end-to-end integration
+# End-to-end integration
 # -----------------------------------------------------------------------------
 
 

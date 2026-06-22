@@ -1,4 +1,4 @@
-"""Phase 5.3 - tests for ml.ood_combined."""
+"""Tests for ml.ood_combined."""
 from __future__ import annotations
 
 import pytest

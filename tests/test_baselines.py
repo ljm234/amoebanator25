@@ -1,4 +1,4 @@
-"""Phase 3.1/3.2/3.3 - tests for ml.baselines (LR+Platt, RF, GBM)."""
+"""Tests for ml.baselines (LR+Platt, RF, GBM)."""
 from __future__ import annotations
 
 import numpy as np

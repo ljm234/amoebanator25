@@ -1,4 +1,4 @@
-"""Phase 3.5 - tests for ml.metrics.bootstrap (bootstrap_ci, bootstrap_ci_paired)."""
+"""Tests for ml.metrics.bootstrap (bootstrap_ci, bootstrap_ci_paired)."""
 from __future__ import annotations
 
 import math

@@ -1,5 +1,5 @@
 """
-Phase 1.1 De-identification Module - Comprehensive Test Suite.
+De-identification Module - Comprehensive Test Suite.
 
 Tests cover:
   - Safe Harbor processing (18 identifiers, age cap, ZIP truncation,

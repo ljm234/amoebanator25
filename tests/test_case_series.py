@@ -1,4 +1,4 @@
-"""Phase 2.3 - tests for ml.case_series (Yoder 2010, CDC, Cope 2016 constants)."""
+"""Tests for ml.case_series (Yoder 2010, CDC, Cope 2016 constants)."""
 from __future__ import annotations
 
 import numpy as np

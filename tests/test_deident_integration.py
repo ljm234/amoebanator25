@@ -1,5 +1,5 @@
 """
-Phase 7.2 - integration tests for de-identification wiring.
+Integration tests for de-identification wiring.
 
 Verifies that:
   * Ages > 89 are capped at 89 per Safe Harbor

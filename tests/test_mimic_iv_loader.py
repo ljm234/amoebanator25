@@ -1,4 +1,4 @@
-"""Phase 2.2 - tests for ml.mimic_iv_loader."""
+"""Tests for ml.mimic_iv_loader."""
 from __future__ import annotations
 
 from pathlib import Path

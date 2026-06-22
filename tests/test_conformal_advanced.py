@@ -1,4 +1,4 @@
-"""Phase 4.2 / 4.3 / 4.4 - tests for ml.conformal_advanced."""
+"""Tests for ml.conformal_advanced."""
 from __future__ import annotations
 
 import math

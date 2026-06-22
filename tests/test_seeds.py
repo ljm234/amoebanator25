@@ -1,4 +1,4 @@
-"""Phase 9.5 - tests for ml.seeds."""
+"""Tests for ml.seeds."""
 from __future__ import annotations
 
 import os

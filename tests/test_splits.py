@@ -1,4 +1,4 @@
-"""Phase 2.5 - tests for ml.splits.stratified_split / split_summary."""
+"""Tests for ml.splits.stratified_split / split_summary."""
 from __future__ import annotations
 
 import warnings
