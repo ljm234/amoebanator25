@@ -1,5 +1,5 @@
 """
-Phase 7.3 - IRB gate integration tests.
+IRB gate integration tests.
 """
 from __future__ import annotations
 
@@ -145,8 +145,8 @@ def test_evaluate_returns_decision_object(tmp_path: Path) -> None:
     assert decision.record["irb_protocol_id"] == "WSU-2026-0042"
 
 
-# --- Q7.B - assert AuditEventType emission on the IRB gate path --------------
-# These tests close two D-finding gaps surfaced in the Phase 4.5 discovery
+# --- Assert AuditEventType emission on the IRB gate path --------------
+# These tests close two D-finding gaps surfaced in the discovery
 # audit (commit 3fd05ed): ACCESS_DENIED and IRB_STATUS_CHANGE were emitted
 # from ml/irb_gate.py:173 in production but no test asserted on the emitted
 # event_type. Behavior is already covered above - this just tightens the

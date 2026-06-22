@@ -1,9 +1,9 @@
 """
-Q4.B regression test - `scripts.conformal.conformal_fit_from_probs` must route through
+Regression test - `scripts.conformal.conformal_fit_from_probs` must route through
 `ml.conformal_advanced.compute_qhat` and therefore emit `SmallCalibrationWarning`
 on small calibration sets. Without this, the script can ship a qhat fit on
 n < 100 with no warning to stderr - the silent-bypass bug surfaced during
-the Phase 4.5 discovery audit.
+the discovery audit.
 """
 from __future__ import annotations
 
@@ -47,7 +47,7 @@ def test_script_emits_smallcalibrationwarning_at_n6(tmp_path: Path) -> None:
     assert fired, (
         "scripts.conformal.conformal_fit_from_probs must emit SmallCalibrationWarning "
         "when n < SMALL_CAL_FLOOR; refactoring it through "
-        "ml.conformal_advanced.compute_qhat is the fix logged in PHASE_4_5_PLAN.md (Q4.B)."
+        "ml.conformal_advanced.compute_qhat is the fix."
     )
 
 

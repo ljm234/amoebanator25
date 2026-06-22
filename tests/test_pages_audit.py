@@ -1,4 +1,4 @@
-"""Tests for pages/02_audit.py - Phase 4.5 Mini-2 T2.5 (1 of 4)."""
+"""Tests for pages/02_audit.py (1 of 4)."""
 from __future__ import annotations
 
 import os
@@ -128,13 +128,13 @@ def test_audit_page_uses_default_path_when_env_unset(populated_audit_log: Path) 
 
 
 def test_10k_row_cap_documented(populated_audit_log: Path) -> None:
-    """The 10,000-row cap is a Q15.C lock; read the page source to confirm."""
+    """The 10,000-row cap is fixed; read the page source to confirm."""
     src = Path(PAGE_PATH).read_text(encoding="utf-8")
     assert "10_000" in src or "10000" in src
 
 
 def test_audit_page_uses_st_table_not_dataframe(populated_audit_log: Path) -> None:
-    """Q15.5.C: page MUST use st.table for screen-reader semantics."""
+    """Page MUST use st.table for screen-reader semantics."""
     src = Path(PAGE_PATH).read_text(encoding="utf-8")
     assert "st.table(" in src
     # st.dataframe is allowed elsewhere but not for the audit table
@@ -142,7 +142,7 @@ def test_audit_page_uses_st_table_not_dataframe(populated_audit_log: Path) -> No
 
 
 def test_audit_page_renders_under_5s(populated_audit_log: Path) -> None:
-    """Boot-time budget - Mini-2 closure gate criterion #3 inherits this."""
+    """Boot-time budget - acceptance criterion #3 inherits this."""
     import time
     t0 = time.time()
     at = AppTest.from_file(PAGE_PATH)

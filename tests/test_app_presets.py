@@ -1,8 +1,8 @@
-"""Tests for app/presets.py - Phase 4.5 Mini-1 T1.8 (1 of 3).
+"""Tests for app/presets.py (1 of 3).
 
 20 tests: 5 parametrized x 3 presets + 1 xfail-decorated bacterial
 regression + 4 cross-preset invariants. The xfail decorator uses
-``strict=False`` so Phase 6 (MIMIC-IV cohort) success -> XPASS as a
+``strict=False`` so a future MIMIC-IV cohort success -> XPASS as a
 "fix this" signal rather than CI breakage.
 """
 from __future__ import annotations
@@ -26,7 +26,7 @@ _PRESET_KEYS: tuple[str, ...] = (
 
 @pytest.mark.parametrize("preset_key", _PRESET_KEYS)
 def test_preset_dict_has_all_required_fields(preset_key: str) -> None:
-    """Q12.B locked schema."""
+    """Pinned schema."""
     p = PRESETS[preset_key]
     required = {"label", "description", "inputs", "current_behavior", "limitation_banner"}
     assert required.issubset(p.keys()), (
@@ -46,8 +46,8 @@ def test_preset_inputs_has_all_8_features(preset_key: str) -> None:
 
 @pytest.mark.parametrize("preset_key", _PRESET_KEYS)
 def test_preset_current_behavior_has_snapshot_date(preset_key: str) -> None:
-    """Q12.B field rename: current_behavior (NOT expected) +
-    snapshot_date locked to 2026-04-26."""
+    """Field rename: current_behavior (NOT expected) +
+    snapshot_date pinned to 2026-04-26."""
     cb = PRESETS[preset_key]["current_behavior"]
     assert cb["snapshot_date"] == "2026-04-26"
     assert "prediction" in cb
@@ -78,8 +78,8 @@ def test_preset_live_snapshot_matches(preset_key: str) -> None:
     """Live snapshot: actual infer_one output matches current_behavior.
 
     For ``bacterial_meningitis_limitation`` this currently passes
-    because the model returns 'High' (the D18 limitation). When Phase
-    6 fixes the limitation the model will return 'Low'/'Moderate' and
+    because the model returns 'High' (the D18 limitation). When a
+    future fix lands the model will return 'Low'/'Moderate' and
     this test will fail - the standalone xfail-decorated test below
     catches that transition cleanly.
     """
@@ -107,16 +107,16 @@ def test_preset_live_snapshot_matches(preset_key: str) -> None:
     reason=(
         "D18 limitation: bacterial_meningitis_limitation preset returns "
         "prediction='High' because n=30 training set has zero non-PAM "
-        "bacterial cases. Phase 6 (MIMIC-IV cohort, target n>=200) will "
+        "bacterial cases. A future MIMIC-IV cohort (target n>=200) will "
         "flip this to 'High' for confirmed PAM only and 'Low' or "
         "'Moderate' for bacterial-NOT-PAM. When that lands, this test "
-        "will start passing as 'XPASS' and someone in Phase 6 should "
+        "will start passing as 'XPASS' and someone in a future cohort should "
         "remove the xfail decorator and update the current_behavior dict."
     ),
 )
 def test_preset_bacterial_limitation_returns_high() -> None:
     """Snapshot test of D18 limitation. xfail with strict=False so the
-    Phase 6 fix triggers XPASS without breaking CI."""
+    A future fix triggers XPASS without breaking CI."""
     from ml.infer import infer_one
     p = PRESETS["bacterial_meningitis_limitation"]
     inputs = p["inputs"]
@@ -131,9 +131,9 @@ def test_preset_bacterial_limitation_returns_high() -> None:
         symptoms=inputs["symptoms"],
     )
     out = infer_one(row)
-    # Phase 6 will flip this to Low/Moderate; until then the model
+    # A future cohort will flip this to Low/Moderate; until then the model
     # incorrectly says High. xfail catches the transition.
-    assert out["prediction"] == "Low"  # Phase 6 expectation
+    assert out["prediction"] == "Low"  # future-cohort expectation
 
 
 # --- Cross-preset invariants (4 tests) -------------------------------
@@ -149,7 +149,7 @@ def test_preset_keys_are_snake_case() -> None:
 
 
 def test_only_bacterial_has_limitation_banner_true() -> None:
-    """Q12.C lock: limitation_banner is True for exactly the bacterial preset."""
+    """The limitation_banner is True for exactly the bacterial preset."""
     flagged = [k for k, p in PRESETS.items() if p["limitation_banner"]]
     assert flagged == ["bacterial_meningitis_limitation"]
 

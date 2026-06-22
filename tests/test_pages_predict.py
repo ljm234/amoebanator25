@@ -1,14 +1,14 @@
-"""Tests for pages/01_predict.py - Phase 4.5 Mini-1 T1.7.
+"""Tests for pages/01_predict.py.
 
 18 spec-enumerated tests covering form, presets, error paths, badges,
-debounce, and D18 banner. Plus 2 IRB_BYPASS branch tests (Mini-1
-closure gate criterion #6) and 1 visual snapshot baseline test
+debounce, and D18 banner. Plus 2 IRB_BYPASS branch tests (acceptance
+criterion #6) and 1 visual snapshot baseline test
 (criterion #7) - total 21 tests.
 
 AppTest is the load-bearing fixture. We mock ``infer_one`` for tests
 that don't need real inference (most of them) and let the real model
 fire only for the NEUTRAL-defaults sanity gate (test #4) where the
-Q11.A spec requires a live ``p_high < 0.001`` proof.
+The spec requires a live ``p_high < 0.001`` proof.
 """
 from __future__ import annotations
 
@@ -94,7 +94,7 @@ def test_form_renders_8_widgets() -> None:
 
 
 # ---------------------------------------------------------------------
-# 3. Form uses Q11.A neutral defaults
+# 3. Form uses neutral defaults
 # ---------------------------------------------------------------------
 def test_form_uses_neutral_defaults() -> None:
     at = _fresh_app_test()
@@ -110,10 +110,10 @@ def test_form_uses_neutral_defaults() -> None:
 
 
 # ---------------------------------------------------------------------
-# 4. Q11.A sanity gate: neutral defaults predict Low with p_high < 0.001
+# 4. Sanity gate: neutral defaults predict Low with p_high < 0.001
 # ---------------------------------------------------------------------
 def test_neutral_defaults_predict_low_p_high_lt_001() -> None:
-    """Calls real infer_one on the locked NEUTRAL defaults. No mock -
+    """Calls real infer_one on the fixed NEUTRAL defaults. No mock -
     if this regresses, the model itself has changed and the demo's
     'page-load shows Low' invariant breaks."""
     from app.utils import build_row
@@ -198,7 +198,7 @@ def test_no_submit_returns_early() -> None:
 # 9. FileNotFoundError -> graceful yellow banner, NOT crash
 # ---------------------------------------------------------------------
 def test_filenotfounderror_renders_graceful_banner() -> None:
-    """Q15.B: missing artefact must surface as warning banner, not raise."""
+    """Missing artefact must surface as warning banner, not raise."""
     err = FileNotFoundError("Mahalanobis stats not found")
     err.filename = "outputs/metrics/feature_stats_train.json"
     at = _fresh_app_test()
@@ -216,7 +216,7 @@ def test_filenotfounderror_renders_graceful_banner() -> None:
 # 10. Generic exception -> correlation-ID error + INTEGRITY_VIOLATION audit
 # ---------------------------------------------------------------------
 def test_uncaught_exception_emits_correlation_id_audit() -> None:
-    """Q15.A: uncaught exception -> uuid4 12-char display + INTEGRITY_VIOLATION emit."""
+    """Uncaught exception -> uuid4 12-char display + INTEGRITY_VIOLATION emit."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -246,7 +246,7 @@ def test_uncaught_exception_emits_correlation_id_audit() -> None:
 # 11. Double-submit within 30s blocked by debounce
 # ---------------------------------------------------------------------
 def test_double_submit_within_30s_blocked() -> None:
-    """Q15.D: predicting=True with fresh timestamp -> second submit aborts."""
+    """Predicting=True with fresh timestamp -> second submit aborts."""
     import time
     at = _fresh_app_test()
     at.session_state["predicting"] = True
@@ -262,7 +262,7 @@ def test_double_submit_within_30s_blocked() -> None:
 # 12. Stale lock (>30s old) recovers and allows submission
 # ---------------------------------------------------------------------
 def test_stale_lock_recovers_after_30s() -> None:
-    """Q15.D: predicting=True with timestamp >30s ago -> fall through, re-acquire."""
+    """Predicting=True with timestamp >30s ago -> fall through, re-acquire."""
     import time
     at = _fresh_app_test()
     at.session_state["predicting"] = True
@@ -302,7 +302,7 @@ def test_decision_badge_renders_with_bold() -> None:
 def test_decision_badge_color_blind_safe(
     prediction: str, label: str
 ) -> None:
-    """Q15.5.A: every badge state legible without color."""
+    """Every badge state legible without color."""
     from app.utils import decision_badge
 
     badge = decision_badge(prediction, reason="OOD" if prediction == "ABSTAIN" else None)
@@ -312,10 +312,10 @@ def test_decision_badge_color_blind_safe(
 
 
 # ---------------------------------------------------------------------
-# 15. T=0.27 calibration tooltip rendered with full Q3 text
+# 15. T=0.27 calibration tooltip rendered with full text
 # ---------------------------------------------------------------------
 def test_t_027_badge_renders_with_tooltip() -> None:
-    """Q3: tooltip must explain the T<1 amplification, n=6 fit."""
+    """Tooltip must explain the T<1 amplification, n=6 fit."""
     fake = _fake_infer_output()
     at = _fresh_app_test()
     at.run(timeout=30)
@@ -345,7 +345,7 @@ def test_smallcalibrationwarning_fires_for_n_below_30() -> None:
 # 17. 3-state regime badge: at n=6 alpha=0.10 -> INVALID
 # ---------------------------------------------------------------------
 def test_three_state_regime_badge_invalid_at_n6_alpha010() -> None:
-    """Q4.C: k = ceil((n+1)(1-alpha)) = 7 > n=6 -> INVALID."""
+    """k = ceil((n+1)(1-alpha)) = 7 > n=6 -> INVALID."""
     fake = _fake_infer_output(n_cal=6, alpha=0.10)
     at = _fresh_app_test()
     at.run(timeout=30)
@@ -360,7 +360,7 @@ def test_three_state_regime_badge_invalid_at_n6_alpha010() -> None:
 # 18. D18 banner renders ONLY when bacterial preset active
 # ---------------------------------------------------------------------
 def test_d18_limitation_banner_only_on_bacterial_preset() -> None:
-    """Q12.C: banner is post-result + bacterial-preset-gated."""
+    """Banner is post-result + bacterial-preset-gated."""
     from app.presets import PRESETS
 
     fake = _fake_infer_output(prediction="High", p_high=1.0)
@@ -394,7 +394,7 @@ def test_d18_limitation_banner_only_on_bacterial_preset() -> None:
 # 19. IRB_BYPASS=1 -> red banner + IRB_STATUS_CHANGE audit emit
 # ---------------------------------------------------------------------
 def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
-    """Mini-1 closure gate criterion #6 - IRB_BYPASS=1 branch."""
+    """Acceptance criterion #6 - IRB_BYPASS=1 branch."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -418,7 +418,7 @@ def test_irb_bypass_active_renders_banner_and_emits_event() -> None:
 # 20. IRB_BYPASS unset -> NO banner + NO event
 # ---------------------------------------------------------------------
 def test_irb_bypass_inactive_no_banner_no_event() -> None:
-    """Mini-1 closure gate criterion #6 - IRB_BYPASS=0/unset branch."""
+    """Acceptance criterion #6 - IRB_BYPASS=0/unset branch."""
     with tempfile.NamedTemporaryFile(mode="w", suffix=".jsonl", delete=False) as f:
         tmp_path = Path(f.name)
     os.environ["AMOEBANATOR_AUDIT_PATH"] = str(tmp_path)
@@ -438,18 +438,18 @@ def test_irb_bypass_inactive_no_banner_no_event() -> None:
 
 
 # ---------------------------------------------------------------------
-# 21. Visual regression text-snapshot drift <5% chars (Mini-1 gate #7)
+# 21. Visual regression text-snapshot drift <5% chars (acceptance gate #7)
 # ---------------------------------------------------------------------
 def test_visual_snapshot_baseline() -> None:
     """Capture markdown blob from page render; compare to committed baseline.
 
-    Skipped until T1.9 lands the baseline file. Once committed, the
+    Skipped until the baseline file lands. Once committed, the
     test fails if the page's markdown drifts >5% character delta -
     catching nav/disclaimer regressions that unit tests miss.
     """
     if not SNAPSHOT_PATH.exists():
         pytest.skip(
-            f"baseline {SNAPSHOT_PATH} not present yet; T1.9 will create it"
+            f"baseline {SNAPSHOT_PATH} not present yet; capture will create it"
         )
     at = _fresh_app_test()
     at.run(timeout=30)

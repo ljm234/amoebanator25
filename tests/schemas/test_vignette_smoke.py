@@ -129,10 +129,10 @@ def test_literature_anchor_requires_pmid_or_doi():
 
 
 # ============================================================================
-# Test 7: Schema version is locked to 2.0
+# Test 7: Schema version is pinned to 2.0
 # ============================================================================
 @pytest.mark.skipif(not SCHEMA_AVAILABLE, reason="schema not yet implemented")
-def test_schema_version_locked_to_2_0():
+def test_schema_version_pinned_to_2_0():
     """schema_version must be Literal['2.0'] - no other values allowed."""
     fixture_path = FIXTURES_DIR / "valid_pam_fixture.json"
     with open(fixture_path) as f:

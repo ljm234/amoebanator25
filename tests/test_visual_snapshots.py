@@ -1,4 +1,4 @@
-"""Cumulative visual regression - Phase 4.5 Mini-2 T2.6.
+"""Cumulative visual regression.
 
 Single canonical parametrized test covering all 4 pages. Each page's
 captured AppTest markdown blob is compared against its committed
@@ -6,9 +6,9 @@ baseline at ``tests/_snapshots/<name>.md.snap``. Test fails if drift
 exceeds 5% character delta - catches nav/disclaimer/banner
 regressions that unit tests miss.
 
-Mini-1 T1.7 had a single non-parametrized snapshot test for the
+An earlier version had a single non-parametrized snapshot test for the
 predict page; that test is preserved (closure-gate criterion #7
-predates Mini-2). This file is the cumulative version covering all
+predates this one). This file is the cumulative version covering all
 4 pages.
 """
 from __future__ import annotations
@@ -68,11 +68,11 @@ def populated_audit_log() -> Generator[Path, None, None]:
 def test_visual_snapshot_drift_under_5pct(
     page_path: str, snapshot_name: str, populated_audit_log: Path
 ) -> None:
-    """Mini-2 cumulative gate #7 - every page's markdown stays within
+    """Cumulative gate #7 - every page's markdown stays within
     5% character delta of its committed baseline."""
     snapshot_path = SNAPSHOT_DIR / snapshot_name
     if not snapshot_path.exists():
-        pytest.skip(f"baseline {snapshot_path} missing - run T2.6 capture")
+        pytest.skip(f"baseline {snapshot_path} missing - run capture")
     baseline = snapshot_path.read_text(encoding="utf-8")
     if not baseline:
         pytest.skip(f"baseline {snapshot_path} empty")

@@ -1,7 +1,7 @@
-"""Tests for app/audit_export.py - Phase 4.5 Mini-1 T1.8 (3 of 3).
+"""Tests for app/audit_export.py (3 of 3).
 
 10 tests covering CSV export contract, hash-chain round-trip
-(Mini-1 closure gate criterion #4), tamper detection, schema
+(acceptance criterion #4), tamper detection, schema
 preservation, and the AUDIT_EXPORT_REQUESTED self-emission contract.
 """
 from __future__ import annotations
@@ -101,7 +101,7 @@ def test_export_preserves_all_rows(tmp_audit_log: Path) -> None:
 # --- Test 4: round-trip hash chain byte-equal ------------------------
 
 def test_round_trip_hash_chain_byte_equal(tmp_audit_log: Path) -> None:
-    """Mini-1 closure gate criterion #4 - the load-bearing test."""
+    """Acceptance criterion #4 - the load-bearing test."""
     _emit_n_events(10)
     csv_bytes = export_audit_to_csv(tmp_audit_log)
     assert verify_csv_chain_integrity(csv_bytes) is True
@@ -129,12 +129,12 @@ def test_verify_csv_chain_integrity_fail_on_tamper(tmp_audit_log: Path) -> None:
     assert verify_csv_chain_integrity(tampered) is False
 
 
-# --- Test 7: filename format (per Q13.A spec) ------------------------
+# --- Test 7: filename format ------------------------
 
 def test_export_filename_format() -> None:
     """The page-side caller is responsible for the filename, but the
-    locked format is ``f'amoebanator_audit_{session_id}_{ISO_ts}.csv'``.
-    Verify the format string is composable per Q13.A."""
+    fixed format is ``f'amoebanator_audit_{session_id}_{ISO_ts}.csv'``.
+    Verify the format string is composable."""
     session_id = "abc12345"
     iso_ts = (
         datetime.datetime.now(datetime.timezone.utc)
