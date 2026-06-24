@@ -87,7 +87,7 @@ For each combination of model and ablation cell we report:
     (OOD = PAM rows from B60.2). This is the only experiment that uses the
     PAM rows.
 
-The target empirical coverage matches 1 - alpha to within +/- 2 / (n+2) per
+The target empirical coverage matches 1 - alpha to within +/- 1 / (n+1) per
 the Lei et al. 2018 bound. The PAM OOD AUC target is >= 0.85, well above
 chance, distinctly below the perfect 1.0 that would suggest data leakage.
 

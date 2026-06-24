@@ -3,22 +3,22 @@
 .stAlert[kind="error"] {
     background: #FFEBEE;            /* light red wash */
     border-left: 4px solid #B71C1C; /* deep red accent */
-    color: #B71C1C;                 /* deep red text - contrast 7.18:1 */
+    color: #B71C1C;                 /* deep red text - contrast 5.75:1 */
 }
 .stAlert[kind="warning"] {
     background: #FFF8E1;            /* light amber wash */
-    border-left: 4px solid #E65100; /* deep amber accent */
-    color: #E65100;                 /* deep amber text */
+    border-left: 4px solid #BF360A; /* deep orange accent */
+    color: #BF360A;                 /* deep orange text - contrast 5.27:1 */
 }
 .stAlert[kind="info"] {
     background: #E3F2FD;            /* light blue wash */
     border-left: 4px solid #0D47A1; /* deep blue accent (theme primary) */
-    color: #0D47A1;                 /* deep blue text - contrast 8.21:1 */
+    color: #0D47A1;                 /* deep blue text - contrast 7.56:1 */
 }
 .stAlert[kind="success"] {
     background: #E8F5E9;            /* light green wash */
     border-left: 4px solid #1B5E20; /* deep green accent */
-    color: #1B5E20;                 /* deep green text - contrast 7.59:1 */
+    color: #1B5E20;                 /* deep green text - contrast 7.00:1 */
 }
 
 /* -- prefers-reduced-motion -------------------------------- */
@@ -41,7 +41,7 @@ Research prototype, NOT a medical device. Trained on n=30 synthetic patient vign
 - **`guo2017calibration`** Guo C, Pleiss G, Sun Y, Weinberger KQ. *On Calibration of Modern Neural Networks.* **ICML** 2017. The demo applies temperature scaling per this paper; T=0.27 amplification is disclosed on the Predict page badge + About-page section 3.
 - **`vovk2005alrw`** Vovk V, Gammerman A, Shafer G. *Algorithmic Learning in a Random World.* Springer 2005. Foundational split-conformal reference.
 - **`vovk2013mondrian`** Vovk V. *Conditional validity of inductive conformal predictors.* **Machine Learning** 2013. DOI 10.1007/s10994-013-5355-6. Source for the label-conditional Mondrian split conformal in `ml/conformal_advanced.py`.
-- **`lei2018distributionfree`** Lei J, G'Sell M, Rinaldo A, Tibshirani RJ, Wasserman L. *Distribution-Free Predictive Inference for Regression.* **Journal of the American Statistical Association** 2018. DOI 10.1080/01621459.2017.1307116. Source for the split-conformal coverage bound `1 - alpha + 2/(n+2)` cited in `ml/conformal_advanced.py`.
+- **`lei2018distributionfree`** Lei J, G'Sell M, Rinaldo A, Tibshirani RJ, Wasserman L. *Distribution-Free Predictive Inference for Regression.* **Journal of the American Statistical Association** 2018. DOI 10.1080/01621459.2017.1307116. Source for the distribution-free split-conformal coverage bound `1-alpha <= coverage <= 1-alpha + 1/(n+1)` used in `ml/conformal_advanced.py`.
 - **`platt1999probabilistic`** Platt J. *Probabilistic outputs for support vector machines.* **Advances in Large-Margin Classifiers** 1999. Used by `ml/baselines/logistic.py` (Platt-scaled LR).
 - **`niculescu2005calibration`** Niculescu-Mizil A, Caruana R. *Predicting good probabilities with supervised learning.* **ICML** 2005. Used by `ml/baselines/random_forest.py` (isotonic calibration fallback).
 - **`lee2018mahalanobis`** Lee K, Lee K, Lee H, Shin J. *A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks.* **NeurIPS** 2018. Source for the Mahalanobis OOD gate at `ml/ood_simple.py` + `ml/robust.py`.

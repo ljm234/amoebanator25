@@ -160,7 +160,7 @@ def _render_result(out: dict[str, Any]) -> None:
     if n >= k and n >= 100:
         st.success(
             "ASYMPTOTIC: Guarantee holds; "
-            "finite-sample bound 1-alpha + 2/(n+2) is tight."
+            "finite-sample bound 1-alpha + 1/(n+1) is tight."
         )
     elif n >= k:
         st.info(

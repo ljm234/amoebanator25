@@ -9,9 +9,8 @@ pipeline; every claim is defensible against a current run.
 
 ## 1. Model details
 
-* **Developer.** Luis Jordan Montenegro Calla, independent researcher
-  affiliated with Weber State University and Ensign College. Single-author
-  research codebase.
+* **Developer.** Luis Jordan Montenegro-Calla, independent researcher.
+  Single-author research codebase.
 * **Model date.** Trained April 2026; this card reflects model artefacts
   produced on 2026-04-25.
 * **Model version.** V1.0. The state_dict at `outputs/model/model.pt` is
@@ -122,8 +121,9 @@ pipeline; every claim is defensible against a current run.
 
 ## 6. Training data
 
-* **Source.** `outputs/diagnosis_log_pro.csv`, 30 simulated rows generated
-  to mimic published PAM presentations. Every row carries
+* **Source.** `outputs/diagnosis_log_pro.csv`, 30 simulated rows: a synthetic
+  cohort, manually authored (not software-generated), matching published PAM
+  presentations. Every row carries
   `source = "simulated"` and `physician = "demo"`. No real patient data is
   included.
 * **Distribution over factors.** The bundled marginals were tuned to match
@@ -132,7 +132,7 @@ pipeline; every claim is defensible against a current run.
   (`AMOEBANATOR_AUDIT_PATH`).
 * **Other relevant details.** Class weight clamped to `[1, 10]` because
   the small training fold has unstable positive counts. Random seed `42`
-  is pinned in `ml/training.py` so the n = 24 train fold is bit-identical
+  is pinned in `ml/seeds.py` so the n = 24 train fold is bit-identical
   across runs.
 
 ## 7. Quantitative analyses
@@ -192,7 +192,8 @@ pipeline; every claim is defensible against a current run.
   (`ml/case_series.synthesize_yoder_cohort`) draws from Yoder 2010
   marginals; rows it produces carry `source = "synthetic_from_yoder2010"`
   so they can be filtered out of any real-data quoted metric.
-* **Conformal coverage guarantee.** Holds at 1 - alpha only as n_cal grows.
+* **Conformal coverage guarantee.** The 1-alpha lower bound holds at any
+  calibration size; only the upper slack of 1/(n+1) shrinks as n grows.
   At n = 6 the slack is +/- 1/(n+1) ~= +/- 0.143 around the target; the
   `SmallCalibrationWarning` makes this explicit and the held-out framework
   refuses to ship a population-level claim until n >= 100.

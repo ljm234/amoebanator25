@@ -3,22 +3,22 @@
 .stAlert[kind="error"] {
     background: #FFEBEE;            /* light red wash */
     border-left: 4px solid #B71C1C; /* deep red accent */
-    color: #B71C1C;                 /* deep red text - contrast 7.18:1 */
+    color: #B71C1C;                 /* deep red text - contrast 5.75:1 */
 }
 .stAlert[kind="warning"] {
     background: #FFF8E1;            /* light amber wash */
-    border-left: 4px solid #E65100; /* deep amber accent */
-    color: #E65100;                 /* deep amber text */
+    border-left: 4px solid #BF360A; /* deep orange accent */
+    color: #BF360A;                 /* deep orange text - contrast 5.27:1 */
 }
 .stAlert[kind="info"] {
     background: #E3F2FD;            /* light blue wash */
     border-left: 4px solid #0D47A1; /* deep blue accent (theme primary) */
-    color: #0D47A1;                 /* deep blue text - contrast 8.21:1 */
+    color: #0D47A1;                 /* deep blue text - contrast 7.56:1 */
 }
 .stAlert[kind="success"] {
     background: #E8F5E9;            /* light green wash */
     border-left: 4px solid #1B5E20; /* deep green accent */
-    color: #1B5E20;                 /* deep green text - contrast 7.59:1 */
+    color: #1B5E20;                 /* deep green text - contrast 7.00:1 */
 }
 
 /* -- prefers-reduced-motion -------------------------------- */
@@ -37,4 +37,4 @@ Tabular MLP, 914 parameters, 6.4 KB serialized. `Linear(10, 32) -> ReLU -> Linea
 Temperature scaling (Guo et al. 2017) optimised via L-BFGS on the n=6 validation set. Current `T = 0.27`. **T < 1 means the calibrator amplifies the model's raw confidence** - the opposite of typical Guo 2017 behaviour (T > 1 attenuates overconfidence). On n=6 the L-BFGS landscape lacks curvature to constrain T meaningfully; different random subsets of n=6 would produce T values in the range 0.1-2.0. Treat the reported T as a sample-specific point estimate, not as evidence of structural under-/over-confidence. See `docs/model_card.md` section Caveats for the full discussion.
 Move the slider to see how `q-hat` and the regime badge respond to different significance levels. The 3-state regime badge (ASYMPTOTIC / FINITE-SAMPLE / INVALID) is computed from `(n_cal, alpha, k)` where `k = ceil((n_cal + 1)(1 - alpha))`.
 With `n_cal = 6`, `alpha = 0.10` -> `k = ceil((n+1)(1-alpha)) = 7`.
-Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - jordanmontenegroc.99@gmail.com
+Luis Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - jordanmontenegroc.99@gmail.com

@@ -152,7 +152,7 @@ with st.expander("Advanced: explore conformal coverage"):
     if n_cal >= k and n_cal >= 100:
         st.success(
             "ASYMPTOTIC: Guarantee holds; "
-            "finite-sample bound 1-alpha + 2/(n+2) is tight."
+            "finite-sample bound 1-alpha + 1/(n+1) is tight."
         )
     elif n_cal >= k:
         st.info(
@@ -172,7 +172,7 @@ with st.expander("Advanced: explore conformal coverage"):
 # -- section 6. Authorship + handle disclosure ------------------------
 st.subheader("Authorship")
 st.markdown(
-    "Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - "
+    "Luis Jordan Montenegro-Calla - ORCID 0009-0000-7851-7139 - "
     "jordanmontenegroc.99@gmail.com"
 )
 st.caption(

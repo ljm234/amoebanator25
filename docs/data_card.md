@@ -19,7 +19,7 @@ traceable.
   *infrastructure* runs, not to produce population-level performance
   estimates. Replacing it with a real clinical cohort is the explicit V1.1
   goal.
-* **Who created the dataset?** Luis Jordan Montenegro Calla (single-author
+* **Who created the dataset?** Luis Jordan Montenegro-Calla (single-author
   research). No institutional dataset commission.
 * **Funding.** Unfunded.
 * **Other comments.** The synthetic vignettes are clinically *plausible*:
@@ -74,7 +74,7 @@ traceable.
 * **How was the data acquired?** Synthetic generation. The 30 rows were
   hand-curated to span the clinical feature region of published PAM
   case-series.
-* **Mechanisms / procedures.** Manual authoring (no software generation).
+* **Mechanisms / procedures.** A synthetic cohort, manually authored (not software-generated).
   The `ml.case_series.synthesize_yoder_cohort` function provides a
   programmatic synthesis path that draws from Yoder 2010 marginals; rows it
   produces carry `source = "synthetic_from_yoder2010"` and are not part of
@@ -153,7 +153,7 @@ traceable.
 
 ## 7. Maintenance
 
-* **Who maintains the dataset?** Luis Jordan Montenegro Calla.
+* **Who maintains the dataset?** Luis Jordan Montenegro-Calla.
 * **How to contact the maintainer.** Contact the maintainer through the
   repository.
 * **Errata?** None at the V1.0 release. Errata will be tracked in the

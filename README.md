@@ -24,6 +24,17 @@ registry of meningoencephalitis vignettes provides the differential-diagnosis co
 > **For research and educational use.** Not a cleared medical device, not a substitute
 > for clinical judgment, and not validated for unsupervised use.
 
+## Scope and status
+
+Amoebanator is a clinical-ML infrastructure project for CNS-infection triage, using
+primary amebic meningoencephalitis (Naegleria fowleri) as a high-risk must-not-miss
+example. This release demonstrates the engineering stack: conformal prediction,
+calibrated selective abstention, OOD detection, and reproducible training and
+evaluation. The classifier is trained and evaluated on a small synthetic cohort and is
+an infrastructure demonstration, not a clinically validated diagnostic tool. Validation
+on real clinical data is ongoing work and is not part of this release. Not for clinical
+use.
+
 ## License and disclaimer
 
 The code and documentation in this repository are released under the MIT

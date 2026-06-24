@@ -203,7 +203,8 @@ reporting of this work.
   and 9; `rare_class_design.md` Section 5).
 * **Limitations.** The load-bearing limitations are the 6-row validation set,
   the 30-row synthetic training data, the conformal coverage guarantee holding
-  only as the calibration set grows, the absence of real bacterial, viral, and
+  at any n with only the upper slack of 1/(n+1) shrinking as the calibration
+  set grows, the absence of real bacterial, viral, and
   fungal labels (pending the planned MIMIC-IV proxy study), and undefined performance on neonatal
   PAM (`model_card.md` Section 9; `data_card.md` Sections 5 and 7).
 * **Usability and future research.** Out-of-scope uses, namely no clinical

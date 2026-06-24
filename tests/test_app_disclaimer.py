@@ -53,6 +53,23 @@ def test_alert_combo_meets_aa(kind: str, fg: str, bg: str) -> None:
     )
 
 
+# Contrast ratios documented inline in the ``app.disclaimer`` CSS comments,
+# pinned here against the WCAG 2.0 computation so a comment can never silently
+# drift from the math (2 dp, the precision the comments are written to).
+CLAIMED_RATIOS: dict[str, float] = {
+    "error": 5.75,
+    "warning": 5.27,
+    "info": 7.56,
+    "success": 7.00,
+}
+
+
+@pytest.mark.parametrize("kind, fg, bg", ALERT_COMBOS)
+def test_alert_combo_ratio_matches_claim(kind: str, fg: str, bg: str) -> None:
+    """Each combo's computed ratio equals the value claimed in the CSS comment."""
+    assert round(wcag_contrast_ratio(fg, bg), 2) == CLAIMED_RATIOS[kind]
+
+
 def test_reference_black_on_white_is_21() -> None:
     """Maximum contrast (black on white) is 21:1."""
     assert abs(wcag_contrast_ratio("#000000", "#FFFFFF") - 21.0) < 0.01
